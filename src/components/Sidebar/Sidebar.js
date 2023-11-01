@@ -135,7 +135,7 @@ const Sidebar = ({ show, handleClose }) => {
                                                 <i > <FaEnvelope /> </i>
                                              </div>
                                              <div className="text ">
-                                                <span><a href="mailto:support@zibber.com">support@zibber.com</a></span>
+                                                <span><a href="mailto:support@open_src_fstv2023.com">support@open_src_fstv2023.com</a></span>
                                              </div>
                                           </li>
                                           <li>

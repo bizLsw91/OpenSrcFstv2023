@@ -124,9 +124,6 @@ const StyleHeaderSix = () => {
                                  </ul>
                               </nav>
                            </div>
-                           <div className="header__btn d-none d-sm-block d-lg-none d-xl-block ml-50">
-                              <Link to="/contact" className="z-btn">Get a Quote</Link>
-                           </div>
                            <div onClick={handleShow} className="sidebar__menu d-lg-none">
                               <div className="sidebar-toggle-btn sidebar-toggle-btn-3" id="sidebar-toggle">
                                  <span className="line"></span>

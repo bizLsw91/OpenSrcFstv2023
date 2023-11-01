@@ -34,7 +34,7 @@ const HomeThreeHeroSection = () => {
                      </div>
                      <div className="col-xl-6 col-lg-7 d-flex align-items-center">
                         <div className="hero__content">
-                           <span>Welcome To Zibber.</span>
+                           <span>Welcome To open_src_fstv2023.</span>
                            <h1>Get more <br /> Impact Fasted</h1>
                            <p>Tinkety tonk old fruit baking cakes cobblers happy days argy-bargy up the duff excuse my french fanny around.</p>
                            <Link to="/about" className="z-btn z-btn-border">See what's New</Link>

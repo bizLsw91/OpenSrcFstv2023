@@ -26,7 +26,7 @@ const HomeTwoHeroSlider = () => {
 
                 <HomeTwoSingleSlide slider_class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-9 offset-md-3 col-sm-10 offset-sm-2" content_class="slider__content-3 text-center" attr_2={<h1 >Finance Consulting For Challenging Times</h1>} btn_text="Get a Free Quote" />
 
-                <HomeTwoSingleSlide slider_class="col-xl-6" content_class="slider__content-4" attr_1={<span >Welcome To Zibber.</span>} attr_2={<h1 >Get more Impact Fasted</h1>} attr_3="Tinkety tonk old fruit baking cakes cobblers happy days argy-bargy up the duff excuse my french fanny around." btn_text="See what's New" />
+                <HomeTwoSingleSlide slider_class="col-xl-6" content_class="slider__content-4" attr_1={<span >Welcome To open_src_fstv2023.</span>} attr_2={<h1 >Get more Impact Fasted</h1>} attr_3="Tinkety tonk old fruit baking cakes cobblers happy days argy-bargy up the duff excuse my french fanny around." btn_text="See what's New" />
 
              </Slider>
 
