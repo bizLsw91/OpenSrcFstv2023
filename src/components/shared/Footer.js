@@ -1,14 +1,12 @@
 import React from 'react';
-import { FaEnvelope, FaFacebookF, FaPhoneAlt, FaTwitter, FaVimeoV } from 'react-icons/fa';
-import { BiMap } from 'react-icons/bi';
 import {Link, NavLink} from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 
 const Footer = () => {
-   let docUrl1 = "/docTerm";
-   let docUrl2 = "/docPersonal";
-   let docUrl3 = "/docEmail";
+   let docUrl1 = "/docTerms";
+   let docUrl2 = "/docPrivacy";
+   let docUrl3 = "/docRefusal";
 
 
    return (

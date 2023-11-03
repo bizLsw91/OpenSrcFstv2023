@@ -491,7 +491,18 @@
         &.sidebar-opened{
             right: 0px;
         }
+        & .z-btn-white {
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #1f1841;
+        }
     }
+    &__logo{
+        font-family: "Giants Bold", sans-serif;
+        color: white;
+        font-size: 20px;
+    }
+
     &__wrapper{
         position: relative;
         padding: 30px;
@@ -818,9 +829,6 @@
     outline: 0;
     transition: transform 0.3s ease-in-out;
 }
-.side__bar a{
-    color: white;
-}
 .offcanvas-end {
     width: 300px ;
 }
@@ -944,11 +952,6 @@
 }
 .sub_child.icon_close::before{
     padding: 20px;
-}
-.side__bar .z-btn-white {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #1f1841;
 }
 // bootstrap
 // .sidebar_navBar .accordion-item{

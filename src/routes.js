@@ -15,9 +15,29 @@ import Services from "./pages/Services/Services";
 import ServicesDetails from "./pages/ServicesDetails/ServicesDetails";
 import Team from "./pages/Team/Team";
 import TeamDetails from "./pages/TeamDetails/TeamDetails";
+import Overview from "./pages/Overview/Overview";
+import Directions from "./pages/Directions/Directions";
+import Program from "./pages/Program/Program";
+import Notice from "./pages/Notice/Notice";
+import Faq from "./pages/Faq/Faq";
+import PreRegistration from "./pages/PreRegistration/PreRegistration";
+import Event from "./pages/Event/Event";
+import DocTerms from "./pages/DocTerms/DocTerms";
+import DocPrivacy from "./pages/DocPrivacy/DocPrivacy";
+import DocRefusal from "./pages/DocRefusal/DocRefusal";
 
 const routes = [
   { path: "/", component: Home },
+  { path: "/overview", component: Overview },
+  { path: "/directions", component: Directions },
+  { path: "/program", component: Program },
+  { path: "/notice", component: Notice },
+  { path: "/faq", component: Faq },
+  { path: "/preRegistration", component: PreRegistration },
+  { path: "/event", component: Event },
+  { path: "/docTerms", component: DocTerms },
+  { path: "/docPrivacy", component: DocPrivacy },
+  { path: "/docRefusal", component: DocRefusal },
 
 
 

@@ -1,36 +1,36 @@
 const menuItems = [
     {
         label: '행사안내',
-        to: '/portfolio',
+        to: '/overview',
         subItems: [
-            { label: '행사 개요', to: '/portfolio' },
-            { label: '오시는 길', to: '/portfolioDetails' },
+            { label: '행사 개요', to: '/overview' },
+            { label: '오시는 길', to: '/directions' },
             // { label: '지난 행사', to: '/servicesDetails' },
         ]
     },
     {
         label: '프로그램',
-        to: '/services',
+        to: '/program',
         subItems: [
-            { label: '프로그램', to: '/services' },
+            { label: '프로그램', to: '/program' },
             // { label: '발표자', to: '/team' }
         ]
     },
     {
         label: '게시판',
-        to: '/about',
+        to: '/notice',
         subItems: [
-            { label: '공지사항', to: '/about' },
-            { label: 'FAQ', to: '/teamDetails' },
-            { label: 'Q&A', to: '/servicesDetails' },
+            { label: '공지사항', to: '/notice' },
+            { label: 'FAQ', to: '/faq' },
+            // { label: 'Q&A', to: '/servicesDetails' },
         ]
     },
     {
         label: '사전등록',
-        to: '/contact',
+        to: '/preRegistration',
         subItems: [
-            { label: '사전등록', to: '/contact' },
-            { label: '이벤트', to: '/blogDetails' }
+            { label: '사전등록', to: '/preRegistration' },
+            { label: '이벤트', to: '/event' }
         ]
     },
 ];
