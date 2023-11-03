@@ -10,8 +10,14 @@
     &__area{
         & .logo a{
             font-family: "Giants Bold", sans-serif;
-            font-size: 24px;
             color: white;
+            font-size: 15px;
+            @media #{$sm}{
+                font-size: 20px;
+            }
+            @media #{$md_gt}{
+                font-size: 24px;
+            }
         }
     }
     &__search-wrapper{
