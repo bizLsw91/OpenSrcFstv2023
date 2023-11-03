@@ -1,0 +1,23 @@
+/* Giants Bold 폰트 */
+@font-face {
+	font-family: 'Giants Bold';
+	src: url('../fonts/Giants-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* Giants Inline 폰트 */
+@font-face {
+	font-family: 'Giants Inline';
+	src: url('../fonts/Giants-Inline.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Giants Regular 폰트 */
+@font-face {
+	font-family: 'Giants Regular';
+	src: url('../fonts/Giants-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CommonPageHeader = ({ title, subtitle}) => {
    return (
       <>
-         <section className="page__title p-relative d-flex align-items-center fix" style={{ background: `url(assets/img/page-title/page-title-1.jpg)`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+         <section className="page__title p-relative d-flex align-items-center fix" style={{ background: `url(assets/img/banner/subBanner_desktop.png)`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
             <div className="slider__shape">
                <img className= "shape triangle"  src="assets/img/icon/slider/triangle.png" alt="triangle" />
                <img className="shape dotted-square" src="assets/img/icon/slider/dotted-square.png" alt="dotted-square" />

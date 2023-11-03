@@ -3,6 +3,8 @@ import { FaSearch} from 'react-icons/fa';
 import {Link, NavLink} from 'react-router-dom';
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import useGlobalContext from '../../../hooks/useGlobalContext';
+import { Col, Container, Row } from "react-bootstrap";
+import MobileMenu from "../../../components/AlignMenu/MobileMenu";
 
 const HomeOneHeader = () => {
     const [show, setShow] = useState(false);
@@ -14,12 +16,17 @@ const HomeOneHeader = () => {
             <header>
                 <div className="header__area p-relative header__transparent">
                     <div id="header__sticky" className={stickyMenu ? "sticky header__bottom" : "header__bottom"}>
-                        <div className="container">
-                            <div className="row align-items-center">
-                                <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                        <Container>
+                            <Row className="align-items-center">
+                                <Col xl={3} lg={3} md={6} sm={6} xs={6}>
                                     <div className="logo">
                                         <NavLink to="/">
-                                            <img src="assets/img/logo/logo.png" alt="logo"/>
+                                            <div>
+                                                <h4>
+                                                    <a href="/">공개SW 페스티벌 2023</a>
+                                                </h4>
+                                            </div>
+                                            {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
                                         </NavLink>
                                     </div>
                                     <div className="logo-gradient">
@@ -27,70 +34,11 @@ const HomeOneHeader = () => {
                                             <img src="assets/img/logo/logo-gradient.png" alt="logo"/>
                                         </NavLink>
                                     </div>
-                                </div>
-                                <div className="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-6">
+                                </Col>
+                                <Col xl={9} lg={9} md={6} sm={6} xs={6}>
                                     <div className="header__bottom-right d-flex justify-content-end align-items-center">
                                         <div className="main-menu menu_wrapper_one">
-                                            <nav id="mobile-menu">
-                                                <ul>
-                                                    <li>
-                                                        <NavLink to="/home">Home</NavLink>
-                                                        <ul className="submenu">
-                                                            <li><NavLink to="/home">Home Style 1</NavLink></li>
-                                                            <li>
-                                                                <NavLink to="/homeTwo">Home Style 2</NavLink>
-                                                                <ul className="submenu">
-                                                                    <li><NavLink to="/home">Home Style 1</NavLink></li>
-                                                                    <li><NavLink to="/homeTwo">Home Style 2</NavLink>
-                                                                    </li>
-                                                                    <li><NavLink to="/homeThree">Home Style 3</NavLink>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                <NavLink to="/homeThree">Home Style 3</NavLink>
-                                                                <ul className="submenu">
-                                                                    <li><NavLink to="/headerStyleFour">Header Syle
-                                                                        4</NavLink></li>
-                                                                    <li><NavLink to="/headerStyleFive">Header Syle
-                                                                        5</NavLink></li>
-                                                                    <li><NavLink to="/headerStyleSix">Header Syle
-                                                                        6</NavLink></li>
-                                                                    <li><NavLink to="/headerStyleSeven">Header Syle
-                                                                        7</NavLink></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><NavLink to="/about">About Us </NavLink></li>
-                                                    <li>
-                                                        <NavLink to="/services">Services</NavLink>
-                                                        <ul className="submenu">
-                                                            <li><NavLink to="/services">Services</NavLink></li>
-                                                            <li><NavLink to="/servicesDetails">Services
-                                                                Details</NavLink></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <NavLink to="/portfolio">Insights</NavLink>
-                                                        <ul className="submenu">
-                                                            <li><NavLink to="/portfolio">portfolio</NavLink></li>
-                                                            <li><NavLink to="/portfolioDetails">portfolio
-                                                                Details</NavLink></li>
-                                                            <li><NavLink to="/team">team</NavLink></li>
-                                                            <li><NavLink to="/teamDetails">team Details</NavLink></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <NavLink to="/blogs">Blog</NavLink>
-                                                        <ul className="submenu">
-                                                            <li><NavLink to="/blogs">Blog</NavLink></li>
-                                                            <li><NavLink to="/blogDetails">Blog Details</NavLink></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><NavLink to="/contact">Contact Us</NavLink></li>
-                                                </ul>
-                                            </nav>
+                                            <MobileMenu/>
                                         </div>
                                         <div onClick={handleShow} className="sidebar__menu d-lg-none">
                                             <div className="sidebar-toggle-btn" id="sidebar-toggle">
@@ -100,9 +48,9 @@ const HomeOneHeader = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </Col>
+                            </Row>
+                        </Container>
                     </div>
                     <div className="header__search-wrapper">
                         <div className="container">

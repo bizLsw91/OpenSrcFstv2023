@@ -16,9 +16,6 @@ const About = () => {
          <HomeOneHeader/>
          <CommonPageHeader title="About Us" subtitle="About" />
          <HomeAbout/>
-         <HomeTwoFaq/>
-         <HomeTwoAchievement/>
-         <HomeBrands/>
          <Footer/>
       </>
    );

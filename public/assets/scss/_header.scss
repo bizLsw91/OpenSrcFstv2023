@@ -7,6 +7,13 @@
 }
 
 .header{
+    &__area{
+        & .logo a{
+            font-family: "Giants Bold", sans-serif;
+            font-size: 24px;
+            color: white;
+        }
+    }
     &__search-wrapper{
         position: absolute;
         top:100%;

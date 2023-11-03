@@ -129,7 +129,6 @@ p {
 	margin-bottom: 15px;
 	line-height: 24px;
 }
-
 *::-moz-selection {
 	background: $theme-color;
 	color: $white;
@@ -327,6 +326,21 @@ p {
 	text-transform: capitalize;
 	min-width: 160px;
 	text-align: center;
+	&-2{
+		display: inline-block;
+		height: 75px;
+		line-height: 69px;
+		border: 4px solid $theme-color;
+		background: $theme-color;
+		color: $white;
+		padding: 0 20px;
+		border-radius: 10px;
+		font-weight: 800;
+		text-transform: capitalize;
+		min-width: 230px;
+		text-align: center;
+		font-size: xx-large;
+	}
 	& i{
 		margin-left: 8px;
 	}
@@ -494,6 +508,27 @@ p {
 			}
 		}
 	}
+}
+
+.underline__black::before,
+.underline__white::before {
+	content: '';
+	display: inline-block;
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+}
+
+// underline__black 클래스 스타일
+.underline__black::before {
+	border-bottom: 1px solid #08080d;
+}
+
+// underline__white 클래스 스타일
+.underline__white::before {
+	border-bottom: 1px solid #fff;
 }
 
 

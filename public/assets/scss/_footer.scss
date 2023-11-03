@@ -3,7 +3,49 @@
 /*----------------------------------------*/
 
 .footer{
-    &__area{}
+    & a{
+        position: relative;
+    }
+    & .icon{
+        width: 30px;
+        height: 30px;
+    }
+    &__bg{
+        background-color: rgba(241, 243, 249, 0.69);
+        background-position: top center;
+        background-size: cover;
+        padding: 30px 0 0 0;
+        position: relative;
+        z-index: 1;
+    }
+    &__copyright-wrap{
+        background: rgba(241, 243, 249, 0.69);
+        padding: 10px 0;
+        & p {
+            font-family: $lato;
+            font-size: 16px;
+            font-weight: normal;
+            color: $body-text-color;
+            //margin-bottom: 7px;
+            line-height: 24px;
+
+            /* <p> 태그의 margin을 없애줍니다. */
+            margin: 0;
+
+            /* A 요소 내에서 상단과 하단으로 최대한 간격을 둡니다. */
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+    &__horizontal-line{
+        border-top: 1px solid #e3e3e3; /* 선의 색상과 두께를 여기서 설정합니다. */
+    }
+    &__area{
+        & .logo a{
+            font-family: "Giants Bold", sans-serif;
+            font-size: 24px;
+        }
+    }
     &__widget{
         &-3{
             @media #{$lg}{

@@ -4,21 +4,7 @@
 
 .page{
     &__title{
-        min-height: 500px;
-        @include background();
-        &::before{
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: -moz-linear-gradient( 60deg, #690ed0 0%, #170da2 100%);
-            background-image: -ms-linear-gradient( 60deg, #690ed0 0%, #170da2 100%);
-            background-image: -webkit-linear-gradient( 60deg, #690ed0 0%, #170da2 100%);
-            background-image: linear-gradient( 60deg, #690ed0 0%, #170da2 100%);
-            opacity: .9;
-        }
+        min-height: 250px;
         &-2{
             min-height: 700px;
             @media #{$sm}{
