@@ -50,7 +50,7 @@ const HomeKeyVisual = () => {
                                  <div className="slider__content-5">
                                     <img src="assets/img/banner/keyvisual_desktop_text.png" alt=""/>
                                     <div className="slider__btn">
-                                       <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전신청</Link>
+                                       <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전신청1</Link>
                                     </div>
                                  </div>
                               </Col>

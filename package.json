@@ -29,9 +29,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build-o": "react-scripts build",
     "build": "CI=false && react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "deploy:dev": "firebase use dev && firebase deploy",
+    "deploy:prod": "firebase use prod && firebase deploy"
   },
   "eslintConfig": {
     "extends": [
