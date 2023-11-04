@@ -18,7 +18,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: ${{ github.event.push.ref == 'refs/heads/main' && 'secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023' || 'secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023_DEV' }}
-
-          channelId: ${{ github.event.push.ref == 'refs/heads/main' && 'preview' || 'live' }}
-          projectId: ${{ github.event.push.ref == 'refs/heads/main' && 'opensourcefestival2023' || 'opensourcefestival2023-dev' }}
+          firebaseServiceAccount: ${{ github.event.push.ref == 'refs/heads/master' && secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023 || secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023_DEV }}
+          channelId: ${{ github.event.push.ref == 'refs/heads/master' && 'preview' || 'live' }}
+          projectId: ${{ github.event.push.ref == 'refs/heads/master' && 'opensourcefestival2023' || 'opensourcefestival2023-dev' }}
