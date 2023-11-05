@@ -8184,10 +8184,10 @@
     "react-fast-compare" "^3.1.1"
     "react-side-effect" "^2.1.0"
 
-"react-icons@^4.3.1":
-  "integrity" "sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ=="
-  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.3.1.tgz"
-  "version" "4.3.1"
+"react-icons@^4.11.0":
+  "integrity" "sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.11.0.tgz"
+  "version" "4.11.0"
 
 "react-image-lightbox@^5.1.4":
   "integrity" "sha512-kTiAODz091bgT7SlWNHab0LSMZAPJtlNWDGKv7pLlLY1krmf7FuG1zxE0wyPpeA8gPdwfr3cu6sPwZRqWsc3Eg=="

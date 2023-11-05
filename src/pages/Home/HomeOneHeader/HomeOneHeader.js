@@ -4,7 +4,7 @@ import {Link, NavLink} from 'react-router-dom';
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import useGlobalContext from '../../../hooks/useGlobalContext';
 import { Col, Container, Row } from "react-bootstrap";
-import MobileMenu from "../../../components/AlignMenu/MobileMenu";
+import MobileMenu from "../../../components/TopMenu/MobileMenu";
 
 const HomeOneHeader = () => {
     const [show, setShow] = useState(false);

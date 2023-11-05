@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import menuItems from "../../menuItem";
+import {FiUser} from "react-icons/fi";
 
 
 const MobileMenu = () => {
@@ -28,6 +29,7 @@ const MobileMenu = () => {
                         {renderSubMenu(item.subItems)}
                     </li>
                 ))}
+                <li className="ml-40"><NavLink to="/login"><FiUser className="loginIcon"/>로그인</NavLink></li>
             </ul>
         </nav>
     );};

@@ -1,0 +1,25 @@
+/*----------------------------------------*/
+/*  23. Login CSS START
+/*----------------------------------------*/
+
+.docTerms{
+    &__area{
+        display: flex;
+        justify-content: center;
+        padding: 60px 0;
+        & h1{
+            text-align: center;
+        }
+    }
+    &__widget{
+        max-width: 900px;
+        padding: 43px 40px;
+        padding-bottom: 45px;
+        @media #{$lg}{
+        }
+        @media #{$xs}{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+}

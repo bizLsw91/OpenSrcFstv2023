@@ -5,6 +5,7 @@ import Collapsible from 'react-collapsible';
 import { BiMap } from 'react-icons/bi';
 import { FaEnvelope, FaPhoneAlt, FaSearch } from 'react-icons/fa';
 import menuItems from "../../menuItem";
+import {FiUser} from "react-icons/fi";
 
 const Sidebar = ({ show, handleClose }) => {
 
@@ -27,7 +28,7 @@ const Sidebar = ({ show, handleClose }) => {
                </Offcanvas.Header>
 
                <Offcanvas.Body>
-
+                  <div className="sidebar__login"><ul><li><NavLink to="/login"><FiUser className="loginIcon"/>로그인</NavLink></li></ul></div>
 
                   <section>
                      <div className="p-0">
@@ -42,7 +43,6 @@ const Sidebar = ({ show, handleClose }) => {
                            </ul>
                         </div>
                         <div className="sidebar__content">
-
                            <div className="tab-content" id="sidebar-tab-content">
                               <div className="tab-pane fade show active" id="menu" role="tabpanel" aria-labelledby="menu-tab">
 

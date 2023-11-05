@@ -16,7 +16,7 @@
     "react-countup": "^6.1.1",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.11.0",
     "react-image-lightbox": "^5.1.4",
     "react-modal-video": "^1.2.8",
     "react-router-dom": "6",
@@ -33,7 +33,6 @@
     "build": "CI=false && react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-
     "deploy:dev": "firebase use dev && firebase deploy",
     "deploy:prod": "firebase use prod && firebase deploy"
   },

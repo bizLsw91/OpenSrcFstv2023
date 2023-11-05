@@ -25,9 +25,11 @@ import Event from "./pages/Event/Event";
 import DocTerms from "./pages/DocTerms/DocTerms";
 import DocPrivacy from "./pages/DocPrivacy/DocPrivacy";
 import DocRefusal from "./pages/DocRefusal/DocRefusal";
+import Login from "./pages/Login/Login";
 
 const routes = [
   { path: "/", component: Home },
+  { path: "/login", component: Login },
   { path: "/overview", component: Overview },
   { path: "/directions", component: Directions },
   { path: "/program", component: Program },

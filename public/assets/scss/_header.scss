@@ -497,6 +497,20 @@
             color: #1f1841;
         }
     }
+    &__login{
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: #ffffff;
+        display: inline-block;
+        padding: 20px 0;
+        padding-bottom: 25px;
+        & .loginIcon{
+            display: inline-block;
+            font-size: 1.3rem;
+            transform: translateY(-12%);
+        }
+    }
     &__logo{
         font-family: "Giants Bold", sans-serif;
         color: white;
@@ -806,11 +820,22 @@
 .header__style-4 a.active{
     color: $theme-color;
 }
+nav#mobile-menu{
+    & .loginIcon{
+        display: block;
+        position: absolute;
+        top: 47%;
+        left: -52%;
+        font-size: 1.3rem;
+        transform: translateY(-50%);
+    }
+}
 @media(max-width:991px){
     nav#mobile-menu {
     display: none;
    }
 }
+
 
 
 

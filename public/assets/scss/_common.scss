@@ -84,12 +84,18 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $frank;
+	font-family: $kbo-bold;
 	color: $heading-color;
 	margin-top: 0px;
 	font-weight: 900;
 	line-height: 1.2;
 	@include transition(.3s);
+}
+h3,h4{
+	font-family: $kbo-medium;
+}
+h5,h6{
+	font-family: $kbo-light;
 }
 
 h1 {
@@ -523,6 +529,10 @@ p {
 	}
 }
 
+.underline__black,
+.underline__white{
+	position: relative;
+}
 .underline__black::before,
 .underline__white::before {
 	content: '';
@@ -532,6 +542,7 @@ p {
 	position: absolute;
 	bottom: 2px;
 	left: 0;
+	transform: translateY(2px);
 }
 
 // underline__black 클래스 스타일
