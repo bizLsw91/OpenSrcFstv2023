@@ -1,10 +1,14 @@
 import {Container} from "react-bootstrap";
+import KakaoMap from "../../../components/KakaoMap/KakaoMap";
 
 const DirectionsArea = () => {
     return (
         <div id="DirectionsArea">
             <Container>
-                <h1 className="p-5">준비중</h1>
+                {/*<div id="map" style="width:500px;height:400px;"></div>*/}
+                <KakaoMap/>
+
+
             </Container>
         </div>
     );

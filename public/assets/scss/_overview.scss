@@ -1,0 +1,65 @@
+/*----------------------------------------*/
+/*  23. Login CSS START
+/*----------------------------------------*/
+
+.overview{
+    &__area{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        padding: 60px 0;
+    }
+    &__title{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__content{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 900px;
+        padding: 43px 40px;
+        padding-bottom: 45px;
+        @media #{$lg}{
+        }
+        @media #{$xs}{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+    &__textInfo{
+        & tr{
+            height: 50px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-items: baseline;
+        }
+        & .item{
+            position: relative;
+            width: 85px;
+            font-family: $nps-bold;
+            white-space: nowrap;
+        }
+        & .item::after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 5px;
+            left: 61px;
+            width: 3px; /* 막대의 너비 조절 */
+            height: 14px; /* 막대의 높이 조절 */
+            background-color: #3b8bdb; /* 파란색으로 설정 */
+            margin-left: 10px; /* A 요소 다음에 한 칸 띄우기 위한 여백 설정 */
+            margin-right: 10px; /* A 요소 다음에 한 칸 띄우기 위한 여백 설정 */
+        }
+        & .desc{
+            font-family: $lato;
+            &-sub{
+                font-size: small;
+            }
+        }
+        & p{
+            margin-bottom: 0;
+        }
+    }
+}

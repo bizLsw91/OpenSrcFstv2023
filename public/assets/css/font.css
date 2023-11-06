@@ -43,3 +43,23 @@
 	font-style: normal;
 }
 
+
+/* NPSfont 국민연금체 */
+@font-face {
+	font-family: 'NPS font Bold';
+	src: url('../fonts/NPSfont_bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'NPS font Extrabold';
+	src: url('../fonts/NPSfont_extrabold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'NPS font Regular';
+	src: url('../fonts/NPSfont_regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
