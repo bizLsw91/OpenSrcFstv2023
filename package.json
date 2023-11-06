@@ -31,10 +31,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-gitD": "cross-env NODE_ENV=development CI=false && react-scripts --openssl-legacy-provider build",
+    "build-gitD": "cross-env NODE_ENV=development CI=false react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:dev": "cross-env NODE_ENV=development firebase use dev && firebase deploy",
+    "deploy:dev": "firebase use dev && cross-env NODE_ENV=development firebase deploy",
     "deploy:prod": "firebase use prod && firebase deploy"
   },
   "eslintConfig": {
