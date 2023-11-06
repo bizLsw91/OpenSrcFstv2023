@@ -6,7 +6,7 @@ const DirectionsArea = () => {
         <div id="DirectionsArea">
             <Container>
                 {/*<div id="map" style="width:500px;height:400px;"></div>*/}
-                <KakaoMap/>
+                {/*<KakaoMap/>*/}
 
 
             </Container>
