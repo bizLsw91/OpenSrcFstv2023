@@ -292,7 +292,7 @@
     }
     &__tag{
         & span{
-            font-family: $frank;
+            font-family: $font-frank;
             font-size: 18px;
             color: $black;
             margin-right: 5px;
@@ -319,7 +319,7 @@
     }
     &__share{
         & span{
-            font-family: $frank;
+            font-family: $font-frank;
             font-size: 18px;
             color: $black;
             margin-right: 5px;
@@ -540,7 +540,7 @@
                 font-size: 14px;
                 color: $black-2;
                 margin-bottom: 7px;
-                font-family: $lato;
+                font-family: $font-lato;
                 font-weight: 700;
             }
             & p{

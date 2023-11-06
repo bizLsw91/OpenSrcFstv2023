@@ -10,7 +10,7 @@
 	box-sizing: border-box;
 }
  body {
-	font-family: $lato;
+	font-family: $font-lato;
 	font-size: 16px;
 	font-weight: normal;
 	color: $body-text-color;
@@ -84,7 +84,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $kbo-bold;
+	font-family: $font-kbo-bold;
 	color: $heading-color;
 	margin-top: 0px;
 	font-weight: 900;
@@ -92,10 +92,10 @@ h6 {
 	@include transition(.3s);
 }
 h3,h4{
-	font-family: $kbo-medium;
+	font-family: $font-kbo-medium;
 }
 h5,h6{
-	font-family: $kbo-light;
+	font-family: $font-kbo-light;
 }
 
 h1 {
@@ -128,7 +128,7 @@ li {
 	list-style: none;
 }
 p {
-	font-family: $lato;
+	font-family: $font-lato;
 	font-size: 16px;
 	font-weight: normal;
 	color: $body-text-color;
@@ -574,7 +574,7 @@ p {
 			color: $theme-color;
 			display: inline-block;
 			font-weight: 700;
-			font-family: $frank;
+			font-family: $font-frank;
 			margin-bottom: 25px;
 		}
 		& h2{
