@@ -5,10 +5,12 @@ const DirectionsArea = () => {
     return (
         <div id="DirectionsArea">
             <Container>
-                {/*<div id="map" style="width:500px;height:400px;"></div>*/}
-                {/*<KakaoMap/>*/}
-
-
+                <div className="directions__area">
+                    <div className="directions__content">
+                        <h2 className="directions__title">오시는 길</h2>
+                        <KakaoMap/>
+                    </div>
+                </div>
             </Container>
         </div>
     );

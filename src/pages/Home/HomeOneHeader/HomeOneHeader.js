@@ -5,7 +5,9 @@ import Sidebar from '../../../components/Sidebar/Sidebar';
 import useGlobalContext from '../../../hooks/useGlobalContext';
 import { Col, Container, Row } from "react-bootstrap";
 import MobileMenu from "../../../components/TopMenu/MobileMenu";
+import appConfig from "../../../config/app.config";
 
+const isShow = appConfig.isShow
 const HomeOneHeader = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -13,6 +15,7 @@ const HomeOneHeader = () => {
     const {stickyMenu} = useGlobalContext();
     return (
         <>
+        {isShow &&
             <header>
                 <div className="header__area p-relative header__transparent">
                     <div id="header__sticky" className={stickyMenu ? "sticky header__bottom" : "header__bottom"}>
@@ -67,10 +70,10 @@ const HomeOneHeader = () => {
                     <div className="body-overlay-2"></div>
                 </div>
             </header>
+        }
 
 
-            <Sidebar show={show} handleClose={handleClose}/>
-
+            {isShow && <Sidebar show={show} handleClose={handleClose}/>}
         </>
     );
 };

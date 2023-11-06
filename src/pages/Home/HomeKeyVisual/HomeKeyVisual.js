@@ -2,7 +2,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from "react-bootstrap";
+import appConfig from "../../../config/app.config";
 
+const isShow = appConfig.isShow
 const HomeKeyVisual = () => {
    // slider data
    const homeSliderData = [
@@ -50,7 +52,7 @@ const HomeKeyVisual = () => {
                                  <div className="slider__content-5">
                                     <img src="assets/img/banner/keyvisual_desktop_text.png" alt=""/>
                                     <div className="slider__btn">
-                                       <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전신청</Link>
+                                       {isShow && <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전신청</Link>}
                                     </div>
                                  </div>
                               </Col>

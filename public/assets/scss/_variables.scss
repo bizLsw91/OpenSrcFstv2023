@@ -81,6 +81,8 @@ $black-soft-6:#8f8f9a;
 // Responsive Variables
 $laptop: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
 $lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$lg_gt : 'only screen and (min-width: 992px)';
+$lg_st : 'only screen and (max-width: 991px)';
 $md_gt:'only screen and (min-width: 768px)';
 $md:'only screen and (min-width: 768px) and (max-width: 991px)';
 $sm: 'only screen and (min-width: 576px) and (max-width: 767px)';

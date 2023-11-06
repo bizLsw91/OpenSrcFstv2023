@@ -530,11 +530,16 @@ p {
 }
 
 .underline__black,
-.underline__white{
+.underline__white,
+.underline__blue {
 	position: relative;
 }
+.underline__blue{
+	color: #1e42d8;
+}
 .underline__black::before,
-.underline__white::before {
+.underline__white::before,
+.underline__blue::before {
 	content: '';
 	display: inline-block;
 	width: 100%;
@@ -553,6 +558,10 @@ p {
 // underline__white 클래스 스타일
 .underline__white::before {
 	border-bottom: 1px solid #fff;
+}
+
+.underline__blue::before {
+	border-bottom: 1px solid #1e42d8;
 }
 
 
