@@ -3,6 +3,7 @@ import ScrollTop from "./components/ScrollTop";
 
 import routes from "./routes";
 
+console.log('REACT_APP_SERVER: ',process.env.REACT_APP_SERVER)
 
 function App() {
   return (
