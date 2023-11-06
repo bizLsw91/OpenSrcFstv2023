@@ -4,7 +4,11 @@ const ProgramArea = () => {
     return (
         <div id="ProgramArea">
             <Container>
-                <h1 className="p-5">준비중</h1>
+                <div className="common__area">
+                    <div className="common__content">
+                        <h2 className="common__title">프로그램</h2>
+                    </div>
+                </div>
             </Container>
         </div>
     );

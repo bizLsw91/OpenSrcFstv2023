@@ -727,3 +727,42 @@ p {
 		}
 	}
 }
+
+
+.common{
+	&__area{
+		display: flex;
+		justify-content: center;
+		padding: 60px 0;
+		& h1{
+			text-align: center;
+		}
+	}
+	&__title{
+		text-align: center;
+		margin-bottom: 35px;
+	}
+	&__content{
+		max-width: 900px;
+		padding: 43px 40px 45px;
+
+		$base: 992px;
+		$ratio: 5/8;
+		@media #{$lg_st}{
+			width: 80vw;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		& #map{
+			@media #{$lg_gt}{
+				width: $base * 0.8;
+				height: $base * 0.8 * $ratio;
+			}
+			@media #{$lg_st}{
+				width: 80vw;
+				height: 80vw * $ratio;
+			}
+
+		}
+	}
+}
