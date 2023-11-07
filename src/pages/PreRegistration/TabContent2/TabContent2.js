@@ -4,7 +4,7 @@ import {
     FormHelperText,
     InputLabel,
     OutlinedInput,
-    Stack
+    Stack,
 } from '@mui/material';
 
 // third party
@@ -13,11 +13,11 @@ import {Formik} from 'formik';
 import AnimateButton from "../../../components/@extended/AnimateButton";
 import appConfig from "../../../config/app.config";
 import axios from "axios";
+import {useState} from "react";
 
-const submitData = async (values) => {
+const submitData2 = async(values) => {
     try {
-        // Axios를 사용하여 POST 요청을 보냄
-        const response = await axios.post(appConfig.apiPreUrl+'/User/', values);
+        const response = await axios.post(appConfig.apiPreUrl+'/User/check', values);
         // 응답이 성공적으로 돌아오면, 결과를 처리
         console.log(response);
         return response; // 성공 상태와 데이터 반환
@@ -27,36 +27,35 @@ const submitData = async (values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
-const TabContent1 = ({nextTab2}) => {
+const TabContent2 = ({nextTab3}) => {
+    const [data, setData] = useState();
+
     return (
         <div id="TabContent1">
             <Formik
                 initialValues={{
                     email: '',
                     name: '',
-                    company: '',
-                    call: '',
                     submit: null
                 }}
                 validationSchema={Yup.object().shape({
                     email: Yup.string().email('유효한 이메일 형식이 아닙니다.').max(100,'100자를 넘을 수 없습니다.').min(5, '최소 6문자 이상 입력하세요.').required('이메일은 필수 입력사항입니다.'),
                     name: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('이름은 필수 입력사항입니다.'),
-                    company: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('소속은 필수 입력사항입니다.'),
-                    call: Yup.string().matches(/^\d{8,11}$/, '유효한 전화번호를 입력하세요.').required('연락처는 필수 입력사항입니다.'),
                 })}
                 onSubmit={async (values, {setErrors, setStatus, setSubmitting}) => {
                     try {
-                        const res = await submitData(values); // 비동기 함수 호출
+                        const res = await submitData2(values); // 비동기 함수 호출
                         if(res.status === 200){
-                            alert('사전 등록을 완료하였습니다.')
-                            nextTab2()
-                        }else {
-                            throw new Error(' ')
+                            alert('정상 확인되었습니다.')
+                            setData({...res.data})
+                            nextTab3(data)
+                        }else{
+
                         }
                         setStatus({success: true});
                         setSubmitting(false);
                     } catch (err) {
-                        console.error(err);
+                        alert('이메일 주소와 이름을 다시 확인해주세요.')
                         setStatus({success: false});
                         setErrors({submit: err.message});
                         setSubmitting(false);
@@ -104,45 +103,6 @@ const TabContent1 = ({nextTab2}) => {
                                 </FormHelperText>
                             )}
                         </Stack>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="company-signup">소속*</InputLabel>
-                            <OutlinedInput
-                                fullWidth
-                                error={Boolean(touched.company && errors.company)}
-                                id="company-signup"
-                                value={values.company}
-                                name="company"
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                placeholder="Demo Inc."
-                                inputProps={{}}
-                            />
-                            {touched.company && errors.company && (
-                                <FormHelperText error id="helper-text-company-signup">
-                                    {errors.company}
-                                </FormHelperText>
-                            )}
-                        </Stack>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="call-signup">연락처*</InputLabel>
-                            <OutlinedInput
-                                fullWidth
-                                error={Boolean(touched.call && errors.call)}
-                                id="call-signup"
-                                value={values.call}
-                                name="call"
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                placeholder="- 없이 입력하세요"
-                                inputProps={{}}
-                            />
-                            {touched.call && errors.call && (
-                                <FormHelperText error id="helper-text-call-signup">
-                                    {errors.call}
-                                </FormHelperText>
-                            )}
-                        </Stack>
-
 
                         {errors.submit && (
                             <FormHelperText error>{errors.submit}</FormHelperText>
@@ -150,7 +110,7 @@ const TabContent1 = ({nextTab2}) => {
                         <AnimateButton>
                             <Button className="preRegiBtn"  disableElevation disabled={isSubmitting || Object.keys(errors).length > 0} fullWidth size="large" type="submit"
                                     variant="contained" color="primary">
-                                사전 등록하기
+                                등록 확인하기
                             </Button>
                         </AnimateButton>
                     </form>
@@ -160,4 +120,4 @@ const TabContent1 = ({nextTab2}) => {
     );
 };
 
-export default TabContent1;
+export default TabContent2;
