@@ -36,10 +36,11 @@ function UserController (router, firestore) {
 
         try {
             const doc = await docRef.get(); // 문서 가져오기
-            if (doc.exists && doc.name == name) {
-                res.status(200).json(doc.data());
+            const data = doc.data();
+            if (doc.exists && data.name === name) {
+                res.status(200).json({email:email, ...data});
             } else {
-                res.status(404).send('이메일 주소와 이름을 다시 확인해주세요.');
+                res.status(404).send('');
             }
         } catch (error) {
             // 서버 에러 처리

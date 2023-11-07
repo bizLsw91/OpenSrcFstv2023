@@ -1,6 +1,5 @@
 // material-ui
 import {
-    Button,
     FormHelperText,
     InputLabel,
     OutlinedInput,
@@ -10,16 +9,17 @@ import {
 // third party
 import * as Yup from 'yup';
 import {Formik} from 'formik';
-import AnimateButton from "../../../components/@extended/AnimateButton";
 import appConfig from "../../../config/app.config";
 import axios from "axios";
 import {useState} from "react";
+import {Modal, Button} from "antd";
+import {Col, Row} from "react-bootstrap";
 
-const submitData2 = async(values) => {
+const userCheckApi = async(values) => {
     try {
         const response = await axios.post(appConfig.apiPreUrl+'/User/check', values);
         // 응답이 성공적으로 돌아오면, 결과를 처리
-        console.log(response);
+        console.debug(response);
         return response; // 성공 상태와 데이터 반환
     } catch (error) {
         // 에러가 발생했을 경우, 에러 처리
@@ -27,14 +27,32 @@ const submitData2 = async(values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
-const TabContent2 = ({nextTab3}) => {
-    const [data, setData] = useState();
 
+
+const TabContent2 = ({email0}) => {
+    const [email] = useState(email0);
+    const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [userData, setUserData] = useState({});
+    const [isError, setIsError] = useState(false);
+    const [msg, setMsg] = useState('');
+    const errMsg0 = '정상적으로 등록이 확인되었습니다.'
+    const errMsg1 = '이메일 주소와 이름을 다시 확인해주세요.'
+    const errMsg2 = '서버와 통신 중 에러가 발생하였습니다.'
+    const showModal = () => {
+        setOpen(true);
+    };
+    const handleCancel = () => {
+        setOpen(false);
+    };
+
+    const sm1 = 4;
+    const md1 = 2;
     return (
-        <div id="TabContent1">
+        <div className="TabContent2">
             <Formik
                 initialValues={{
-                    email: '',
+                    email: email,
                     name: '',
                     submit: null
                 }}
@@ -42,34 +60,33 @@ const TabContent2 = ({nextTab3}) => {
                     email: Yup.string().email('유효한 이메일 형식이 아닙니다.').max(100,'100자를 넘을 수 없습니다.').min(5, '최소 6문자 이상 입력하세요.').required('이메일은 필수 입력사항입니다.'),
                     name: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('이름은 필수 입력사항입니다.'),
                 })}
-                onSubmit={async (values, {setErrors, setStatus, setSubmitting}) => {
+                onSubmit={async (values) => {
+                    setLoading(true)
                     try {
-                        const res = await submitData2(values); // 비동기 함수 호출
+                        const res = await userCheckApi(values);
                         if(res.status === 200){
-                            alert('정상 확인되었습니다.')
-                            setData({...res.data})
-                            nextTab3(data)
-                        }else{
-
+                            setUserData({...res.data})
+                            setMsg(errMsg0)
+                        }else if(res.status === 404) {
+                            setMsg(errMsg1)
                         }
-                        setStatus({success: true});
-                        setSubmitting(false);
                     } catch (err) {
-                        alert('이메일 주소와 이름을 다시 확인해주세요.')
-                        setStatus({success: false});
-                        setErrors({submit: err.message});
-                        setSubmitting(false);
+                        setIsError(true)
+                        setMsg(errMsg2)
+                        console.error('Error during API call', err);
                     }
+                    setLoading(false);
+                    showModal()
                 }}
             >
-                {({errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values}) => (
+                {({errors, handleBlur, handleChange, handleSubmit, touched, values}) => (
                     <form noValidate onSubmit={handleSubmit}>
                         <Stack spacing={1}>
                             <InputLabel htmlFor="email-signup">Email 주소*</InputLabel>
                             <OutlinedInput
                                 fullWidth
                                 error={Boolean(touched.email && errors.email)}
-                                id="email-login"
+                                id="email-login2"
                                 type="email"
                                 value={values.email}
                                 name="email"
@@ -79,7 +96,7 @@ const TabContent2 = ({nextTab3}) => {
                                 inputProps={{}}
                             />
                             {touched.email && errors.email && (
-                                <FormHelperText error id="helper-text-email-signup">
+                                <FormHelperText error id="helper-text-email-signup2">
                                     {errors.email}
                                 </FormHelperText>
                             )}
@@ -87,7 +104,7 @@ const TabContent2 = ({nextTab3}) => {
                         <Stack spacing={1}>
                             <InputLabel htmlFor="name-signup">이름*</InputLabel>
                             <OutlinedInput
-                                id="name-login"
+                                id="name-login2"
                                 type="name"
                                 value={values.name}
                                 name="name"
@@ -98,24 +115,37 @@ const TabContent2 = ({nextTab3}) => {
                                 error={Boolean(touched.name && errors.name)}
                             />
                             {touched.name && errors.name && (
-                                <FormHelperText error id="helper-text-name-signup">
+                                <FormHelperText error id="helper-text-name-signup2">
                                     {errors.name}
                                 </FormHelperText>
                             )}
                         </Stack>
 
-                        {errors.submit && (
-                            <FormHelperText error>{errors.submit}</FormHelperText>
-                        )}
-                        <AnimateButton>
-                            <Button className="preRegiBtn"  disableElevation disabled={isSubmitting || Object.keys(errors).length > 0} fullWidth size="large" type="submit"
-                                    variant="contained" color="primary">
-                                등록 확인하기
-                            </Button>
-                        </AnimateButton>
+                        <Button className="preRegiBtn" key="submit" htmlType="submit" type="primary" loading={loading} disabled={Object.keys(errors).length > 0}>
+                            등록 확인하기
+                        </Button>
                     </form>
                 )}
             </Formik>
+
+            <Modal
+                open={open}
+                title="결과:"
+                footer={[
+                    <Button key="back" onClick={handleCancel}>
+                        확인
+                    </Button>
+                ]}
+            >
+                <div className="msg">{msg}</div>
+                {!isError &&
+                <ul className="result">
+                    <Row><Col xs={sm1} sm={md1}>이메일:</Col><Col><div>{userData.email}</div></Col></Row>
+                    <Row><Col xs={sm1} sm={md1}>이름:</Col><Col><div>{userData.name}</div></Col></Row>
+                    <Row><Col xs={sm1} sm={md1}>소속:</Col><Col><div>{userData.company}</div></Col></Row>
+                    <Row><Col xs={sm1} sm={md1}>연락처:</Col><Col><div>{userData.call}</div></Col></Row>
+                </ul>}
+            </Modal>
         </div>
     );
 };

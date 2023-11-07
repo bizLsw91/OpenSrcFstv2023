@@ -1,6 +1,5 @@
 // material-ui
 import {
-    Button,
     FormHelperText,
     InputLabel,
     OutlinedInput,
@@ -10,9 +9,9 @@ import {
 // third party
 import * as Yup from 'yup';
 import {Formik} from 'formik';
-import AnimateButton from "../../../components/@extended/AnimateButton";
 import appConfig from "../../../config/app.config";
 import axios from "axios";
+import {Button} from "antd";
 
 const submitData = async (values) => {
     try {
@@ -29,7 +28,7 @@ const submitData = async (values) => {
 }
 const TabContent1 = ({nextTab2}) => {
     return (
-        <div id="TabContent1">
+        <div className="TabContent1">
             <Formik
                 initialValues={{
                     email: '',
@@ -147,12 +146,10 @@ const TabContent1 = ({nextTab2}) => {
                         {errors.submit && (
                             <FormHelperText error>{errors.submit}</FormHelperText>
                         )}
-                        <AnimateButton>
-                            <Button className="preRegiBtn"  disableElevation disabled={isSubmitting || Object.keys(errors).length > 0} fullWidth size="large" type="submit"
-                                    variant="contained" color="primary">
-                                사전 등록하기
-                            </Button>
-                        </AnimateButton>
+                        <Button className="preRegiBtn" key="submit" htmlType="submit" type="primary" loading={isSubmitting} disabled={Object.keys(errors).length > 0}>
+                            사전 등록하기
+                        </Button>
+
                     </form>
                 )}
             </Formik>

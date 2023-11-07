@@ -1,5 +1,5 @@
 const appConfig = {
-    isOpen: false,
+    isOpen: true,
     isProd: process.env.REACT_APP_SERVER === 'prod',
     env: process.env.NODE_ENV,
     apiHost: process.env.REACT_APP_RESTAPI,

@@ -1,0 +1,25 @@
+/*----------------------------------------*/
+/*  23. Login CSS START
+/*----------------------------------------*/
+
+
+.TabContent2 .result {
+  & .row {
+    margin-bottom: 10px;
+
+    & ::after {
+      bottom: 2px;
+      width: 2px;
+      color: #afc3e0;
+    }
+
+    & > div:nth-child(1) {
+
+    }
+
+    & > div:nth-child(2) {
+
+    }
+  }
+
+}

@@ -16,13 +16,13 @@
         }
         &-content{
             & h2{
-                font-size: 70px;
+                font-size: 60px;
                 color: $white;
                 @media #{$sm}{
-                    font-size: 60px;
+                    font-size: 50px;
                 }
                 @media #{$xs}{
-                    font-size: 50px;
+                    font-size: 8vw; /* 비례적으로 폰트 크기 조절 */
                 }
             }
             & .breadcrumb{
