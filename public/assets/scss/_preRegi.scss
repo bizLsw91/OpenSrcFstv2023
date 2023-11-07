@@ -2,111 +2,157 @@
 /*  23. Login CSS START
 /*----------------------------------------*/
 
-.preRegi{
-    &__area{
-        display: flex;
-        justify-content: center;
-        padding: 60px 0;
-        & h1{
-            text-align: center;
-        }
-    }
-    &__title{
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    &__content{
-        max-width: 900px;
-        padding: 0 40px 0;
+.preRegi {
+  &__area {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
 
-        $base: 992px;
-        $ratio: 5/8;
-        @media #{$lg_st}{
-            width: 90vw;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-        & .tabBtn{
-            font-family: 'KBO Dia Gothic_bold';
-            width: 300px;
-            font-size: x-large;
-            @media #{$lg_st}{
-                width: 45vw;
-            }
-            @media #{$ss}{
-                font-size: 7vw;
-            }
-        }
-        & .preRegiBtn{
-            font-family: $font-nps-regular;
-            margin-top: 40px;
-            width: 100%;
-            background-color: #4980df;
-        }
-        & .row{
-            display: flex;
-            align-items: center;
-        }
-        & .guide{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: fit-content;
-            & .office{
-                margin-bottom: 13px;
-                font-family: $font-kbo-bold;
-                font-size: x-large;
-                color: #10274d;
-            }
-            & .tel,.email{
-                font-family: $font-kbo-medium;
-                font-size: medium;
-                margin-bottom: 10px;
-                & > span:nth-child(1){
-                    font-weight: bold;
-                }
-            }
-            & span{
-                display: block;
-            }
-        }
+    & h1 {
+      text-align: center;
     }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    max-width: 900px;
+    padding: 0 40px 0;
+
+    $base: 992px;
+    $ratio: 5/8;
+    @media #{$lg_st}{
+      width: 90vw;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    & .tabBtn {
+      font-family: 'KBO Dia Gothic_bold';
+      width: 300px;
+      font-size: x-large;
+      @media #{$lg_st}{
+        width: 45vw;
+      }
+      @media #{$ss}{
+        font-size: 7vw;
+      }
+    }
+
+    & .preRegiBtn {
+      font-family: $font-nps-regular;
+      margin-top: 40px;
+      width: 100%;
+      background-color: #4980df;
+    }
+
+    & .row {
+      display: flex;
+      align-items: center;
+    }
+
+    & .guide {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: fit-content;
+
+      & .office {
+        margin-bottom: 13px;
+        font-family: $font-kbo-bold;
+        font-size: x-large;
+        color: #10274d;
+      }
+
+      & .tel, .email {
+        font-family: $font-kbo-medium;
+        font-size: medium;
+        margin-bottom: 10px;
+
+        & > span:nth-child(1) {
+          font-weight: bold;
+        }
+      }
+
+      & span {
+        display: block;
+      }
+    }
+  }
+}
+
+.TabContent1 {
+  & .agreeBox {
+    & .agreeDiv {
+      margin-bottom: 10px;
+      & textarea{
+        width: 100%;
+        height: 100px;
+      }
+    }
+
+    & .agreeDiv {
+
+    }
+
+    & .agreeDiv {
+
+    }
+
+    & .agreeDiv {
+
+    }
+  }
 }
 
 .TabContent1,
-.TabContent2{
-    & label{
-        font-family: $font-nps-regular;
-    }
+.TabContent2 {
+  & label {
+    font-family: $font-nps-regular;
+  }
+
+  & .MuiStack-root {
+    margin-bottom: 10px;
+  }
 }
 
 .ant-modal-root {
-    & .msg{
-        font-family: $font-nps-bold;
-        margin-bottom: 15px;
-    }
-    & .result{
-        & .row{
-            margin-bottom: 10px;
+  & .msg {
+    font-family: $font-nps-bold;
+    margin-bottom: 15px;
+  }
 
-            & > div:nth-child(1){
-                color: #263c46;
-                min-width: 73px;
-            }
-            & > div:nth-child(2){
-                padding: 0 8px;
-                & > div:nth-child(1){
-                    padding: 4px 7px;
-                    font-size: smaller;
-                    color: #264982;
-                    line-height: 1.2;
-                    border-radius: 9px;
-                    border-color: #dfe5f3;
-                    border-width: 2px;
-                    border-style: solid;
-                }
-            }
+  & .result {
+    & .row {
+      margin-bottom: 10px;
+
+      & > div:nth-child(1) {
+        color: #263c46;
+        min-width: 73px;
+      }
+
+      & > div:nth-child(2) {
+        padding: 0 8px;
+
+        & > div:nth-child(1) {
+          padding: 4px 7px;
+          font-size: smaller;
+          color: #264982;
+          line-height: 1.2;
+          border-radius: 9px;
+          border-color: #dfe5f3;
+          border-width: 2px;
+          border-style: solid;
         }
-
+      }
     }
+
+  }
+  & .termsModal{
+    height: 200px;
+    overflow:scroll;
+  }
 }

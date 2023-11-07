@@ -37,10 +37,12 @@ const PreRegistrationArea = () => {
                                             </TabList>
                                         </Box>
                                         <TabPanel value="1">
+                                            {/* 사전등록 탭 */}
                                             <TabContent1 nextTab2={nextTab2}/>
                                         </TabPanel>
                                         <TabPanel value="2">
-                                            <TabContent2 email={email}/>
+                                            {/* 등록하기 탭*/}
+                                            <TabContent2 email0={email}/>
                                         </TabPanel>
                                     </TabContext>
                                 </Box>

@@ -131,6 +131,7 @@ const TabContent2 = ({email0}) => {
             <Modal
                 open={open}
                 title="결과:"
+                onCancel={handleCancel}
                 footer={[
                     <Button key="back" onClick={handleCancel}>
                         확인
