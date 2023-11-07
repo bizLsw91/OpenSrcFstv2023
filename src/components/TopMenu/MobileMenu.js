@@ -29,7 +29,7 @@ const MobileMenu = () => {
                         {renderSubMenu(item.subItems)}
                     </li>
                 ))}
-                {/*<li className="ml-40"><NavLink to="/login"><FiUser className="loginIcon"/>로그인</NavLink></li>*/}
+                <li className="ml-40"><NavLink to="/login"><FiUser className="loginIcon"/>로그인</NavLink></li>
             </ul>
         </nav>
     );};

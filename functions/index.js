@@ -1,19 +1,28 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const express = require('express');
+const cors = require('cors');
+const UserController = require("./UserController/UserController");
 
-const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+admin.initializeApp();
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+const firestore = admin.firestore();
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+const main = express();
+const router_User = express();
+
+// CORS 미들웨어를 사용하여 특정 출처에서의 요청만 허용합니다.
+const allowedOrigins =
+    ['http://localhost:3000',
+        'https://opensourcefestival2023-dev.web.app',
+        'https://opensourcefestival2023.web.app',
+        'https://ossfestival.kr',
+    ];
+main.use(cors({ origin: allowedOrigins }));
+
+UserController(router_User, firestore)
+
+main.use(express.json())
+main.use('/user', router_User)
+
+exports.api = functions.region("asia-northeast3").https.onRequest(main);

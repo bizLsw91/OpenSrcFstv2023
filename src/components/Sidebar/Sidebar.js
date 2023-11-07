@@ -28,7 +28,7 @@ const Sidebar = ({ show, handleClose }) => {
                </Offcanvas.Header>
 
                <Offcanvas.Body>
-                  {/*<div className="sidebar__login"><ul><li><NavLink to="/login"><FiUser className="loginIcon"/>로그인</NavLink></li></ul></div>*/}
+                  <div className="sidebar__login"><ul><li><NavLink to="/login"><FiUser className="loginIcon"/>로그인</NavLink></li></ul></div>
 
                   <section>
                      <div className="p-0">

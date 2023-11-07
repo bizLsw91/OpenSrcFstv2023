@@ -4,6 +4,7 @@ import {Box, Tab, Tabs} from "@mui/material";
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import TabContent1 from "../TabContent1/TabContent1";
 
 const PreRegistrationArea = () => {
     const [value, setValue] = React.useState('1');
@@ -26,7 +27,7 @@ const PreRegistrationArea = () => {
                                     </TabList>
                                 </Box>
                                 <TabPanel value="1">
-
+                                    <TabContent1/>
                                 </TabPanel>
                                 <TabPanel value="2">
                                     Item Two</TabPanel>
