@@ -1,0 +1,47 @@
+/*----------------------------------------*/
+/*  23. Login CSS START
+/*----------------------------------------*/
+
+.home{
+    &__area{
+        display: flex;
+        justify-content: center;
+        padding: 60px 0;
+        & h1{
+            text-align: center;
+        }
+    }
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 1200px;
+        padding: 0 40px 0;
+
+        @media #{$lg_gt}{
+            width: 1100px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        @media #{$lg_st}{
+            width: 90vw;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        & .ant-image{
+            width: 100%;
+        }
+        & .imgBox{
+            width: 100%;
+            & img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@ const EventArea = () => {
                 <div className="program__area">
                     <div className="program__content">
                         <h2 className="program__title">이벤트</h2>
-                        <p>※클릭하시면 확대해서 보실 수 있습니다.</p>
+                        <p className="d-sm-none">※클릭하시면 확대해서 보실 수 있습니다.</p>
                         <Image
                             className="imgBox"
                             movable={true}

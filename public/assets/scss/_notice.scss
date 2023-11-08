@@ -2,13 +2,12 @@
 /*  23. Login CSS START
 /*----------------------------------------*/
 
-.program{
+.notice{
     &__area{
         display: flex;
         justify-content: center;
         padding: 60px 0;
         & h1{
-            text-align: center;
         }
     }
     &__title{
@@ -16,6 +15,8 @@
         margin-bottom: 40px;
     }
     &__content{
+        display: flex;
+        justify-content: center;
         max-width: 900px;
         padding: 0 40px 0;
 
@@ -79,46 +80,6 @@
                     display: flex;
                 }
             }
-        }
-        & .bold_l{
-            font-size: 19px;
-            min-width: 60px;
-            font-family: $font-nps-bold;
-            @media #{$xs}{
-                font-size: 15px;
-            }
-        }
-        & .bold_m{
-            font-family: $font-nps-bold;
-            font-size: 15px;
-            @media #{$xs}{
-                font-size: 12px;
-            }
-        }
-        & .regu_m{
-            font-family: $font-nps-regular;
-            font-size: 15px;
-            @media #{$xs}{
-                font-size: 12px;
-            }
-        }
-        & .regu_s{
-            font-family: $font-nps-regular;
-            font-size: 12px;
-            @media #{$xs}{
-                font-size: 9px;
-            }
-        }
-
-        & .d{
-        }
-        & .r401{
-        }
-        & .r402{
-        }
-        & .r403{
-        }
-        & .d4{
         }
     }
 }

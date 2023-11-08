@@ -105,6 +105,9 @@ const OverviewArea = () => {
                                         </Col>
                                     </Row>
                                 </section>
+                                <section className="overview__poster">
+                                    <img className="poster" src="assets/img/openSW/openSW-poster.png"/>
+                                </section>
                             </Col>
                             <Col md={5}>
                                 <section className="overview__schedule">

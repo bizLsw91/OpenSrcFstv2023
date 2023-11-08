@@ -43,7 +43,7 @@ const Footer = () => {
                      <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>
                      <Col md={{span:6, order:1}} className="d-flex align-items-md-end">
                         <div className="copyright-text">
-                           <p>Copyright © <a href="/#">NIPA.</a> All Rights Reserved.</p>
+                           <p>Copyright © 2023<Link to="/"> OSSFESTIVAL.KR.</Link>&nbsp;&nbsp;All Rights Reserved.</p>
                            <p>Contact: <a className="underline__black" href="mailto:ossfesta2023@gmail.com">ossfesta2023@gmail.com</a></p>
                         </div>
                      </Col>

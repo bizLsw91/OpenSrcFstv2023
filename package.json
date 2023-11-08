@@ -47,6 +47,7 @@
     "emul-hosting:dev": "env-cmd -f .env.development react-scripts build && firebase use dev && env-cmd -f .env.development firebase emulators:start --only hosting",
     "deploy:dev": "firebase use dev && env-cmd -f .env.development firebase deploy",
     "deploy:prod": "firebase use prod && firebase deploy",
+    "build_deploy:prod": "firebase use prod && react-scripts build && firebase deploy",
     "f-deploy:dev": "firebase use dev && env-cmd -f .env.development firebase deploy --only functions",
     "f-deploy:prod": "firebase use prod && firebase deploy --only functions"
   },

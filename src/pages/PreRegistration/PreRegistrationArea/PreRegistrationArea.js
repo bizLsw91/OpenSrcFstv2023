@@ -49,8 +49,7 @@ const PreRegistrationArea = () => {
                             </Col>
                             <Col className="guide">
                                 <div className="office">공개SW페스티벌 사무국</div>
-                                <div className="tel"><span>전화</span><span>02-502-5953</span></div>
-                                <div className="email"><span>이메일</span><span>boomcom2013@gmail.com</span></div>
+                                <div className="email"><span>이메일</span><span>ossfesta2023@gmail.com</span></div>
                             </Col>
                         </Row>
 

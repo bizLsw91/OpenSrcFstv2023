@@ -746,12 +746,43 @@ p {
 		max-width: 900px;
 		padding: 0 40px 0;
 
-		$base: 992px;
-		$ratio: 5/8;
 		@media #{$lg_st}{
 			width: 90vw;
 			padding-left: 0px;
 			padding-right: 0px;
 		}
 	}
+}
+
+.bold_l{
+	font-size: 19px;
+	font-family: $font-nps-bold;
+	@media #{$xs}{
+		font-size: 15px;
+	}
+}
+.bold_m{
+	font-family: $font-nps-bold;
+	font-size: 15px;
+	@media #{$xs}{
+		font-size: 12px;
+	}
+}
+.regu_m{
+	font-family: $font-nps-regular;
+	font-size: 15px;
+	@media #{$xs}{
+		font-size: 12px;
+	}
+}
+.regu_s{
+	font-family: $font-nps-regular;
+	font-size: 12px;
+	@media #{$xs}{
+		font-size: 9px;
+	}
+}
+
+.ant-image-mask:hover{
+	display: none;
 }
