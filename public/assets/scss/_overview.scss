@@ -67,6 +67,18 @@
         & p{
             margin-bottom: 0;
         }
+        & .directions{
+            width: fit-content;
+            padding: 4px 7px;
+            font-size: smaller;
+            color: white;
+            background-color: #2a3a57;
+            line-height: 1.2;
+            border-radius: 9px;
+            border-color: #dfe5f3;
+            border-width: 2px;
+            border-style: solid;
+        }
     }
     &__schedule{
         padding-bottom: 0;
