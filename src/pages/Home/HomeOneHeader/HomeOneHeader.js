@@ -34,7 +34,12 @@ const HomeOneHeader = () => {
                                     </div>
                                     <div className="logo-gradient">
                                         <NavLink to="/">
-                                            <img src="assets/img/logo/logo-gradient.png" alt="logo"/>
+                                            <div>
+                                                <h4>
+                                                    <a href="/">공개SW 페스티벌 2023</a>
+                                                </h4>
+                                            </div>
+                                            {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
                                         </NavLink>
                                     </div>
                                 </Col>
