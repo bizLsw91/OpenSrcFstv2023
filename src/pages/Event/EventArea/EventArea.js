@@ -15,7 +15,6 @@ const EventArea = () => {
                             src='assets/img/edm/edm-event.png' // 이미지 URL을 넣으세요
                             preview={{ src: "assets/img/edm/edm-event.png" }} // 클릭할 때만 확대되도록 설정
                         />
-
                     </div>
                 </div>
             </Container>
