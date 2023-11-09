@@ -32,7 +32,7 @@ const NoticeDetailArea = ({post}) => {
                         <div className='postContent'  dangerouslySetInnerHTML={{ __html: data.content }}>
                         </div>
                         <div className='postFooter'>
-                            <div className="btn prevBtn"><Link to={"/notice/prev/"+data.index}></Link></div>
+                            <div className="btn prevBtn"><Link to={"/notice/prev/"+data.index}>이전글</Link></div>
                             <div className="btn listBtn"><Link to="/notice">목록으로</Link></div>
                             <div className="btn nextBtn"><Link to={"/notice/next/"+data.index}>다음글</Link></div>
                         </div>
