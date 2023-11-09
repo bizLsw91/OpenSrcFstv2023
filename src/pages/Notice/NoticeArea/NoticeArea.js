@@ -4,9 +4,13 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import appConfig from "../../../config/app.config";
 import {useNavigate} from "react-router-dom";
+import moment from "moment";
 
-const fetchPosts = async (req) => {
+const getPosts = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Notice/getPosts', req)
+};
+const fetchViewsUp = async (index) => {
+    return await axios.get(appConfig.apiPreUrl + '/Notice/viewsUp/'+index)
 };
 
 
@@ -20,7 +24,7 @@ const NoticeArea = () => {
     const fetchData = async (req) => {
         try {
             setLoading(true);
-            const res = await fetchPosts(req);
+            const res = await getPosts(req);
             console.log("res.data = ", res.data);
             setPosts(res.data)
             setLoading(false);
@@ -37,8 +41,17 @@ const NoticeArea = () => {
         fetchData()
     }, []);
 
-    const toDetail = (index) => {
-        navigate('/noticeDetail',{state:{data:posts.find((post)=>post.index===index)}})
+    const toDetail = async (index) => {
+        try {
+            await fetchViewsUp(index)
+            navigate('/noticeDetail',{state:{data:posts.find((post)=>post.index===index)}})
+        }catch (err){
+            alert('서버와 통신중 에러가 발생하였습니다.')
+        }
+    }
+
+    const fomatedDate = (date)=>{
+        return moment(date, "YYYYMMDD").format("YYYY.MM.DD")
     }
 
     const columns = [
@@ -70,6 +83,27 @@ const NoticeArea = () => {
             title: '등록일',
             dataIndex: 'date',
             key: 'date',
+            render:(date)=>(
+                <div>{fomatedDate(date)}</div>
+            )
+        },
+    ];
+
+    const columns_mobile = [
+        {
+            dataIndex: 'index',
+            key: 'index',
+            render: (_, record) => (
+                <a onClick={() => toDetail(record.index)}>
+                    <div>
+                        <div className="m-title">{record.title}</div>
+                        <div className="m-shortbox">작성자: {record.author}</div>
+                        <div className="m-shortbox">조회수: {record.views}</div>
+                        <div className="m-shortbox">등록일: {fomatedDate(record.date)}</div>
+                    </div>
+                </a>
+            )
+
         },
     ];
 
@@ -79,7 +113,8 @@ const NoticeArea = () => {
                 <div className="notice__area">
                     <div className="notice__content">
                         <h2 className="notice__title">공지사항</h2>
-                        <Table className="" loading={loading} columns={columns} dataSource={posts} pagination={{ position: ['bottomCenter'] }} />
+                        <Table className="notMobile d-st-sm-none" loading={loading} columns={columns} dataSource={posts} pagination={{ position: ['bottomCenter'] }} />
+                        <Table className="mobile d-sm-none" showHeader={false} loading={loading} columns={columns_mobile} dataSource={posts} pagination={{ position: ['bottomCenter'] }} />
                     </div>
                 </div>
             </Container>

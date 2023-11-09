@@ -2,47 +2,118 @@
 /*  23. Login CSS START
 /*----------------------------------------*/
 
-.notice{
-    &__area{
-        display: flex;
-        justify-content: center;
-        padding: 60px 0;
-        & h1{
-        }
-    }
-    &__title{
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    &__content{
-        max-width: 900px;
-        padding: 0 40px 0;
+.notice {
+  &__area {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
 
-        @media #{$lg_gt}{
-            width: 900px;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-        @media #{$lg_st}{
-            width: 90vw;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-
-        .ant-table-cell:nth-child(1){
-            min-width: 70px;
-        }
-        .ant-table-cell:nth-child(2){
-        }
-        .ant-table-cell:nth-child(3){
-            min-width: 95px;
-        }
-        .ant-table-cell:nth-child(4){
-            min-width: 95px;
-        }
-        .ant-table-cell:nth-child(5){
-            min-width: 95px;
-        }
+    & h1 {
     }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+
+    @media #{$lg_gt}{
+      width: 900px;
+    }
+    @media #{$lg_st}{
+      width: 90vw;
+    }
+
+
+    @media #{$sm_gt}{
+      .ant-table-thead .ant-table-cell {
+        @media #{$sm}{
+          font-size: 12px;
+          padding: 10px;
+          min-width: 65px;
+        }
+      }
+
+      .ant-table-tbody .ant-table-cell {
+        word-break: break-all;
+        font-family: $font-nps-regular;
+        font-size: 12px;
+        @media #{$sm} {
+          font-size: 11px;
+          padding: 10px;
+        }
+      }
+      .ant-table-cell:nth-child(1) {
+        min-width: 70px;
+        @media #{$sm}{
+          min-width: 50px;
+        }
+      }
+      .ant-table-cell:nth-child(2) {
+        font-family: $font-lato;
+        font-weight: bold;
+        font-size: 13px;
+      }
+      .ant-table-cell:nth-child(3) {
+        min-width: 95px;
+        @media #{$sm}{
+          min-width: 70px;
+        }
+      }
+      .ant-table-cell:nth-child(4) {
+        min-width: 95px;
+        @media #{$sm}{
+          min-width: 60px;
+        }
+      }
+      .ant-table-cell:nth-child(5) {
+        min-width: 95px;
+        @media #{$sm}{
+          min-width: 77px;
+        }
+      }
+    }
+
+    //모바일
+    @media #{$xs} {
+      .m{
+        &-title{
+          width: 100%;
+          text-align: left;
+          overflow: hidden;
+          word-break: break-all;
+          line-height: 1.4;
+          box-sizing: border-box;
+          font-weight: bold;
+          font-family: $font-lato;
+          margin-bottom: 8px;
+          background-color: #fafafa;
+          border-radius: 15px;
+          padding: 0.5em;
+        }
+        &-shortbox{
+          margin-left: 0.2em;
+          margin-right: 0.4rem;
+          margin-bottom: 0.5rem;
+          display: inline-block;
+          padding: 0.5em;
+          background-color: #f3f8ffa6;
+          border-radius: 15px;
+        }
+      }
+      .ant-table-tbody{
+          padding: 0 16px;
+      }
+      .ant-table-tbody .ant-table-cell{
+          padding: 16px 0;
+          border-bottom: 1px solid #cac5c5;
+      }
+    }
+  }
 }

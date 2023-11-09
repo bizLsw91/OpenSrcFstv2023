@@ -35,6 +35,16 @@ function NoticeController(router, firestore) {
         }
     })
 
+    // 조회수 증가 API
+    router.get("/viewsUp/:postId", async (req, res) => {
+        try {
+            const postId = req.params.postId;
+            await incrementPostView(firestore, postId);
+            res.status(200).send('success');
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+    });
 
     // 게시글 조회 및 조회수 증가 API
     router.get("/:postId", async (req, res) => {
