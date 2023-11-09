@@ -26,6 +26,7 @@ import DocTerms from "./pages/DocTerms/DocTerms";
 import DocPrivacy from "./pages/DocPrivacy/DocPrivacy";
 import DocRefusal from "./pages/DocRefusal/DocRefusal";
 import Login from "./pages/Login/Login";
+import NoticeDetail from "./pages/Notice/NoticeDetail/NoticeDetail";
 
 const routes = [
   { path: "/", component: Home },
@@ -34,6 +35,7 @@ const routes = [
   { path: "/directions", component: Directions },
   { path: "/program", component: Program },
   { path: "/notice", component: Notice },
+  { path: "/noticeDetail", component: NoticeDetail },
   { path: "/faq", component: Faq },
   { path: "/preRegistration", component: PreRegistration },
   { path: "/event", component: Event },
@@ -42,23 +44,6 @@ const routes = [
   { path: "/docRefusal", component: DocRefusal },
 
 
-
-  { path: "/homeTwo", component: HomeTwo },
-  { path: "/homeThree", component: HomeThree },
-  { path: "/headerStyleFour", component: HeaderStyleFour },
-  { path: "/headerStyleFive", component: HeaderStyleFive },
-  { path: "/headerStyleSix", component: HeaderStyleSix },
-  { path: "/headerStyleSeven", component: HeaderStyleSeven },
-  { path: "/about", component: About },
-  { path: "/services", component: Services },
-  { path: "/servicesDetails", component: ServicesDetails },
-  { path: "/portfolio", component: Portfolio },
-  { path: "/portfolioDetails", component: PortfolioDetails },
-  { path: "/team", component: Team },
-  { path: "/teamDetails", component: TeamDetails },
-  { path: "/blogs", component: Blogs },
-  { path: "/blogDetails", component: BlogDetails },
-  { path: "/contact", component: Contact }
 ];
 
 export default routes;

@@ -15,13 +15,11 @@
         margin-bottom: 40px;
     }
     &__content{
-        display: flex;
-        justify-content: center;
         max-width: 900px;
         padding: 0 40px 0;
 
         @media #{$lg_gt}{
-            width: 800px;
+            width: 900px;
             padding-left: 0px;
             padding-right: 0px;
         }
@@ -30,56 +28,21 @@
             padding-left: 0px;
             padding-right: 0px;
         }
-        & .imgBox{
-            width: 100%;
+
+
+        .ant-table-cell:nth-child(1){
+            min-width: 70px;
         }
-        & .gridTable{
-            font-family: $font-nps-regular;
-            & .title{
-                & >div:nth-child(2){
-                    border-left-color: white;
-                    border-left-style: solid;
-                    border-left-width: 3px;
-
-                }
-            }
-            & .row{
-                & >div:nth-child(1){
-                    @media #{'(max-width: 350px)'}{
-                        width: 16%;
-                        min-width: 50px;
-                    }
-                }
-                & >div:nth-child(2){
-                    @media #{'(max-width: 350px)'}{
-                        width: 84%;
-                    }
-                }
-            }
-            & .title{
-                & >div{
-                    font-family: $font-nps-bold;
-                    font-size: large;
-                    color: white;
-                    background-color: #2a3a57;
-                }
-            }
-
-            & .content{
-                & .item, .time {
-                    padding: 7px 10px;
-                    display: flex;
-                    align-items: center;
-                }
-                & .bLine, .time{
-                    border-bottom: 1px solid #ddd; /* 얇은 회색 선을 추가 */
-                }
-            }
-            & .spkL{
-                & .spk{
-                    display: flex;
-                }
-            }
+        .ant-table-cell:nth-child(2){
+        }
+        .ant-table-cell:nth-child(3){
+            min-width: 95px;
+        }
+        .ant-table-cell:nth-child(4){
+            min-width: 95px;
+        }
+        .ant-table-cell:nth-child(5){
+            min-width: 95px;
         }
     }
 }
