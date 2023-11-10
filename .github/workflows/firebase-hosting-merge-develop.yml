@@ -1,18 +1,18 @@
-name: Build_DeployToFirebase:master
+name: Build_DeployToFirebase:develop
 'on':
   push:
     branches:
-      - master
+      - develop
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npm run build-gitD-master
+      - run: npm run build-gitD-develop
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023 }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023_DEV }}'
           channelId: live
-          projectId: opensourcefestival2023
+          projectId: opensourcefestival2023-dev
