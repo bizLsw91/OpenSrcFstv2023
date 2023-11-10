@@ -28,3 +28,4 @@ yarn-error.log*
 /functions/ui-debug.log
 /.firebase/hosting.YnVpbGQ.cache
 /functions/ui-debug.log
+firebase-hosting-merge.yml
