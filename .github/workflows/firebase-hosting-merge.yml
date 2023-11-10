@@ -2,39 +2,16 @@ name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
-      - master
       - develop
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies and build
-        run: |
-          npm ci
-          if [[ "${{ github.event.ref }}" == "refs/heads/master" ]]; then
-            npm run build-gitD-master
-          elif [[ "${{ github.event.ref }}" == "refs/heads/develop" ]]; then
-            npm run build-gitD-develop
-          else
-            echo "Branch not recognized"
-            exit 1
-          fi
-      - name: Set Firebase Service Account and Project ID
-        run: |
-          if [[ "${{ github.event.ref }}" == "refs/heads/master" ]]; then
-            export FIREBASE_SERVICE_ACCOUNT=${{ secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023 }}
-            export FIREBASE_PROJECT_ID="opensourcefestival2023"
-          elif [[ "${{ github.event.ref }}" == "refs/heads/develop" ]]; then
-            export FIREBASE_SERVICE_ACCOUNT=${{ secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023_DEV }}
-            export FIREBASE_PROJECT_ID="opensourcefestival2023-dev"
-          else
-            echo "Branch not recognized"
-            exit 1
-          fi
+      - run: npm ci && npm run build-gitD
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: ${{ env.FIREBASE_SERVICE_ACCOUNT }}
+          firebaseServiceAccount: ${{ github.event.push.ref == 'refs/heads/master' && secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023 || secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023_DEV }}
           channelId: live
-          projectId: ${{ env.FIREBASE_PROJECT_ID }}
+          projectId: ${{ github.event.push.ref == 'refs/heads/master' && 'opensourcefestival2023' || 'opensourcefestival2023-dev' }}

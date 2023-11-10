@@ -7,23 +7,77 @@
         display: flex;
         justify-content: center;
         padding: 60px 0;
-        & h1{
-            text-align: center;
-        }
     }
     &__title{
-        text-align: center;
         margin-bottom: 35px;
     }
     &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         max-width: 900px;
         padding: 0px 40px 45px;
 
-        & .infoWindowBox{
-            padding: 5px;
-            & a{
+        .infoBox{
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            @media #{'(max-width:630px)'} {
+                flex-direction: column;
+            }
+            >div{
+                padding-top: 20px;
+                padding-right: 20px;
+                min-width: 140px;
+            }
+            a{
                 font-size: small;
             }
+            .w250{width: 250px}
+            .w160{width: 160px}
+            .list_wayout{
+                font-size: 15px;
+                .wrap_wayout{
+                    display: flex;
+
+                    line-height: 21px;
+                    overflow: hidden;
+                    .info_wayout{
+                        display: flex;
+                        flex-direction: row;
+                        >span{margin-right: 5px}
+                        .txt_station{
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
+                        .ico_traffic{
+                            display: flex;
+                            font-size: 11px;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 8px;
+                            color: white;
+                            background-color: #c7a54e;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .gr{
+                            background-color: #61b157;
+                        }
+                        .color_g2{
+                            color: #263c46;
+                        }
+                        .txt_walk{
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mapInfoWindowBox{
+            padding: 5px;
         }
 
         $base: 992px;
@@ -39,8 +93,8 @@
                 height: $base * 0.8 * $ratio;
             }
             @media #{$lg_st}{
-                width: 80vw;
-                height: 80vw * $ratio;
+                width: 90vw;
+                height: 90vw * $ratio;
             }
         }
     }

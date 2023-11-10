@@ -23,5 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+/functions/firebase-debug.log
+/.firebase/hosting.YnVpbGQ.cache
+/functions/ui-debug.log
 /.firebase/hosting.YnVpbGQ.cache
 /functions/ui-debug.log
