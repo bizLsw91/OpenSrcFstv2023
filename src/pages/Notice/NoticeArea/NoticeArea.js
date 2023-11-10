@@ -34,7 +34,7 @@ const NoticeArea = () => {
             setLoading(false);
             setPosts([])
             alert(errMsg)
-            console.error(errMsg, error);
+            console.log(errMsg, error);
         }
     }
 
