@@ -21,7 +21,14 @@ const NoticeDetailArea = ({post}) => {
                 <div className="noticeDetail__area">
                     <div className="noticeDetail__content">
                         <h2 className="title">공지사항</h2>
-                        <h2 className="postTitle">{data.title}</h2>
+                        {data.categoryCode === 0 ?
+                            <h2 className="postTitle">{data.title}</h2>
+                            :
+                            <div className="titleDiv">
+                                <div className="star">★</div>
+                                <h2 className="postTitle">{data.title}</h2>
+                            </div>
+                        }
                         <div className="subInfo">
                             <div className="author">작성자: <p>{data.author}</p></div>
                             <div className="rightBox">

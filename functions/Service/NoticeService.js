@@ -41,6 +41,7 @@ async function getPosts(db, req) {
                     index: data.index,
                     title: data.title,
                     content: data.content,
+                    categoryCode: data.categoryCode,
                     author: data.author,
                     date: moment(data.timestamp, 'YYYYMMDDHHmmss').format('YYYYMMDD'),
                     views: data.views,

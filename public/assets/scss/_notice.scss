@@ -30,6 +30,9 @@
       width: 90vw;
     }
 
+    .star{
+      font-size: large;
+    }
 
     @media #{$sm_gt}{
       .ant-table-thead .ant-table-cell {
@@ -83,6 +86,12 @@
     //모바일
     @media #{$xs} {
       .m{
+        &-titleDiv{
+          display: flex;
+        }
+        &-star{
+          font-size: large;
+        }
         &-title{
           width: 100%;
           text-align: left;

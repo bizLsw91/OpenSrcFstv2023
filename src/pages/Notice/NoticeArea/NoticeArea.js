@@ -59,6 +59,11 @@ const NoticeArea = () => {
             title: 'No.',
             dataIndex: 'index',
             key: 'index',
+            render: (index, recode)=>(
+                <>
+                    {recode.categoryCode === 0 ? <span>{index}</span> : <span className="star">★</span>}
+                </>
+            )
         },
         {
             title: '제목',
@@ -67,7 +72,6 @@ const NoticeArea = () => {
             render: (_, record) => (
                 <a onClick={() => toDetail(record.index)}>{record.title}</a>
             )
-
         },
         {
             title: '작성자',
@@ -96,7 +100,14 @@ const NoticeArea = () => {
             render: (_, record) => (
                 <a onClick={() => toDetail(record.index)}>
                     <div>
-                        <div className="m-title">{record.title}</div>
+                        {record.categoryCode === 0 ?
+                            <div className="m-title">{record.title}</div>
+                            :
+                            <div className="m-titleDiv">
+                                <div className="m-star">★</div>
+                                <div className="m-title">{record.title}</div>
+                            </div>
+                        }
                         <div className="m-shortbox">작성자: {record.author}</div>
                         <div className="m-shortbox">조회수: {record.views}</div>
                         <div className="m-shortbox">등록일: {fomatedDate(record.date)}</div>
