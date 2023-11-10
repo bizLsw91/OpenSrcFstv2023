@@ -70,7 +70,7 @@ const OverviewArea = () => {
                                             </td>
                                             <td className="d-flex">
                                                 <div className="desc">{infoData[3].desc}</div>
-                                                <Link className="directions ml-15" to="/directions">찾아오시는 길 ></Link>
+                                                <Link className="directions  ml-15" to="/directions">찾아오시는 길 ></Link>
                                             </td>
                                         </Col>
                                     </Row>
