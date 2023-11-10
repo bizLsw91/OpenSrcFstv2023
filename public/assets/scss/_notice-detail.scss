@@ -102,16 +102,29 @@
             border-bottom: #2c234d solid 2px;
         }
         .postFooter{
+            position: relative;
             width: 100%;
-            display: flex;
-            justify-content: space-between;
             padding-top: 10px;
             .btn{
+                position: absolute;
+                display: flex;
                 padding: 5px;
-                background-color: #5c7b8954;
+                background-color: rgba(92, 123, 137, 0.3294117647);
                 color: white;
                 border-radius: 10px;
                 font-size: 11px;
+                word-break: keep-all;
+            }
+            .prevBtn{
+                left: 0;
+            }
+            .listBtn{
+                left:50%;
+                transform: translateX(-50%);
+            }
+            .nextBtn{
+                left:100%;
+                transform: translateX(-100%);
             }
         }
     }

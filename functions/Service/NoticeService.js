@@ -91,8 +91,8 @@ async function getPosts(db, req) {
 
     /**
      * 특정 게시물 조회 수 증가 서비스 함수
-     * @param {object} db - 파이어스토어
-     * @param {string} postId - 조회 수를 증가할 게시물의 문서 ID
+     * @param db {json}  - 파이어스토어
+     * @param postId {string}  - 조회 수를 증가할 게시물의 문서 ID
      * @returns {Promise} - 조회 수 증가 결과를 나타내는 프로미스.
      */
     async function incrementPostView(db, postId) {
@@ -123,10 +123,34 @@ async function getPosts(db, req) {
         return postSnap.data();
     }
 
+    async function getPrevNextIdx(db, postId) {
+        //filed 의 index
+        let prevIdx = -1
+        let nextIdx = -1
+        try {
+            // Notice 컬렉션을 categoryCode 및 index에 따라 정렬
+            const query = db.collection(collectionPath)
+                .orderBy('categoryCode', 'desc')
+                .orderBy('index', 'desc');
+
+            const snapshot = await query.get();
+            const docs = snapshot.docs;
+            const arrIdx = docs.findIndex(doc=>doc.data().index === Number(postId))
+            if(arrIdx > 0) prevIdx = docs[arrIdx-1]?.data().index
+            if(arrIdx >= 0) nextIdx = docs[arrIdx+1]?.data().index
+
+            return {prevIdx:prevIdx || -1, nextIdx:nextIdx || -1 };
+        } catch (error) {
+            console.error('Error:', error);
+            throw new Error('')
+        }
+    }
+
 
     module.exports = {
         getPosts,
         addNotice,
         getPostById,
         incrementPostView,
+        getPrevNextIdx,
     }

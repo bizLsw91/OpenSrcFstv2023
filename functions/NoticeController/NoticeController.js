@@ -1,5 +1,5 @@
 const moment = require("moment");
-const {addNotice, getPosts, incrementPostView, getPostById} = require("../Service/NoticeService");
+const {addNotice, getPosts, incrementPostView, getPostById, getPrevNextIdx} = require("../Service/NoticeService");
 
 function NoticeController(router, firestore) {
 
@@ -46,6 +46,17 @@ function NoticeController(router, firestore) {
         }
     });
 
+    // 게시글 조회
+    router.get("/:postId", async (req, res) => {
+        try {
+            const postId = req.params.postId;
+            const post = await getPostById(firestore, postId);
+            res.status(200).json(post);
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+    });
+
     // 게시글 조회 및 조회수 증가 API
     router.get("/:postId", async (req, res) => {
         try {
@@ -58,6 +69,16 @@ function NoticeController(router, firestore) {
         }
     });
 
+    // 이전글, 다음글 여부 체크
+    router.get("/getPrevNextIdx/:postId", async (req, res) => {
+        try {
+            const postId = req.params.postId;
+            const data = await getPrevNextIdx(firestore, postId);
+            res.status(200).json(data);
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+    });
 }
 
 module.exports = NoticeController

@@ -1,18 +1,17 @@
 import {Container} from "react-bootstrap";
 import {Table} from "antd";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import axios from "axios";
 import appConfig from "../../../config/app.config";
 import {useNavigate} from "react-router-dom";
 import moment from "moment";
 
-const getPosts = async (req) => {
+const api_getPosts = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Notice/getPosts', req)
 };
-const fetchViewsUp = async (index) => {
+const api_viewsUp = async (index) => {
     return await axios.get(appConfig.apiPreUrl + '/Notice/viewsUp/'+index)
 };
-
 
 const NoticeArea = () => {
     const [loading, setLoading] = useState(false);
@@ -21,10 +20,13 @@ const NoticeArea = () => {
     const errMsg = '게시물을 가져오는 데 실패했습니다.';
     const navigate = useNavigate();
 
+    // useMemo를 사용하여 API 응답을 캐싱합니다.
+    const cachedPosts = useMemo(() => posts, [posts]);
+
     const fetchData = async (req) => {
         try {
             setLoading(true);
-            const res = await getPosts(req);
+            const res = await api_getPosts(req);
             console.log("res.data = ", res.data);
             setPosts(res.data)
             setLoading(false);
@@ -37,13 +39,12 @@ const NoticeArea = () => {
     }
 
     useEffect(() => {
-        // 페이지가 로드될 때 게시물 가져오는 함수 호출
-        fetchData()
+        fetchData();
     }, []);
 
     const toDetail = async (index) => {
         try {
-            await fetchViewsUp(index)
+            await api_viewsUp(index)
             navigate('/noticeDetail',{state:{data:posts.find((post)=>post.index===index)}})
         }catch (err){
             alert('서버와 통신중 에러가 발생하였습니다.')
@@ -53,6 +54,7 @@ const NoticeArea = () => {
     const fomatedDate = (date)=>{
         return moment(date, "YYYYMMDD").format("YYYY.MM.DD")
     }
+
 
     const columns = [
         {
@@ -124,8 +126,8 @@ const NoticeArea = () => {
                 <div className="notice__area">
                     <div className="notice__content">
                         <h2 className="notice__title">공지사항</h2>
-                        <Table className="notMobile d-st-sm-none" loading={loading} columns={columns} dataSource={posts} pagination={{ position: ['bottomCenter'] }} />
-                        <Table className="mobile d-sm-none" showHeader={false} loading={loading} columns={columns_mobile} dataSource={posts} pagination={{ position: ['bottomCenter'] }} />
+                        <Table className="notMobile d-st-sm-none" loading={loading} columns={columns} dataSource={cachedPosts} pagination={{ position: ['bottomCenter'] }} />
+                        <Table className="mobile d-sm-none" showHeader={false} loading={loading} columns={columns_mobile} dataSource={cachedPosts} pagination={{ position: ['bottomCenter'] }} />
                     </div>
                 </div>
             </Container>
