@@ -11,7 +11,6 @@ const ProgramArea = () => {
                         <p className="d-sm-none">※클릭하시면 확대해서 보실 수 있습니다.</p>
                         <Image
                             className="imgBox"
-                            movable={true}
                             src='assets/img/edm/edm-program.jpg' // 이미지 URL을 넣으세요
                             preview={{ src: "assets/img/edm/edm-program.jpg" }} // 클릭할 때만 확대되도록 설정
                         />

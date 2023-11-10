@@ -86,7 +86,7 @@ h5,
 h6 {
 	font-family: $font-kbo-bold;
 	color: $heading-color;
-	margin-top: 0px;
+	margin-top: 0;
 	font-weight: 900;
 	line-height: 1.2;
 	@include transition(.3s);
@@ -117,8 +117,8 @@ h6 {
 	font-size: 14px;
 }
 ul {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 ol{
 	margin: 0;
@@ -748,8 +748,8 @@ p {
 
 		@media #{$lg_st}{
 			width: 90vw;
-			padding-left: 0px;
-			padding-right: 0px;
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 }
@@ -784,5 +784,18 @@ p {
 }
 
 .ant-image-mask:hover{
+	display: none;
+}
+
+@media (max-width: 575px) {
+	.d-st-sm-none {
+		display: none !important;
+	}
+}
+
+.w5{width: 5% !important}
+.w95{width: 95% !important}
+
+.SpinByW-loading + div{
 	display: none;
 }

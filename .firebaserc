@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "opensourcefestival2023-dev",
+    "default": "opensourcefestival2023",
     "dev": "opensourcefestival2023-dev",
     "prod": "opensourcefestival2023"
   },

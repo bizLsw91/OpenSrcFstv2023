@@ -27,18 +27,6 @@ const DirectionsArea = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://m.map.kakao.com/actions/detailMapView?id=SES0928"
-                                           className="wrap_wayout" data-logtarget="" data-logevent="waytogo,subway">
-                                            <span className="info_wayout">
-                                                <span className="txt_station">삼성중앙역</span>
-                                                <span className="ico_traffic">9</span>
-                                                <span className="txt_bar"> | </span>
-                                                <span className="color_g2">4번 출구 <em
-                                                    className="txt_walk">도보 9분</em></span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="https://m.map.kakao.com/actions/detailMapView?id=SES0219"
                                            className="wrap_wayout" data-logtarget="" data-logevent="waytogo,subway">
                                             <span className="info_wayout">
@@ -47,6 +35,18 @@ const DirectionsArea = () => {
                                                 <span className="txt_bar"> | </span>
                                                 <span className="color_g2">5번, 6번 출구 <em
                                                     className="txt_walk">도보 13분</em></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://m.map.kakao.com/actions/detailMapView?id=SES2731"
+                                           className="wrap_wayout" data-logtarget="" data-logevent="waytogo,subway">
+                                            <span className="info_wayout">
+                                                <span className="txt_station">청담역</span>
+                                                <span className="ico_traffic">7</span>
+                                                <span className="txt_bar"> | </span>
+                                                <span className="color_g2">2번 출구 <em
+                                                    className="txt_walk">도보 20분</em></span>
                                             </span>
                                         </a>
                                     </li>
