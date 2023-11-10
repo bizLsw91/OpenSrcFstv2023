@@ -40,7 +40,6 @@ async function getPosts(db, req) {
                 posts.push({
                     index: data.index,
                     title: data.title,
-                    content: data.content,
                     categoryCode: data.categoryCode,
                     author: data.author,
                     date: moment(data.timestamp, 'YYYYMMDDHHmmss').format('YYYYMMDD'),
@@ -120,7 +119,9 @@ async function getPosts(db, req) {
         if (!postSnap.exists) {
             throw new Error("게시물을 찾을 수 없습니다.");
         }
-        return postSnap.data();
+        const data = postSnap.data()
+        data.date = moment(data.timestamp, 'YYYYMMDDHHmmss').format('YYYYMMDD')
+        return data;
     }
 
     async function getPrevNextIdx(db, postId) {

@@ -8,14 +8,14 @@ import Footer from "../../../components/shared/Footer";
 
 const NoticeDetail = () => {
     const location = useLocation();
-    const post = location.state.data
+    const index = location.state.index
 
     return (
         <div id="NoticeDetail">
             <PageHelmet pageTitle="공지사항" />
             <HomeOneHeader/>
             <CommonPageHeader title="Notice Detail" subtitle="공지사항" />
-            <NoticeDetailArea post={post}/>
+            <NoticeDetailArea index={index}/>
             <Footer/>
         </div>
     );

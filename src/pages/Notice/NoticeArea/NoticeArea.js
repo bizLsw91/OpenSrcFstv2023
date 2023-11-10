@@ -43,12 +43,7 @@ const NoticeArea = () => {
     }, []);
 
     const toDetail = async (index) => {
-        try {
-            await api_viewsUp(index)
-            navigate('/noticeDetail',{state:{data:posts.find((post)=>post.index===index)}})
-        }catch (err){
-            alert('서버와 통신중 에러가 발생하였습니다.')
-        }
+        navigate('/noticeDetail',{state:{index:index}})
     }
 
     const fomatedDate = (date)=>{

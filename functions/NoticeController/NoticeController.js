@@ -58,7 +58,7 @@ function NoticeController(router, firestore) {
     });
 
     // 게시글 조회 및 조회수 증가 API
-    router.get("/:postId", async (req, res) => {
+    router.get("/getPostAndViewsUp/:postId", async (req, res) => {
         try {
             const postId = req.params.postId;
             await incrementPostView(firestore, postId);
