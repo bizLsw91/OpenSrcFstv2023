@@ -19,5 +19,5 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: ${{ github.event.push.ref == 'refs/heads/master' && secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023 || secrets.FIREBASE_SERVICE_ACCOUNT_OPENSOURCEFESTIVAL2023_DEV }}
-          channelId: ${{ github.event.push.ref == 'refs/heads/master' && 'preview' || 'live' }}
-          projectId: ${{ github.event.push.ref == 'refs/heads/master' && 'opensourcefestival2023' || 'opensourcefestival2023-dev' }}
+          channelId: live
+          projectId: ${{ github.event.ref == 'refs/heads/master' && 'opensourcefestival2023' || github.event.ref == 'refs/heads/develop' && 'opensourcefestival2023-dev' || 'opensourcefestival2023-dev' }}
