@@ -19,6 +19,7 @@ const NoticeDetailArea = ({index}) => {
         setLoading(true)
         try {
             const res1 = await api_getPostAndViewsUp(idx)
+            setLoading(false)
             if (res1.status === 200) setData(res1.data)
         } catch (err) {
             setLoading(false)
@@ -26,13 +27,12 @@ const NoticeDetailArea = ({index}) => {
         }
         try {
             const res2 = await api_getPrevNextIdx(idx)
+            setLoading(false)
             if (res2.status === 200) setPnIdx(res2.data)
         } catch (err) {
             setLoading(false)
             alert(errMsg2)
         }
-        console.log('fefefef')
-        setLoading(false)
     }
 
     useEffect(() => {
