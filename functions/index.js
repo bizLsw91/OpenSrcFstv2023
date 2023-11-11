@@ -2,8 +2,9 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const express = require('express');
 const cors = require('cors');
-const UserController = require("./UserController/UserController");
-const NoticeController = require("./NoticeController/NoticeController");
+const FaqController = require("./Controller/FaqController/FaqController");
+const UserController = require("./Controller/UserController/UserController");
+const NoticeController = require("./Controller/NoticeController/NoticeController");
 // const {ipMiddleware, requestLimitMiddleware} = require("./midleware/IpReqLimt");
 
 admin.initializeApp();
@@ -14,6 +15,7 @@ const firestore = admin.firestore();
 const main = express();
 const router_User = express();
 const router_Notice = express();
+const router_Faq = express();
 
 // CORS 미들웨어를 사용하여 특정 출처에서의 요청만 허용합니다.
 const allowedOrigins =
@@ -31,9 +33,11 @@ main.use(cors({ origin: allowedOrigins }));
 //express 에 라우터 생성 및 등록
 UserController(router_User, firestore)
 NoticeController(router_Notice, firestore)
+FaqController(router_Faq, firestore)
 
 main.use(express.json())
 main.use('/User', router_User)
 main.use('/Notice', router_Notice)
+main.use('/Faq', router_Faq)
 
 exports.api = functions.region("asia-northeast3").https.onRequest(main);

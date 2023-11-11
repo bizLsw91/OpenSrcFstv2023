@@ -136,6 +136,7 @@ async function getPosts(db, req) {
 
             const snapshot = await query.get();
             const docs = snapshot.docs;
+            console.log("snapshot.docs = ", docs);
             const arrIdx = docs.findIndex(doc=>doc.data().index === Number(postId))
             if(arrIdx > 0) prevIdx = docs[arrIdx-1]?.data().index
             if(arrIdx >= 0) nextIdx = docs[arrIdx+1]?.data().index
