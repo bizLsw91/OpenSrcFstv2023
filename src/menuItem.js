@@ -21,7 +21,7 @@ const menuItems = [
         to: '/notice',
         subItems: [
             { label: '공지사항', to: '/notice' },
-            { label: 'FAQ', to: '/faq' },
+            // { label: 'FAQ', to: '/faq' },
             // { label: 'Q&A', to: '/servicesDetails' },
         ]
     },
