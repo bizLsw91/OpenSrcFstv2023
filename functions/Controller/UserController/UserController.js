@@ -43,7 +43,6 @@ function UserController(router, firestore) {
 
             const data = doc.data();
             if (!doc.exists) {
-                throw new Error('')
                 //등록되어있는 이메일 주소 존재 안함
                 errData.errCode = -1
                 res.status(200).json(errData);
