@@ -36,13 +36,20 @@ function UserController (router, firestore) {
 
         try {
             const doc = await docRef.get(); // 문서 가져오기
+            const errData={
+                errCode:0
+            }
             const data = doc.data();
             if (!doc.exists){
-                res.status(404).send('email not exists');
+                //등록되어있는 이메일 주소 존재 안함
+                errData.errCode = -1
+                res.status(200).json(errData);
+            }else if(doc.exists && data.name !== name) {
+                //이메일 주소 존재하지만 이름 불일치
+                errData.errCode = -2
+                res.status(200).json(errData);
             }else if(doc.exists && data.name === name) {
                 res.status(200).json({email:email, ...data});
-            }else if(doc.exists && data.name !== name) {
-                res.status(404).send('불일치');
             }  else {
                 res.status(404).send('');
             }

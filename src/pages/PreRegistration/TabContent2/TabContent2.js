@@ -65,15 +65,15 @@ const TabContent2 = ({email0}) => {
                     setLoading(true)
                     try {
                         const res = await userCheckApi(values);
-                        if(res.status === 200){
-                            setUserData(res.data)
-                            setMsg(errMsg0)
-                        }else if(res.status === 404) {
-                            setIsError(true)
-                            if(res.data==='email not exists') {
-                                setMsg(errMsg1)
-                            }else if(res.data==='불일치') {
-                                setMsg(errMsg1_1)
+                        if(res.status === 200) {
+                            if (res.data.errCode) {
+                                setIsError(true)
+                                if (res.data.errCode === -1) setMsg(errMsg1)
+                                else if (res.data.errCode === -2) setMsg(errMsg1_1)
+                            } else {
+                                setIsError(false)
+                                setUserData(res.data)
+                                setMsg(errMsg0)
                             }
                         }
                     } catch (err) {
