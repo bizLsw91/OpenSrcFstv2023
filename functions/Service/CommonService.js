@@ -1,11 +1,11 @@
 const moment = require("moment/moment");
-const {execSync} = require('child_process');
+// const {execSync} = require('child_process');
 
 async function addErrLog(db, req, error, collection, code) {
     const errData = {
         code: code || '',
         collection:collection||'',
-        gitHead: execSync('git rev-parse HEAD').toString().trim()||'',
+        // gitHead: execSync('git rev-parse HEAD').toString().trim()||'',
         ip: req.ip ||'',
         url: req.originalUrl ||'',
         payload: req.body ||'',
