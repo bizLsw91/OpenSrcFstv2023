@@ -23,6 +23,7 @@ function UserController(router, firestore) {
             const doc = await userRef.get()
             if(doc.exists){
                 res.status(200).json({isError:true, errMsg:'email already exists', errCode:-1}).end()
+                return
             }
             const userData = {
                 name: req.body.name,
@@ -79,7 +80,6 @@ function UserController(router, firestore) {
             await addErrLog(0, firestore, req, error, collectionPath)
             res.status(500).send('error while getUserCnt')
         }
-
     })
 }
 
