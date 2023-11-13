@@ -37,9 +37,13 @@ function UserController (router, firestore) {
         try {
             const doc = await docRef.get(); // 문서 가져오기
             const data = doc.data();
-            if (doc.exists && data.name === name) {
+            if (!doc.exists){
+                res.status(404).send('email not exists');
+            }else if(doc.exists && data.name === name) {
                 res.status(200).json({email:email, ...data});
-            } else {
+            }else if(doc.exists && data.name !== name) {
+                res.status(404).send('불일치');
+            }  else {
                 res.status(404).send('');
             }
         } catch (error) {

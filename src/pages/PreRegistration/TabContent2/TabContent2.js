@@ -37,7 +37,8 @@ const TabContent2 = ({email0}) => {
     const [isError, setIsError] = useState(false);
     const [msg, setMsg] = useState('');
     const errMsg0 = '정상적으로 등록이 확인되었습니다.'
-    const errMsg1 = '이메일 주소와 이름을 다시 확인해주세요.'
+    const errMsg1 = '등록이 되어있지 않습니다. 다시 등록 해주시기 바랍니다.'
+    const errMsg1_1 = '이메일 주소와 이름이 일치하지 않습니다.'
     const errMsg2 = '서버와 통신 중 에러가 발생하였습니다.'
     const showModal = () => {
         setOpen(true);
@@ -65,10 +66,15 @@ const TabContent2 = ({email0}) => {
                     try {
                         const res = await userCheckApi(values);
                         if(res.status === 200){
-                            setUserData({...res.data})
+                            setUserData(res.data)
                             setMsg(errMsg0)
                         }else if(res.status === 404) {
-                            setMsg(errMsg1)
+                            setIsError(true)
+                            if(res.data==='email not exists') {
+                                setMsg(errMsg1)
+                            }else if(res.data==='불일치') {
+                                setMsg(errMsg1_1)
+                            }
                         }
                     } catch (err) {
                         setIsError(true)

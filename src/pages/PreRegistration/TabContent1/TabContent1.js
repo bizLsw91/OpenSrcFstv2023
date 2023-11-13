@@ -38,7 +38,7 @@ const TabContent1 = ({nextTab2}) => {
     const [agree1, setAgree1] = useState(false);
     const [agree2, setAgree2] = useState(false);
     const msg0 = '사전 등록 되었습니다.'
-    const msg1 = '서버와 통신 중 에러가 발생하였습니다.'
+    const msg1 = '서버와 통신 중 에러가 발생하였습니다. 다시 등록해주시기 바랍니다.'
 
     const showModal = () => {
         setOpen(true);
