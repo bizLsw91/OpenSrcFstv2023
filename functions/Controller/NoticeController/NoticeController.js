@@ -4,7 +4,6 @@ const {addNotice, getPosts, incrementPostView, getPostById, getPrevNextIdx} = re
 function NoticeController(router, firestore) {
 
     router.post("/getPosts", async (req, res) => {
-        console.log("NoticeController req = ", req);
         try {
             const posts = await getPosts(firestore, req.body)
             res.status(200).json(posts)

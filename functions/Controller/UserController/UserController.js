@@ -1,11 +1,12 @@
 const moment = require("moment");
+const {addErrLog} = require("../../Service/CommonService");
 
-function UserController (router, firestore) {
+function UserController(router, firestore) {
     const collectionPath = 'User'
 
     router.get('/', async (req, res) => {
         const snapshot = await firestore.collection(collectionPath).orderBy('timestamp', 'asc').get();
-        const users = snapshot.docs.map(doc => ({ email: doc.id, ...doc.data() }));
+        const users = snapshot.docs.map(doc => ({email: doc.id, ...doc.data()}));
         res.status(200).send(users);
     });
 
@@ -26,37 +27,38 @@ function UserController (router, firestore) {
             await userRef.set(userData);
             res.status(200).send(`새로운 User 추가 ID: ${email}`);
         } catch (error) {
+            await addErrLog(firestore, req, error, collectionPath)
             res.status(500).send(error.message);
         }
     });
 
     router.post("/check", async (req, res) => {
-        const { email, name } = req.body; // 요청 본문에서 email과 name을 추출
-        const docRef = firestore.collection('User').doc(email); // 문서 참조 생성
-
         try {
-            const doc = await docRef.get(); // 문서 가져오기
-            const errData={
-                errCode:0
+            const {email, name} = req.body; // 요청 본문에서 email과 name을 추출
+            const docRef = firestore.collection('User').doc(email); // 문서 참조 생성
+            const errData = {
+                errCode: 0
             }
+            const doc = await docRef.get(); // 문서 가져오기
+
             const data = doc.data();
-            if (!doc.exists){
+            if (!doc.exists) {
+                throw new Error('')
                 //등록되어있는 이메일 주소 존재 안함
                 errData.errCode = -1
                 res.status(200).json(errData);
-            }else if(doc.exists && data.name !== name) {
+            } else if (doc.exists && data.name !== name) {
                 //이메일 주소 존재하지만 이름 불일치
                 errData.errCode = -2
                 res.status(200).json(errData);
-            }else if(doc.exists && data.name === name) {
-                res.status(200).json({email:email, ...data});
-            }  else {
-                res.status(404).send('');
+            } else if (doc.exists && data.name === name) {
+                res.status(200).json({email: email, ...data});
+            } else {
+                throw new Error('')
             }
         } catch (error) {
-            // 서버 에러 처리
-            console.error('Error fetching user:', error);
-            res.status(500).send(error.message);
+            await addErrLog(firestore, req, error, collectionPath)
+            res.status(500).json(error);
         }
     })
 
