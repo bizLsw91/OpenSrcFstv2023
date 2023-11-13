@@ -1,5 +1,6 @@
 const moment = require("moment");
 const {addErrLog} = require("../Service/CommonService");
+const {getUserCnt} = require("../Service/UserService");
 
 function UserController(router, firestore) {
     const collectionPath = 'User'
@@ -15,14 +16,21 @@ function UserController(router, firestore) {
         const email = req.body.email; // 이메일 값을 변수로 추출
 
         try {
+            // doc() 메서드를 사용하여 문서 ID를 email로 설정
+            const userRef = firestore.collection(collectionPath).doc(email);
+
+            //중복확인
+            const doc = await userRef.get()
+            if(doc.exists){
+                res.status(200).json({isError:true, errMsg:'email already exists', errCode:-1}).end()
+            }
             const userData = {
                 name: req.body.name,
                 company: req.body.company,
                 call: req.body.call,
                 timestamp: currentDateTime
             };
-            // doc() 메서드를 사용하여 문서 ID를 email로 설정
-            const userRef = firestore.collection(collectionPath).doc(email);
+
             // set() 메서드를 사용하여 문서에 userData를 설정
             await userRef.set(userData);
             res.status(200).send(`새로운 User 추가 ID: ${email}`);
@@ -32,10 +40,11 @@ function UserController(router, firestore) {
         }
     });
 
+    //등록확인
     router.post("/check", async (req, res) => {
         try {
             const {email, name} = req.body; // 요청 본문에서 email과 name을 추출
-            const docRef = firestore.collection('User').doc(email); // 문서 참조 생성
+            const docRef = firestore.collection(collectionPath).doc(email); // 문서 참조 생성
             const errData = {
                 errCode: 0
             }
@@ -62,6 +71,16 @@ function UserController(router, firestore) {
     })
 
 
+    router.get("/count", async (req, res) => {
+        try {
+            const cnt = await getUserCnt(firestore)
+            res.status(200).json({count:cnt})
+        }catch (error){
+            await addErrLog(0, firestore, req, error, collectionPath)
+            res.status(500).send('error while getUserCnt')
+        }
+
+    })
 }
 
 module.exports = UserController

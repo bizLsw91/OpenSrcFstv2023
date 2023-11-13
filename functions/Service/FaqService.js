@@ -51,7 +51,7 @@ async function getFaqs(db, req) {
         return {faqs:faqs, tot:totDocs.length}
     } catch (error) {
         console.error('Error getting faqs:', error);
-        throw new Error('')
+        throw error
     }
 }
 

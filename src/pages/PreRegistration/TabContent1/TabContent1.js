@@ -36,12 +36,14 @@ const TabContent1 = ({nextTab2}) => {
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
+    const [isError, setIsError] = useState(false);
     const [msg, setMsg] = useState('');
     const [email, setEmail] = useState('');
     const [agree1, setAgree1] = useState(false);
     const [agree2, setAgree2] = useState(false);
     const msg0 = '사전 등록 되었습니다.'
     const msg1 = '서버와 통신 중 에러가 발생하였습니다. 다시 등록해주시기 바랍니다.'
+    const msg2 = '이미 같은 이메일 주소가 등록되어 있습니다. 다른 이메일로 등록해주시기 바랍니다.'
 
     const showModal = () => {
         setOpen(true);
@@ -54,8 +56,7 @@ const TabContent1 = ({nextTab2}) => {
     };
     const handleCancel = () => {
         setOpen(false);
-        console.log("email = ", email);
-        nextTab2(email)
+        if(!isError) nextTab2(email)
     };
     const handleCancel1 = () => {
         setOpen1(false);
@@ -91,7 +92,7 @@ const TabContent1 = ({nextTab2}) => {
                     email: Yup.string().email('유효한 이메일 형식이 아닙니다.').max(100,'100자를 넘을 수 없습니다.').min(5, '최소 6문자 이상 입력하세요.').required('이메일은 필수 입력사항입니다.'),
                     name: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('이름은 필수 입력사항입니다.'),
                     company: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('소속은 필수 입력사항입니다.'),
-                    call: Yup.string().matches(/^\d{8,11}$/, '유효한 전화번호를 입력하세요.').required('연락처는 필수 입력사항입니다.'),
+                    call: Yup.string().matches(/^\d{8,11}$/, '유효한 전화번호를 입력하세요. - 없이 입력하세요').required('연락처는 필수 입력사항입니다.'),
                 })}
                 onSubmit={async (values, {setErrors, setStatus, setSubmitting}) => {
                     setEmail(values.email)
@@ -99,12 +100,20 @@ const TabContent1 = ({nextTab2}) => {
                         const res = await submitData(values); // 비동기 함수 호출
                         setSubmitting(false);
                         if(res.status === 200) {
-                            setMsg(msg0)
-                            setStatus({success: true});
+                            if(res.data.isError && res.data.errCode === -1) {
+                                setMsg(msg2)
+                                setIsError(true)
+                                setStatus({success: false});
+                            }else {
+                                setMsg(msg0)
+                                setIsError(false)
+                                setStatus({success: true});
+                            }
                         }
                     } catch (err) {
                         console.error(err);
                         setMsg(msg1)
+                        setIsError(true)
                         setStatus({success: false});
                         setErrors({submit: err.message});
                         await api_addErrLog({collectionPath: 'User', error:{stack:err.stack}, payload:values})
