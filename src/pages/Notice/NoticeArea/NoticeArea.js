@@ -27,14 +27,12 @@ const NoticeArea = () => {
         try {
             setLoading(true);
             const res = await api_getPosts(req);
-            console.log("res.data = ", res.data);
             setPosts(res.data)
             setLoading(false);
         } catch (error) {
             setLoading(false);
             setPosts([])
             alert(errMsg)
-            console.log(errMsg, error);
         }
     }
 

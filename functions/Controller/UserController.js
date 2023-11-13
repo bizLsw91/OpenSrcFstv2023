@@ -1,5 +1,5 @@
 const moment = require("moment");
-const {addErrLog} = require("../../Service/CommonService");
+const {addErrLog} = require("../Service/CommonService");
 
 function UserController(router, firestore) {
     const collectionPath = 'User'
@@ -27,7 +27,7 @@ function UserController(router, firestore) {
             await userRef.set(userData);
             res.status(200).send(`새로운 User 추가 ID: ${email}`);
         } catch (error) {
-            await addErrLog(firestore, req, error, collectionPath)
+            await addErrLog(0, firestore, req, error, collectionPath)
             res.status(500).send(error.message);
         }
     });
@@ -56,7 +56,7 @@ function UserController(router, firestore) {
                 throw new Error('')
             }
         } catch (error) {
-            await addErrLog(firestore, req, error, collectionPath)
+            await addErrLog(0, firestore, req, error, collectionPath)
             res.status(500).json(error);
         }
     })

@@ -1,5 +1,5 @@
 const moment = require("moment");
-const {addNotice, getPosts, incrementPostView, getPostById, getPrevNextIdx} = require("../../Service/NoticeService");
+const {addNotice, getPosts, incrementPostView, getPostById, getPrevNextIdx} = require("../Service/NoticeService");
 
 function NoticeController(router, firestore) {
 

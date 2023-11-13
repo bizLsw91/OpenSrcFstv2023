@@ -29,6 +29,9 @@ const submitData = async (values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
+const api_addErrLog = async (req) => {
+    return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog',req)
+};
 const TabContent1 = ({nextTab2}) => {
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
@@ -94,6 +97,7 @@ const TabContent1 = ({nextTab2}) => {
                     setEmail(values.email)
                     try {
                         const res = await submitData(values); // 비동기 함수 호출
+                        setSubmitting(false);
                         if(res.status === 200) {
                             setMsg(msg0)
                             setStatus({success: true});
@@ -103,8 +107,8 @@ const TabContent1 = ({nextTab2}) => {
                         setMsg(msg1)
                         setStatus({success: false});
                         setErrors({submit: err.message});
+                        await api_addErrLog({collectionPath: 'User', error:{stack:err.stack}, payload:values})
                     }
-                    setSubmitting(false);
                     showModal()
                 }}
             >

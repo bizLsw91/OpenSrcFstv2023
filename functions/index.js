@@ -2,9 +2,10 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const express = require('express');
 const cors = require('cors');
-const FaqController = require("./Controller/FaqController/FaqController");
-const UserController = require("./Controller/UserController/UserController");
-const NoticeController = require("./Controller/NoticeController/NoticeController");
+const FaqController = require("./Controller/FaqController");
+const UserController = require("./Controller/UserController");
+const NoticeController = require("./Controller/NoticeController");
+const CommonController = require("./Controller/CommonController");
 // const {ipMiddleware, requestLimitMiddleware} = require("./midleware/IpReqLimt");
 
 admin.initializeApp();
@@ -13,6 +14,7 @@ const firestore = admin.firestore();
 // module.exports = firestore
 
 const main = express();
+const router_Common = express();
 const router_User = express();
 const router_Notice = express();
 const router_Faq = express();
@@ -31,11 +33,13 @@ main.use(cors({ origin: allowedOrigins }));
 // main.use(requestLimitMiddleware);
 
 //express 에 라우터 생성 및 등록
+CommonController(router_Common, firestore)
 UserController(router_User, firestore)
 NoticeController(router_Notice, firestore)
 FaqController(router_Faq, firestore)
 
 main.use(express.json())
+main.use('/Common', router_Common)
 main.use('/User', router_User)
 main.use('/Notice', router_Notice)
 main.use('/Faq', router_Faq)

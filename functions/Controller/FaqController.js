@@ -1,5 +1,5 @@
 const moment = require("moment");
-const {getFaqs, addFaq} = require("../../Service/FaqService");
+const {getFaqs, addFaq} = require("../Service/FaqService");
 
 function FaqController(router, firestore) {
 

@@ -27,7 +27,9 @@ const userCheckApi = async(values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
-
+const api_addErrLog = async (req) => {
+    return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog',req)
+};
 
 const TabContent2 = ({email0}) => {
     const [email] = useState(email0);
@@ -65,6 +67,7 @@ const TabContent2 = ({email0}) => {
                     setLoading(true)
                     try {
                         const res = await userCheckApi(values);
+                        setLoading(false);
                         if(res.status === 200) {
                             if (res.data.errCode) {
                                 setIsError(true)
@@ -79,9 +82,8 @@ const TabContent2 = ({email0}) => {
                     } catch (err) {
                         setIsError(true)
                         setMsg(errMsg2)
-                        console.error('Error during API call', err);
+                        await api_addErrLog({collectionPath: 'User', error:{stack:err.stack}, payload:values})
                     }
-                    setLoading(false);
                     showModal()
                 }}
             >
