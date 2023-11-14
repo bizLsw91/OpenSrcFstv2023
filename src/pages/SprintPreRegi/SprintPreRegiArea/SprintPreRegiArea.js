@@ -14,7 +14,7 @@ const customScrollIntoView = (viewId) => {
         const headerHeight = header.clientHeight;
         const viewEl = document.getElementById(viewId);
         if (viewEl) {
-            scrollIntoView(viewEl,{ behavior: 'smooth', offsetY: -1*headerHeight+8 });
+            scrollIntoView(viewEl,{ behavior: 'smooth', offsetY: -1*headerHeight-8 });
         }
     }
 }

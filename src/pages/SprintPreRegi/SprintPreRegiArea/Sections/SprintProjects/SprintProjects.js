@@ -1,5 +1,6 @@
 import Project from "./Project";
 
+//스프린트 프로젝트명은 여기서만 관리
 export const sprintProjectDatas = [
     {name:'모던 자바스크립트 튜토리얼', value:1},
     // {name:'모던 자바스크립트 튜토리얼2', value:2},

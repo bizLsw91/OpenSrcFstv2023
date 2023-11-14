@@ -40,8 +40,8 @@ const SprintApply = () => {
                             <TabContext value={value}>
                                 <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                                     <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                        <Tab className="tabBtn" label="사전 등록" value="1"/>
-                                        <Tab className="tabBtn" label="등록 확인" value="2"/>
+                                        <Tab className="tabBtn" label="사전 신청" value="1"/>
+                                        <Tab className="tabBtn" label="신청 확인" value="2"/>
                                     </TabList>
                                 </Box>
                                 <TabPanel value="1">

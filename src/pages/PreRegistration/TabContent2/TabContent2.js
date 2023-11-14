@@ -11,9 +11,10 @@ import * as Yup from 'yup';
 import {Formik} from 'formik';
 import appConfig from "../../../config/app.config";
 import axios from "axios";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Modal, Button} from "antd";
 import {Col, Row} from "react-bootstrap";
+import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
 
 const userCheckApi = async(isSprint, values) => {
     values.isSprint = isSprint
@@ -44,6 +45,7 @@ const TabContent2 = (props) => {
     const errMsg1 = '등록이 되어있지 않습니다. 다시 등록 해주시기 바랍니다.'
     const errMsg1_1 = '이메일 주소와 이름이 일치하지 않습니다.'
     const errMsg2 = '서버와 통신 중 에러가 발생하였습니다.'
+
     const showModal = () => {
         setOpen(true);
     };
@@ -151,6 +153,9 @@ const TabContent2 = (props) => {
                 <div className="msg">{msg}</div>
                 {!isError &&
                 <ul className="result">
+                    {isSprint && userData.sprint != undefined &&
+                        <Row><Col xs={sm1} sm={md1}>Sprint:</Col><Col><div>{sprintProjectDatas[userData.sprint-1].name}</div></Col></Row>
+                    }
                     <Row><Col xs={sm1} sm={md1}>이메일:</Col><Col><div>{userData.email}</div></Col></Row>
                     <Row><Col xs={sm1} sm={md1}>이름:</Col><Col><div>{userData.name}</div></Col></Row>
                     <Row><Col xs={sm1} sm={md1}>소속:</Col><Col><div>{userData.company}</div></Col></Row>
