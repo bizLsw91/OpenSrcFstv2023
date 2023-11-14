@@ -11,6 +11,7 @@ import DocPrivacy from "./pages/DocPrivacy/DocPrivacy";
 import DocRefusal from "./pages/DocRefusal/DocRefusal";
 import Login from "./pages/Login/Login";
 import NoticeDetail from "./pages/Notice/NoticeDetail/NoticeDetail";
+import SprintPreRegi from "./pages/SprintPreRegi/SprintPreRegi";
 
 const routes = [
   { path: "/", component: Home },
@@ -22,6 +23,7 @@ const routes = [
   { path: "/noticeDetail", component: NoticeDetail },
   { path: "/faq", component: Faq },
   { path: "/preRegistration", component: PreRegistration },
+  { path: "/preRegistration-sprint", component: SprintPreRegi },
   { path: "/event", component: Event },
   { path: "/docTerms", component: DocTerms },
   { path: "/docPrivacy", component: DocPrivacy },

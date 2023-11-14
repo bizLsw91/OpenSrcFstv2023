@@ -30,6 +30,14 @@ const menuItems = [
         to: '/preRegistration',
         subItems: [
             { label: '사전등록', to: '/preRegistration' },
+            { label: 'Sprint 사전신청',
+                to: '/preRegistration-sprint' ,
+                subItems:[
+                    { label: '스프린트 모집 안내', to: '/preRegistration-sprint?viewId=SprintGuide' },
+                    { label: '스프린트 프로젝트별 소개', to: '/preRegistration-sprint?viewId=SprintProjects' },
+                    { label: '스프린트 사전신청', to: '/preRegistration-sprint?viewId=SprintApply' },
+                ]
+            },
             { label: '이벤트', to: '/event' }
         ]
     },

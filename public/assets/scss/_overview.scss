@@ -30,23 +30,23 @@
             padding-right: 0px;
         }
         & section{
-            padding-bottom: 50px;
+            margin-bottom: 50px;
         }
     }
     &__textInfo{
-        & tr{
+        tr{
             height: 50px;
             margin-bottom: 5px;
             display: flex;
             justify-items: baseline;
         }
-        & .item{
+        .item{
             position: relative;
             width: 85px;
             font-family: $font-nps-bold;
             white-space: nowrap;
         }
-        & .item::after{
+        .item::after{
             content: "";
             display: inline-block;
             position: absolute;
@@ -58,16 +58,16 @@
             margin-left: 10px; /* A 요소 다음에 한 칸 띄우기 위한 여백 설정 */
             margin-right: 10px; /* A 요소 다음에 한 칸 띄우기 위한 여백 설정 */
         }
-        & .desc{
+        .desc{
             font-family: $font-lato;
             &-sub{
                 font-size: small;
             }
         }
-        & p{
+        p{
             margin-bottom: 0;
         }
-        & .directions{
+        .directions{
             width: fit-content;
             padding: 4px 7px;
             font-size: smaller;
@@ -82,17 +82,17 @@
     }
     &__schedule{
         padding-bottom: 0;
-        & .contentBox{
+        .contentBox{
             display: flex;
             flex-direction: column; /* 수직 방향으로 요소들을 배치 */
             justify-content: center; /* 수직 가운데 정렬 */
             min-height: 100px;
             min-width: 140px;
             padding: 20px 0px; /* 내용과 테두리 사이 여백 설정 */
-            & .item{
+            .item{
                 margin-bottom: 13px;
 
-                & .title{
+                .title{
                     width: fit-content;
                     padding: 4px 7px;
                     font-size: smaller;
@@ -103,51 +103,51 @@
                     border-width: 2px;
                     border-style: solid;
                 }
-                & .ho{
+                .ho{
                     width: fit-content;
                     padding: 1px 2px;
                     color: white;
                     line-height: 1.2;
                 }
-                & .ho-color1{
+                .ho-color1{
                     background-color: $color-401-ho;
                 }
-                & .ho-color2{
+                .ho-color2{
                     background-color: $color-402-ho;
                 }
-                & .ho-color3{
+                .ho-color3{
                     background-color: $color-403-ho;
                 }
 
             }
         }
-        & li{
+        li{
             /* TimelineOppositeContent */
-            & >div:nth-child(1){
+            >div:nth-child(1){
                 font-family: $font-nps-bold;
                 font-size: 0.9rem;
             }
             /* TimelineSeparator */
-            & >div:nth-child(2) span{
+            >div:nth-child(2) span{
                 background-color: #3b8bdb;
                 border-color: #7adb4d;
             }
             /* TimelineContent */
-            & >div:nth-child(3){
+            >div:nth-child(3){
                 padding-top :2rem;
             }
         }
-        & .ops{
+        .ops{
             opacity: 0;
         }
-        & .last{
+        .last{
             min-height:0px;
             padding: 10px 0 0 0;
         }
     }
     &__poster{
         width: 100%;
-        & .poster{
+        .poster{
             width: 100%;
             object-fit: cover;
         }

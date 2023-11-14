@@ -2,8 +2,8 @@
 import {
     FormHelperText,
     InputLabel,
-    OutlinedInput,
-    Stack
+    OutlinedInput, RadioGroup, Radio,
+    Stack, FormControlLabel, createTheme, ThemeProvider
 } from '@mui/material';
 
 // third party
@@ -15,11 +15,13 @@ import {Button, Checkbox, Modal} from "antd";
 import {useState} from "react";
 import Terms1 from "./Terms1";
 import Terms2 from "./Terms2";
+import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
 
-const submitData = async (values) => {
+const submitData = async (isSprint, values) => {
+    values.isSprint = isSprint
     try {
         // Axios를 사용하여 POST 요청을 보냄
-        const response = await axios.post(appConfig.apiPreUrl+'/User/', values);
+        const response = await axios.post(appConfig.apiPreUrl + '/User/' , values);
         // 응답이 성공적으로 돌아오면, 결과를 처리
         console.log(response);
         return response; // 성공 상태와 데이터 반환
@@ -30,9 +32,12 @@ const submitData = async (values) => {
     }
 }
 const api_addErrLog = async (req) => {
-    return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog',req)
+    return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog', req)
 };
-const TabContent1 = ({nextTab2}) => {
+
+
+const TabContent1 = (props) => {
+    const {isSprint, nextTab2} = props
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
@@ -45,6 +50,7 @@ const TabContent1 = ({nextTab2}) => {
     const msg1 = '서버와 통신 중 에러가 발생하였습니다. 다시 등록해주시기 바랍니다.'
     const msg2 = '이미 같은 이메일 주소가 등록되어 있습니다. 다른 이메일로 등록해주시기 바랍니다.'
 
+
     const showModal = () => {
         setOpen(true);
     };
@@ -56,7 +62,7 @@ const TabContent1 = ({nextTab2}) => {
     };
     const handleCancel = () => {
         setOpen(false);
-        if(!isError) nextTab2(email)
+        if (!isError) nextTab2(email)
     };
     const handleCancel1 = () => {
         setOpen1(false);
@@ -71,10 +77,10 @@ const TabContent1 = ({nextTab2}) => {
         setAgree2(e.target.checked)
     };
 
-    const agree1Chk = (e)=>{
+    const agree1Chk = (e) => {
         setAgree1(e.target.checked)
     }
-    const agree2Chk = (e)=>{
+    const agree2Chk = (e) => {
         setAgree2(e.target.checked)
     }
 
@@ -86,25 +92,27 @@ const TabContent1 = ({nextTab2}) => {
                     name: '',
                     company: '',
                     call: '',
+                    sprint: isSprint?0:99,
                     submit: null
                 }}
                 validationSchema={Yup.object().shape({
-                    email: Yup.string().email('유효한 이메일 형식이 아닙니다.').max(100,'100자를 넘을 수 없습니다.').min(5, '최소 6문자 이상 입력하세요.').required('이메일은 필수 입력사항입니다.'),
-                    name: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('이름은 필수 입력사항입니다.'),
-                    company: Yup.string().max(100,'100자를 넘을 수 없습니다.').required('소속은 필수 입력사항입니다.'),
+                    email: Yup.string().email('유효한 이메일 형식이 아닙니다.').max(100, '100자를 넘을 수 없습니다.').min(5, '최소 6문자 이상 입력하세요.').required('이메일은 필수 입력사항입니다.'),
+                    name: Yup.string().max(100, '100자를 넘을 수 없습니다.').required('이름은 필수 입력사항입니다.'),
+                    company: Yup.string().max(100, '100자를 넘을 수 없습니다.').required('소속은 필수 입력사항입니다.'),
                     call: Yup.string().matches(/^\d{8,11}$/, '유효한 전화번호를 입력하세요. - 없이 입력하세요').required('연락처는 필수 입력사항입니다.'),
+                    sprint: Yup.number().min(1, 'Sprint Project 선택은 필수입니다.'),
                 })}
                 onSubmit={async (values, {setErrors, setStatus, setSubmitting}) => {
                     setEmail(values.email)
                     try {
-                        const res = await submitData(values); // 비동기 함수 호출
+                        const res = await submitData(isSprint, values); // 비동기 함수 호출
                         setSubmitting(false);
-                        if(res.status === 200) {
-                            if(res.data.isError && res.data.errCode === -1) {
+                        if (res.status === 200) {
+                            if (res.data.isError && res.data.errCode === -1) {
                                 setMsg(msg2)
                                 setIsError(true)
                                 setStatus({success: false});
-                            }else {
+                            } else {
                                 setMsg(msg0)
                                 setIsError(false)
                                 setStatus({success: true});
@@ -116,110 +124,138 @@ const TabContent1 = ({nextTab2}) => {
                         setIsError(true)
                         setStatus({success: false});
                         setErrors({submit: err.message});
-                        await api_addErrLog({collectionPath: 'User', error:{stack:err.stack}, payload:values})
+                        await api_addErrLog({collectionPath: isSprint?'UserSpr':'User', error: {stack: err.stack}, payload: values})
                     }
                     showModal()
                 }}
             >
                 {({errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values}) => (
-                    <form noValidate onSubmit={handleSubmit}>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="email-signup">Email 주소*</InputLabel>
-                            <OutlinedInput
-                                fullWidth
-                                error={Boolean(touched.email && errors.email)}
-                                id="email-login"
-                                type="email"
-                                value={values.email}
-                                name="email"
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                placeholder="demo@company.com"
-                                inputProps={{}}
-                            />
-                            {touched.email && errors.email && (
-                                <FormHelperText error id="helper-text-email-signup">
-                                    {errors.email}
-                                </FormHelperText>
-                            )}
-                        </Stack>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="name-signup">이름*</InputLabel>
-                            <OutlinedInput
-                                id="name-login"
-                                type="name"
-                                value={values.name}
-                                name="name"
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                placeholder="홍길동"
-                                fullWidth
-                                error={Boolean(touched.name && errors.name)}
-                            />
-                            {touched.name && errors.name && (
-                                <FormHelperText error id="helper-text-name-signup">
-                                    {errors.name}
-                                </FormHelperText>
-                            )}
-                        </Stack>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="company-signup">소속*</InputLabel>
-                            <OutlinedInput
-                                fullWidth
-                                error={Boolean(touched.company && errors.company)}
-                                id="company-signup"
-                                value={values.company}
-                                name="company"
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                placeholder="Demo Inc."
-                                inputProps={{}}
-                            />
-                            {touched.company && errors.company && (
-                                <FormHelperText error id="helper-text-company-signup">
-                                    {errors.company}
-                                </FormHelperText>
-                            )}
-                        </Stack>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="call-signup">연락처*</InputLabel>
-                            <OutlinedInput
-                                fullWidth
-                                error={Boolean(touched.call && errors.call)}
-                                id="call-signup"
-                                value={values.call}
-                                name="call"
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                placeholder="- 없이 입력하세요"
-                                inputProps={{}}
-                            />
-                            {touched.call && errors.call && (
-                                <FormHelperText error id="helper-text-call-signup">
-                                    {errors.call}
-                                </FormHelperText>
-                            )}
-                        </Stack>
 
-                        <div className="agreeBox">
-                            <div className="agreeDiv allAgreeDiv">
-                                <Checkbox className="allAgreeChk" onChange={allAgreeChk}>모두 동의합니다.</Checkbox>
-                            </div>
-                            <div className="agreeDiv agree1Div">
-                                <Checkbox className="agree1Chk" onChange={agree1Chk} checked={agree1}>이용약관 동의(필수)</Checkbox>
-                                <a onClick={showModal1} className="underline__blue">보기</a>
-                            </div>
-                            <div className="agreeDiv agree2Div">
-                                <Checkbox className="agree2Chk" onChange={agree2Chk} checked={agree2}>개인정보 수집 및 이용 동의(필수)</Checkbox>
-                                <a onClick={showModal2} className="underline__blue">보기</a>
-                            </div>
-                        </div>
+                        <form noValidate onSubmit={handleSubmit}>
+                            {isSprint &&
+                                <Stack spacing={1}>
+                                    <InputLabel htmlFor="sprint-signup">Sprint Project 선택*</InputLabel>
+                                    <RadioGroup
+                                        col
+                                        id="sprint-signup"
+                                        name="sprint"
+                                        value={values.sprint}
+                                        onChange={handleChange}
+                                    >
+                                        {
+                                            sprintProjectDatas.map((data) =>
+                                                (<FormControlLabel value={data.value} control={<Radio/>}
+                                                                   label={<div className={'bold_m colorSprint'+data.value}>{data.name}</div>}/>)
+                                            )
+                                        }
+                                    </RadioGroup>
 
-                        <Button className="preRegiBtn" key="submit" htmlType="submit" type="primary" loading={isSubmitting} disabled={!agree1 || !agree2 || Object.keys(errors).length > 0}>
-                            사전 등록하기
-                        </Button>
+                                    {errors.sprint && (
+                                        <FormHelperText error id="helper-text-sprint-signup">
+                                            {errors.sprint}
+                                        </FormHelperText>
+                                    )}
+                                </Stack>
+                            }
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="email-signup">Email 주소*</InputLabel>
+                                <OutlinedInput
+                                    fullWidth
+                                    error={Boolean(touched.email && errors.email)}
+                                    id="email-login"
+                                    type="email"
+                                    value={values.email}
+                                    name="email"
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                    placeholder="demo@company.com"
+                                    inputProps={{}}
+                                />
+                                {touched.email && errors.email && (
+                                    <FormHelperText error id="helper-text-email-signup">
+                                        {errors.email}
+                                    </FormHelperText>
+                                )}
+                            </Stack>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="name-signup">이름*</InputLabel>
+                                <OutlinedInput
+                                    id="name-login"
+                                    type="name"
+                                    value={values.name}
+                                    name="name"
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                    placeholder="홍길동"
+                                    fullWidth
+                                    error={Boolean(touched.name && errors.name)}
+                                />
+                                {touched.name && errors.name && (
+                                    <FormHelperText error id="helper-text-name-signup">
+                                        {errors.name}
+                                    </FormHelperText>
+                                )}
+                            </Stack>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="company-signup">소속*</InputLabel>
+                                <OutlinedInput
+                                    fullWidth
+                                    error={Boolean(touched.company && errors.company)}
+                                    id="company-signup"
+                                    value={values.company}
+                                    name="company"
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                    placeholder="Demo Inc."
+                                    inputProps={{}}
+                                />
+                                {touched.company && errors.company && (
+                                    <FormHelperText error id="helper-text-company-signup">
+                                        {errors.company}
+                                    </FormHelperText>
+                                )}
+                            </Stack>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="call-signup">연락처*</InputLabel>
+                                <OutlinedInput
+                                    fullWidth
+                                    error={Boolean(touched.call && errors.call)}
+                                    id="call-signup"
+                                    value={values.call}
+                                    name="call"
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                    placeholder="- 없이 입력하세요"
+                                    inputProps={{}}
+                                />
+                                {touched.call && errors.call && (
+                                    <FormHelperText error id="helper-text-call-signup">
+                                        {errors.call}
+                                    </FormHelperText>
+                                )}
+                            </Stack>
+                            <div className="agreeBox">
+                                <div className="agreeDiv allAgreeDiv">
+                                    <Checkbox className="allAgreeChk" onChange={allAgreeChk}>모두 동의합니다.</Checkbox>
+                                </div>
+                                <div className="agreeDiv agree1Div">
+                                    <Checkbox className="agree1Chk" onChange={agree1Chk} checked={agree1}>이용약관
+                                        동의(필수)</Checkbox>
+                                    <a onClick={showModal1} className="underline__blue">보기</a>
+                                </div>
+                                <div className="agreeDiv agree2Div">
+                                    <Checkbox className="agree2Chk" onChange={agree2Chk} checked={agree2}>개인정보 수집 및 이용
+                                        동의(필수)</Checkbox>
+                                    <a onClick={showModal2} className="underline__blue">보기</a>
+                                </div>
+                            </div>
 
-                    </form>
+                            <Button className="preRegiBtn" key="submit" htmlType="submit" type="primary"
+                                    loading={isSubmitting}
+                                    disabled={!agree1 || !agree2 || Object.keys(errors).length > 0}>
+                                사전 등록하기
+                            </Button>
+                        </form>
                 )}
             </Formik>
 

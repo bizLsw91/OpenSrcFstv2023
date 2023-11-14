@@ -15,7 +15,8 @@ import {useState} from "react";
 import {Modal, Button} from "antd";
 import {Col, Row} from "react-bootstrap";
 
-const userCheckApi = async(values) => {
+const userCheckApi = async(isSprint, values) => {
+    values.isSprint = isSprint
     try {
         const response = await axios.post(appConfig.apiPreUrl+'/User/check', values);
         // 응답이 성공적으로 돌아오면, 결과를 처리
@@ -31,7 +32,8 @@ const api_addErrLog = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog',req)
 };
 
-const TabContent2 = ({email0}) => {
+const TabContent2 = (props) => {
+    const {isSprint, email0} = props
     const [email] = useState(email0);
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
@@ -66,7 +68,7 @@ const TabContent2 = ({email0}) => {
                 onSubmit={async (values) => {
                     setLoading(true)
                     try {
-                        const res = await userCheckApi(values);
+                        const res = await userCheckApi(isSprint, values);
                         setLoading(false);
                         if(res.status === 200) {
                             if (res.data.errCode) {
@@ -82,7 +84,7 @@ const TabContent2 = ({email0}) => {
                     } catch (err) {
                         setIsError(true)
                         setMsg(errMsg2)
-                        await api_addErrLog({collectionPath: 'User', error:{stack:err.stack}, payload:values})
+                        await api_addErrLog({collectionPath: isSprint?'UserSpr':'User', error:{stack:err.stack}, payload:values})
                     }
                     showModal()
                 }}
