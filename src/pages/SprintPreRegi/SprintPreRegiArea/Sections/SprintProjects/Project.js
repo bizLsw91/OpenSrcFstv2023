@@ -29,6 +29,18 @@ const Project = ({projId, data}) => {
                     </div>
                 </Col>
             </Row>
+            {data.recruitType &&
+                <Row className="flex-column">
+                    <Col className="mb-20">
+                        <div className="item">
+                            <div className="text">모집 유형</div>
+                        </div>
+                        <div className="desc">
+                            <div className="text">{data.recruitType}</div>
+                        </div>
+                    </Col>
+                </Row>
+            }
             <Row className="flex-column">
                 <Col className="mb-20">
                     <div className="item">

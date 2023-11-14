@@ -7,7 +7,7 @@ import SprintPreRegiArea from "./SprintPreRegiArea/SprintPreRegiArea";
 
 const SprintPreRegi = () => {
     return (
-        <div cl="SprintPreRegi">
+        <div id="SprintPreRegi">
             <PageHelmet pageTitle="Sprint사전신청" />
             <HomeOneHeader/>
             <CommonPageHeader title="Sprint Pre-Registration" subtitle="Sprint 사전신청" />

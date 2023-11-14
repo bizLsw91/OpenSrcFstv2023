@@ -3,7 +3,7 @@ import Project from "./Project";
 //스프린트 프로젝트명은 여기서만 관리
 export const sprintProjectDatas = [
     {name:'모던 자바스크립트 튜토리얼', value:1},
-    // {name:'모던 자바스크립트 튜토리얼2', value:2},
+    {name:'OpenStack', value:2},
     // {name:'모던 자바스크립트 튜토리얼3', value:3},
 ]
 const project_1 = {
@@ -15,12 +15,26 @@ const project_1 = {
     recruitType:'',
     recruitNum:'10명 내외'
 }
+const project_2 = {
+    name: sprintProjectDatas[1].name,
+    introDiv:
+        <div>
+            <p>OpenStack은 가상머신, 베어메탈 그리고 컨테이너를 위한 클라우드 인프라를 구축하는 오프소스 클라우드 소프트웨어입니다.
+            6개의 핵심 컴포넌트와 약 20여개의 보조 컴포넌트를 유기적으로 연동하여 클라우드 인프라를 구축합니다.</p>
+            <p>NHN, 카카오, 블리자드, 레드헷 등 다양한 기업에서 프라이빗 / 퍼블릭 클라우드를 구축하기 위해 오픈스택을 적극적으로 사용하고 있습니다.</p>
+            <p>OpenStack은 Python으로 개발되어있으며, Python 개발이 가능하다면 누구나 참여할 수 있습니다. </p>
+        </div>,
+    mentorDiv:<div>백승주 , 신시온, 김우석, 배석주</div>,
+    recruitType:'클라우드 인프라 서비스에 관심있는 누구나',
+    recruitNum:'15명'
+}
 
 const SprintProjects = () => {
     return (
         <section id="SprintProjects">
             <h2 className="title">스프린트 프로젝트별 소개</h2>
             <Project projId="1" data={project_1}/>
+            <Project projId="2" data={project_2}/>
 
 
         </section>
