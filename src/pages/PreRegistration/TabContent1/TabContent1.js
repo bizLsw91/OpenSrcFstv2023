@@ -12,7 +12,7 @@ import {Formik} from 'formik';
 import appConfig from "../../../config/app.config";
 import axios from "axios";
 import {Button, Checkbox, Modal} from "antd";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Terms1 from "./Terms1";
 import Terms2 from "./Terms2";
 import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
@@ -31,6 +31,9 @@ const submitData = async (isSprint, values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
+const api_checkClose = async (req) => {
+    return await axios.post(appConfig.apiPreUrl + '/User/checkClose')
+};
 const api_addErrLog = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog', req)
 };
@@ -49,7 +52,25 @@ const TabContent1 = (props) => {
     const msg0 = '사전 등록 되었습니다.'
     const msg1 = '서버와 통신 중 에러가 발생하였습니다. 다시 등록해주시기 바랍니다.'
     const msg2 = '이미 같은 이메일 주소가 등록되어 있습니다. 다른 이메일로 등록해주시기 바랍니다.'
+    let msg3 = ''
 
+    useEffect(()=>{
+        if(isSprint){
+
+        }
+    },[])
+
+    // const checkClose = async ()=>{
+    //     try {
+    //         const res = await api_checkClose(req)
+    //         if (res.status === 200) {
+    //
+    //         }
+    //     } catch (err) {
+    //         alert()
+    //
+    //     }
+    // }
 
     const showModal = () => {
         setOpen(true);
@@ -72,7 +93,6 @@ const TabContent1 = (props) => {
     };
 
     const allAgreeChk = (e) => {
-        console.log("e.target.checked = ", e.target.checked);
         setAgree1(e.target.checked)
         setAgree2(e.target.checked)
     };
@@ -103,13 +123,20 @@ const TabContent1 = (props) => {
                     sprint: Yup.number().min(1, 'Sprint Project 선택은 필수입니다.'),
                 })}
                 onSubmit={async (values, {setErrors, setStatus, setSubmitting}) => {
+                    values.sprint = Number(values.sprint)
                     setEmail(values.email)
+                    if(values.sprint != 99)
+                        msg3 = 'Sprint Project: <'+sprintProjectDatas[values.sprint-1].name+'> 가 마감되었습니다.'
                     try {
                         const res = await submitData(isSprint, values); // 비동기 함수 호출
                         setSubmitting(false);
                         if (res.status === 200) {
-                            if (res.data.isError && res.data.errCode === -1) {
+                            if (res.data?.isError && res.data?.errCode === -1) { //중복 이메일 존재
                                 setMsg(msg2)
+                                setIsError(true)
+                                setStatus({success: false});
+                            }else if (res.data?.isError && res.data?.errCode === -2) { //스프린트 정원2배수 마감
+                                setMsg(msg3)
                                 setIsError(true)
                                 setStatus({success: false});
                             } else {

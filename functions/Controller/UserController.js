@@ -1,6 +1,6 @@
 const moment = require("moment");
 const {addErrLog} = require("../Service/CommonService");
-const {getUserCnt} = require("../Service/UserService");
+const {getUserCnt, checkClose, sprintCloseChk, addUserSpr} = require("../Service/UserService");
 
 function UserController(router, firestore) {
     const collectionPath = 'User'
@@ -14,10 +14,18 @@ function UserController(router, firestore) {
 
     router.post("/", async (req, res) => {
         const currentDateTime = moment().format('YYYYMMDDHHmmss');
-        const email = req.body.email; // 이메일 값을 변수로 추출
-        const isSprint = req.body.isSprint
+        const {email, isSprint, sprint} = req.body
         const collPath = !isSprint ? collectionPath : collectionPath2
         try {
+            //스프린트 사전신청 정원 체크, 2배수 선착순
+            if(isSprint){
+                const isClosed = await sprintCloseChk(firestore, sprint)
+                if(isClosed){
+                    res.status(200).json({isError:true, errMsg:'sprint '+sprint+' closed', errCode:-2}).end()
+                    return
+                }
+            }
+
             // doc() 메서드를 사용하여 문서 ID를 email로 설정
             const userRef = firestore.collection(collPath).doc(email);
 
@@ -33,10 +41,14 @@ function UserController(router, firestore) {
                 call: req.body.call,
                 timestamp: currentDateTime
             };
-            if(isSprint) userData.sprint = req.body.sprint
-
-            // set() 메서드를 사용하여 문서에 userData를 설정
-            await userRef.set(userData);
+            if(isSprint) {
+                //스프린트 사전신청 - 트랜잭션
+                userData.sprint = req.body.sprint
+                await addUserSpr(firestore, userData, email)
+            }else{
+                //일반 사전등록
+                await userRef.set(userData);
+            }
             res.status(200).send(`새로운 User 추가 ID: ${email}`);
         } catch (error) {
             await addErrLog(0, firestore, req, error, collPath)
@@ -83,6 +95,27 @@ function UserController(router, firestore) {
         }catch (error){
             await addErrLog(0, firestore, req, error, collectionPath)
             res.status(500).send('error while getUserCnt')
+        }
+    })
+
+    router.post("/checkClose", async (req, res) => {
+        try {
+            const isClosed = await checkClose(firestore, req)
+            res.status(200).json({isClosed:isClosed})
+        }catch (error){
+            await addErrLog(0, firestore, req, error, collectionPath2)
+            res.status(500).send('error while checkClose')
+        }
+    })
+
+    router.get("/sprintCloseChk/:sprintId", async (req, res) => {
+        const sprintId = req.params.sprintId
+        try {
+            const isClosed = await sprintCloseChk(firestore, sprintId)
+            res.status(200).json({isClosed:isClosed})
+        }catch (error){
+            await addErrLog(0, firestore, req, error, 'Sprint')
+            res.status(500).send('error while sprintCloseChk')
         }
     })
 }
