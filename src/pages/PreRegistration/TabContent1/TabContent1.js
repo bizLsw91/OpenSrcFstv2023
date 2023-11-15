@@ -31,8 +31,8 @@ const submitData = async (isSprint, values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
-const api_checkClose = async (req) => {
-    return await axios.post(appConfig.apiPreUrl + '/User/checkClose')
+const api_sprintCloseChks = async () => {
+    return await axios.get(appConfig.apiPreUrl + '/User/sprintCloseChks')
 };
 const api_addErrLog = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog', req)
@@ -41,6 +41,7 @@ const api_addErrLog = async (req) => {
 
 const TabContent1 = (props) => {
     const {isSprint, nextTab2} = props
+    const [isClosedArr, setIsClosedArr] = useState([false,false,false]);
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
@@ -53,24 +54,28 @@ const TabContent1 = (props) => {
     const msg1 = '서버와 통신 중 에러가 발생하였습니다. 다시 등록해주시기 바랍니다.'
     const msg2 = '이미 같은 이메일 주소가 등록되어 있습니다. 다른 이메일로 등록해주시기 바랍니다.'
     let msg3 = ''
+    const msg4 = '스프린트 신청 마감정보를 불러오는데 실패했습니다.'
 
     useEffect(()=>{
         if(isSprint){
-
+            sprintCloseChks()
         }
     },[])
 
-    // const checkClose = async ()=>{
-    //     try {
-    //         const res = await api_checkClose(req)
-    //         if (res.status === 200) {
-    //
-    //         }
-    //     } catch (err) {
-    //         alert()
-    //
-    //     }
-    // }
+    const sprintCloseChks = async ()=>{
+        try {
+            const res = await api_sprintCloseChks()
+            if (res.status === 200) {
+                setIsError(false)
+                setIsClosedArr(res.data.isClosedArr)
+            }
+        } catch (err) {
+            console.log("sprintCloseChks err.stack = ", err.stack);
+            setIsError(true)
+            setMsg(msg4)
+            showModal()
+        }
+    }
 
     const showModal = () => {
         setOpen(true);
@@ -170,13 +175,12 @@ const TabContent1 = (props) => {
                                         onChange={handleChange}
                                     >
                                         {
-                                            sprintProjectDatas.map((data) =>
-                                                (<FormControlLabel value={data.value} control={<Radio/>}
-                                                                   label={<div className={'bold_m colorSprint'+data.value}>{data.name}</div>}/>)
+                                            sprintProjectDatas.map((data,index) =>
+                                                (<FormControlLabel value={data.value} control={<Radio disabled={isClosedArr[index]}/>}
+                                                                   label={<div className={'bold_m colorSprint'+data.value}>{data.name+(isClosedArr[index]?' (마감)':'')}</div>}/>)
                                             )
                                         }
                                     </RadioGroup>
-
                                     {errors.sprint && (
                                         <FormHelperText error id="helper-text-sprint-signup">
                                             {errors.sprint}

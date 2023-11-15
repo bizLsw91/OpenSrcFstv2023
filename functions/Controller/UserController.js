@@ -1,6 +1,6 @@
 const moment = require("moment");
 const {addErrLog} = require("../Service/CommonService");
-const {getUserCnt, checkClose, sprintCloseChk, addUserSpr} = require("../Service/UserService");
+const {getUserCnt, checkClose, sprintCloseChk, addUserSpr, sprintCloseChks} = require("../Service/UserService");
 
 function UserController(router, firestore) {
     const collectionPath = 'User'
@@ -116,6 +116,15 @@ function UserController(router, firestore) {
         }catch (error){
             await addErrLog(0, firestore, req, error, 'Sprint')
             res.status(500).send('error while sprintCloseChk')
+        }
+    })
+    router.get("/sprintCloseChks", async (req, res) => {
+        try {
+            const isClosedArr = await sprintCloseChks(firestore)
+            res.status(200).json({isClosedArr:isClosedArr})
+        }catch (error){
+            await addErrLog(0, firestore, req, error, 'Sprint')
+            res.status(500).send('error while sprintCloseChks')
         }
     })
 }

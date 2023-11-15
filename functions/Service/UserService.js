@@ -12,6 +12,14 @@ async function sprintCloseChk(db, sprintId) {
     const doc = docSnapshot.data()
     return doc.isClosed
 }
+async function sprintCloseChks(db) {
+    const collSnapshot = await db.collection('Sprint').get()
+    let isClosedArr = []
+    collSnapshot.forEach((doc)=>{
+        isClosedArr.push(doc.data().isClosed)
+    })
+    return isClosedArr
+}
 
 async function addUserSpr(db, userData, email) {
     const userSprCollRef = db.collection(collectionPath2);
@@ -40,5 +48,6 @@ async function addUserSpr(db, userData, email) {
 module.exports = {
     getUserCnt,
     addUserSpr,
-    sprintCloseChk
+    sprintCloseChk,
+    sprintCloseChks
 }
