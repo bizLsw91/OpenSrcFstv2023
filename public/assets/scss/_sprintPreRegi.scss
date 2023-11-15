@@ -176,9 +176,14 @@ $sprintApplyColor: #bf55af;
             }
             .profileDesc{
                 margin-bottom: 15px;
-                p{
-                    font-size: 16px;
-                    color: #6b6b78;
+            }
+            p{
+                font-size: 16px;
+                color: #6b6b78;
+                margin-bottom: 4px;
+                @media #{$xs} {
+                    font-size: 13px;
+                    margin-bottom: 2px;
                 }
             }
             .bottom{
