@@ -126,6 +126,7 @@ $pfc-h-simple:399px;
                         align-items: center;
                         .underline__blue{
                             font-weight: 600;
+                            font-size: 14px;
                         }
                     }
                     .prfName{
@@ -142,6 +143,7 @@ $pfc-h-simple:399px;
                         border-radius: 3px;
                         padding: 3px 5px;
                         color: white;
+                        font-size: 14px;
                         &-c1{background-color: $sp-badge-color1;}
                         &-c2{background-color: $sp-badge-color2;}
                         &-c3{background-color: $sp-badge-color3;}

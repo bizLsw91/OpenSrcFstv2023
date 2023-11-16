@@ -36,7 +36,7 @@ export const speakersData = {
     //기조강연
     startLect: {
         1: {
-            badge: '기조강연-1',
+            badge: '기조강연1',
             name: '이희승',
             company: 'LINE Plus',
             position: '개발자',
@@ -47,7 +47,7 @@ export const speakersData = {
             lectSummary: '세상 사람들 다 있는 고양이, 나만 없다구요? 지금 그게 문제가 아닙니다! 고양이보다 훨씬 사랑스러운 나만의 오픈소스 프로젝트가 없는데… 본 발표에서 오픈소스가 어째서 고양이보다 사랑스러운지, 어떻게 하면 나만의 오픈소스를 쑥쑥 키울 수 있는지 알아보세요. 오셔서 저희 귀여운 오픈소스 사진 보시며 힐링도 하고 영감도 얻어가세요. '
         },
         2: {
-            badge: '기조강연-2',
+            badge: '기조강연2',
             name: '엄위상',
             company: 'LG전자 SW센터',
             position: '상무',
