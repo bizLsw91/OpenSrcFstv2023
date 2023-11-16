@@ -88,9 +88,18 @@ function UserController(router, firestore) {
     })
 
 
-    router.get("/count", async (req, res) => {
+    router.get("/count/conf", async (req, res) => {
         try {
-            const cnt = await getUserCnt(firestore, req)
+            const cnt = await getUserCnt(firestore, false)
+            res.status(200).json({count:cnt})
+        }catch (error){
+            await addErrLog(0, firestore, req, error, collectionPath)
+            res.status(500).send('error while getUserCnt')
+        }
+    })
+    router.get("/count/spr", async (req, res) => {
+        try {
+            const cnt = await getUserCnt(firestore, true)
             res.status(200).json({count:cnt})
         }catch (error){
             await addErrLog(0, firestore, req, error, collectionPath)

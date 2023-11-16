@@ -1,0 +1,265 @@
+$sp-badge-color1: #0dcaf0;
+$sp-badge-color2: #2f77ff;
+$sp-badge-color3: #c4aa21;
+$sp-badge-color4: #c47b21;
+.speakers {
+    &__area {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+
+        @media #{$xl_gt}{ //1200 이상
+            width: 90vw;
+        }
+        @media #{$lg} {
+            padding: 0 30px;
+        }
+        @media #{$lg_st} {
+            padding: 0;
+        }
+    }
+
+    &__content {
+        max-width: 1800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 50px;
+
+        .title {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        section{
+            margin-bottom: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .subTitle{
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &-1 h3{background-color: $sp-badge-color1}
+                &-2 h3{background-color: $sp-badge-color2}
+                &-3 h3{background-color: $sp-badge-color3}
+                &-4 h3{background-color: $sp-badge-color4}
+                h3{
+                    width: fit-content;
+                    padding: 5px 8px;
+                    border-radius: 7px;
+                    color: white;
+                }
+            }
+        }
+
+        .profiles{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+
+
+    }
+
+}
+
+$pfC-bR:20px;
+$pfc-w:500px;
+$pfc-h:400px;
+$pfc-h-xs:870px;
+
+$pfc-w-simple:240px;
+$pfc-h-simple:399px;
+.ProfileCard{
+    padding: 0 20px;
+    margin-bottom: 50px;
+    @media #{$xs} {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    .simple{
+        width: $pfc-w-simple !important;
+        height: $pfc-h-simple !important;
+    }
+    .ProfileWrapper{
+        position: relative;
+        width: $pfc-w;
+        height: $pfc-h;
+        @media #{$xs} {
+            width: $pfc-w-simple;
+            height: $pfc-h-xs;
+        }
+        .front{
+            display: flex;
+            padding: 20px;
+            @media #{$xs} {
+                display: flex;
+                flex-direction: column;
+            }
+            .left{
+                $mb: 5px;
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                height: 360px;
+                border-radius: $pfC-bR;
+                .left-top-1{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    word-break: keep-all;
+                    margin-bottom: $mb;
+                    .nameAndDetail{
+                        display: flex;
+                        align-items: center;
+                        .underline__blue{
+                            font-weight: 600;
+                        }
+                    }
+                    .prfName{
+                        color: white;
+                        background-color: #244bb3;
+                        border-radius: 3px;
+                        padding: 3px 5px;
+                        margin-right: 5px;
+                        @media #{$xs} {
+                            font-size: 15px;
+                        }
+                    }
+                    .prfBadge{
+                        border-radius: 3px;
+                        padding: 3px 5px;
+                        color: white;
+                        &-c1{background-color: $sp-badge-color1;}
+                        &-c2{background-color: $sp-badge-color2;}
+                        &-c3{background-color: $sp-badge-color3;}
+                        &-c4{background-color: $sp-badge-color4;}
+                    }
+
+                }
+                .left-top-2{
+                    .belong{
+                        .prfCompany{
+                            margin-bottom: $mb;
+                            font-weight: 600;
+                        }
+                        .prfPosition{
+                            margin-bottom: $mb;
+                            height: 24px;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .left-photo{
+                    $ratio: 20/27;
+                    width: 200px;
+                    height: auto;
+                    img{
+                        border-radius: 20px;
+                        height: 100%;
+                    }
+                }
+            }
+            .right{
+                width: 240px;
+                margin-left: 20px;
+                @media #{$xs} {
+                    margin-left: 0;
+                    margin-top: 20px;
+                    width: 200px;
+                }
+                .right-title{
+                    height: 93px;
+                    overflow-wrap: anywhere;
+                    display: flex;
+                    img{
+                        width: 20px;
+                        height: 15px;
+                    }
+                    .ddaom-1{
+                        margin-right: 3px;
+                    }
+
+                    h4{
+                        display: flex;
+                    }
+                }
+                .right-desc{
+
+                }
+            }
+        }
+        .back{
+            color:white;
+            .up{
+                visibility: hidden;
+                opacity: 0;
+                &-visible{
+                    transition: 0.8s ease-out;
+                    visibility: visible;
+                    opacity: 1;
+                    padding: 20px 20px 20px 40px;
+                    li{
+                        list-style: square;
+                    }
+                }
+            }
+            .down{
+                visibility: hidden;
+                opacity: 0;
+                &-visible{
+                    transition: 0.8s ease-out;
+                    visibility: visible;
+                    opacity: 1;
+                    padding: 20px;
+                }
+            }
+        }
+        .pfCard{
+            &-Container{
+                border-radius: $pfC-bR;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .toggleBox{
+            height: 0;
+            transition: height 0.5s ease-in-out;
+        }
+        .toggleBox.visible{
+            height: 100%;
+            opacity: 0.95;
+        }
+        .gradient1{
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #dfe8f5 100%);
+        }
+        .gradient2{
+            background-image: linear-gradient(135deg, #9db4d4 0%, #7b94ba 100%);
+        }
+        .z2{
+            z-index: 2;
+        }
+    }
+}
+
+//추가 커스텀
+.speakers__content> section:nth-of-type(3) .profiles>.ProfileCard:nth-child(5) .prfPosition{
+    font-size: 11px !important;
+}
+.speakers__content> section:nth-of-type(4) .profiles>.ProfileCard:nth-child(2) .up-visible{
+    font-size: 14px !important;
+}

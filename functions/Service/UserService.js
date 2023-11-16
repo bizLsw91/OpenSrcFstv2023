@@ -1,7 +1,6 @@
 const collectionPath = 'User'
 const collectionPath2 = 'UserSpr'
-async function getUserCnt(db, req) {
-    const {isSprint} = req.body;
+async function getUserCnt(db, isSprint) {
     const collPath = !isSprint ? collectionPath : collectionPath2
     const snapshot = await db.collection(collPath).get()
     const docs = snapshot.docs

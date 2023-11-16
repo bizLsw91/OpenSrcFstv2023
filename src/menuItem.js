@@ -13,7 +13,7 @@ const menuItems = [
         to: '/program',
         subItems: [
             { label: '프로그램', to: '/program' },
-            // { label: '발표자', to: '/team' }
+            { label: '연사 소개', to: '/speakers' }
         ]
     },
     {
