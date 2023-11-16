@@ -119,7 +119,7 @@ export const speakersData = {
             company: '아크회계법인',
             position: 'CTO',
             imgUrl: 'assets/img/speakers/김동우.jpg',
-            profileList: ['전) QueryPie(CHEQUER): Vice President, Developer Relations &amp; Head of Engineering', '전) KOSSLAB: Open Source Frontier', '현) 자바스크립트 개발자 포럼: 운영, React Korea:', '운영'],
+            profileList: ['전) QueryPie(CHEQUER): Vice President, Developer Relations &amp; Head of Engineering', '전) KOSSLAB: Open Source Frontier', '현) 자바스크립트 개발자 포럼: 운영, React Korea: 운영'],
             profileDesc: '',
             lectTitle: 'Architect를 활용한 고성능 서버리스웹서비스 만들기',
             lectSummary: '서비리스 컴퓨팅은 수 많은 장점을 가지고 있지만 섣불리 시작하기에 기술적 허들이\n' +
