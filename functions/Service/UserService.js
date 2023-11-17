@@ -43,10 +43,20 @@ async function addUserSpr(db, userData, email) {
     });
 }
 
+async function getAllDocumentIds(db, collectionPath) {
+    try {
+        const snapshot = await db.collection(collectionPath).listDocuments();
+        const documentIds = snapshot.map((doc) => doc.id);
+        return documentIds;
+    } catch (error) {
+        throw new Error('Failed to get document IDs');
+    }
+}
 
 module.exports = {
     getUserCnt,
     addUserSpr,
     sprintCloseChk,
-    sprintCloseChks
+    sprintCloseChks,
+    getAllDocumentIds,
 }
