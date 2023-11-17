@@ -3,6 +3,7 @@
 /*----------------------------------------*/
 
 .footer{
+    background-color: white;
     & a{
         position: relative;
     }
@@ -19,7 +20,7 @@
         z-index: 1;
     }
     &__copyright-wrap{
-        background: rgba(241, 243, 249, 0.69);
+        background: rgb(221 224 235 / 69%);
         padding: 10px 0;
         & p {
             font-family: $font-lato;

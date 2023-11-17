@@ -1,8 +1,105 @@
 /*----------------------------------------*/
 /*  23. Login CSS START
 /*----------------------------------------*/
-
+.baseBG{
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -2;
+    background: url(../img/banner/Grand_Conference_Hall_ByDaLL.E-Landscape.jpg);
+    //background-repeat: no-repeat;
+    width: 100%;
+    display:block;
+    height: 100vh; /* 화면 높이에 맞게 조정 */
+    background-size: cover; /* 이미지가 배너 크기에 맞게 조정되도록 함 */
+    background-position: center; /* 중앙에 이미지를 위치시킴 */
+    @media screen and (orientation: landscape) {
+        min-height: 850px;
+    }
+}
 .home{
+    &__speakers{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+
+        @media #{$lg} {
+            padding: 0 30px;
+        }
+        @media #{$lg_st} {
+            padding: 0;
+        }
+        &__cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            background-color: #dbecee;
+            z-index: -1;
+        }
+        &__content {
+            max-width: 1800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            margin-top: 50px;
+
+            .title {
+                font-size: 30px;
+                margin-bottom: 10px;
+                @media #{$xs} {
+                    font-size: 23px;
+                }
+                &-2{
+                    font-size: 23px;
+                    margin-bottom: 80px;
+                    color: gray;
+                    @media #{$xs} {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            section{
+                margin-bottom: 40px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+            .profiles{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .detailBtn{
+                width: fit-content;
+                padding: 6px 9px;
+                font-size: 20px;
+                color: white;
+                background-color: #374d76;
+                line-height: 1.2;
+                border-radius: 9px;
+                border-color: #dfe5f3;
+                border-width: 2px;
+                border-style: solid;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    &__program{
+        width: 100vw;
+        background-color: white;
+    }
     &__area{
         display: flex;
         justify-content: center;
