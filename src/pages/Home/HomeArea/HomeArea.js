@@ -28,15 +28,15 @@ const HomeArea = () => {
                         <ProfileCard id={5} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.lectures[4]} subjType={2}/>
                         <ProfileCard id={6} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.lectures[5]} subjType={2}/>
                         <ProfileCard id={7} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.lectures[6]} subjType={2}/>
-                        <ProfileCard simple id={8} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[1]} subjType={3}/>
-                        <ProfileCard simple id={9} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[2]} subjType={3}/>
-                        <ProfileCard simple id={10} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[3]} subjType={3}/>
-                        <ProfileCard simple id={11} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[4]} subjType={3}/>
-                        <ProfileCard simple id={12} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[5]} subjType={3}/>
-                        <ProfileCard simple id={13} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[1]} subjType={4}/>
-                        <ProfileCard simple id={14} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[2]} subjType={4}/>
-                        <ProfileCard simple id={15} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[3]} subjType={4}/>
-                        <ProfileCard simple id={16} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[4]} subjType={4}/>
+                        <ProfileCard id={8} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[1]} subjType={3}/>
+                        <ProfileCard id={9} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[2]} subjType={3}/>
+                        <ProfileCard id={10} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[3]} subjType={3}/>
+                        <ProfileCard id={11} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[4]} subjType={3}/>
+                        <ProfileCard id={12} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[5]} subjType={3}/>
+                        <ProfileCard id={13} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[1]} subjType={4}/>
+                        <ProfileCard id={14} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[2]} subjType={4}/>
+                        <ProfileCard id={15} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[3]} subjType={4}/>
+                        <ProfileCard id={16} simple mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[4]} subjType={4}/>
                     </div>
                     <a className="detailBtn  ml-15" href="/speakers">자세히 보기 &gt;</a>
                 </div>
