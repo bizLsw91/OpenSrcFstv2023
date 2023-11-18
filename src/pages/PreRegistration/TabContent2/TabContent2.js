@@ -15,6 +15,7 @@ import {useEffect, useState} from "react";
 import {Modal, Button} from "antd";
 import {Col, Row} from "react-bootstrap";
 import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
+import moment from "moment";
 
 const userCheckApi = async(isSprint, values) => {
     values.isSprint = isSprint
@@ -43,7 +44,7 @@ const TabContent2 = (props) => {
     const [msg, setMsg] = useState('');
     const errMsg0 = '정상적으로 등록이 확인되었습니다.'
     const errMsg1 = '등록이 되어있지 않습니다. 다시 등록 해주시기 바랍니다.'
-    const errMsg1_1 = '이메일 주소와 이름이 일치하지 않습니다.'
+    const errMsg1_1 = '이름을 다시 확인해주세요.'
     const errMsg2 = '서버와 통신 중 에러가 발생하였습니다.'
 
     const showModal = () => {
@@ -76,7 +77,22 @@ const TabContent2 = (props) => {
                             if (res.data.errCode) {
                                 setIsError(true)
                                 if (res.data.errCode === -1) setMsg(errMsg1)
-                                else if (res.data.errCode === -2) setMsg(errMsg1_1)
+                                else {
+                                    const passwordErrData = res.data.passwordErrData;
+                                    if (res.data.errCode === -2) {
+                                        const accumCnt = passwordErrData.chkFailCount <= 5 ?  passwordErrData.tempLockCnt : passwordErrData.permanentLockCnt
+                                        let errMsg1_2 = errMsg1_1+` (실패횟수:${passwordErrData.chkFailCount}/${accumCnt})`
+                                        if(passwordErrData.chkFailCount<=5) setMsg(errMsg1_2)
+                                        else setMsg(errMsg1_2+`\n실패횟수가 ${passwordErrData.permanentLockCnt}번이 되면 등록확인 서비스를 이용하실 수 없습니다.\n이 후 사무국에 문의해주세요.`)
+                                    }
+                                    else if (res.data.errCode === -3) {
+                                        const unLockTimestamp = passwordErrData.unLockTimestamp
+                                        const unLockTimeText = moment(unLockTimestamp, 'YYYYMMDDHHmmss').format('HH시 mm분 ss초')
+                                        setMsg(`${unLockTimeText} 이 후 다시 시도해주세요. (잠금시간:${passwordErrData.tempLockTime_mm}분)`)
+                                    }else if (res.data.errCode === -4) {
+                                        setMsg(`누적 실패횟수가 ${passwordErrData.permanentLockCnt}번이 되어 등록확인 서비스를 이용하실 수 없습니다.\n사무국에 문의해주세요.`)
+                                    }
+                                }
                             } else {
                                 setIsError(false)
                                 setUserData(res.data)
@@ -84,6 +100,7 @@ const TabContent2 = (props) => {
                             }
                         }
                     } catch (err) {
+                        setLoading(false);
                         setIsError(true)
                         setMsg(errMsg2)
                         await api_addErrLog({collectionPath: isSprint?'UserSpr':'User', error:{stack:err.stack}, payload:values})
