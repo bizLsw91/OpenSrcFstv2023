@@ -156,10 +156,6 @@ const TabContent2 = (props) => {
                     {isSprint && userData.sprint != undefined &&
                         <Row><Col xs={sm1} sm={md1}>Sprint:</Col><Col><div>{sprintProjectDatas[userData.sprint-1].name}</div></Col></Row>
                     }
-                    <Row><Col xs={sm1} sm={md1}>이메일:</Col><Col><div>{userData.email}</div></Col></Row>
-                    <Row><Col xs={sm1} sm={md1}>이름:</Col><Col><div>{userData.name}</div></Col></Row>
-                    <Row><Col xs={sm1} sm={md1}>소속:</Col><Col><div>{userData.company}</div></Col></Row>
-                    <Row><Col xs={sm1} sm={md1}>연락처:</Col><Col><div>{userData.call}</div></Col></Row>
                 </ul>}
             </Modal>
         </div>
