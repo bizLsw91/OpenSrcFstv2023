@@ -1,6 +1,6 @@
 const moment = require("moment");
 const {addErrLog} = require("../Service/CommonService");
-const {getUserCnt, checkClose, sprintCloseChk, addUserSpr, sprintCloseChks, getAllDocumentIds} = require("../Service/UserService");
+const {getUserCnt, checkClose, sprintCloseChk, addUserSpr, sprintCloseChks, getAllDocumentIds, passwordErrHandle} = require("../Service/UserService");
 
 function UserController(router, firestore) {
     const collectionPath = 'User'
@@ -58,31 +58,62 @@ function UserController(router, firestore) {
 
     //등록확인
     router.post("/check", async (req, res) => {
+        const {email, name, isSprint} = req.body; // 요청 본문에서 email과 name을 추출
+        const collPath = !isSprint ? collectionPath : collectionPath2
         try {
-            const {email, name, isSprint} = req.body; // 요청 본문에서 email과 name을 추출
-            const collPath = !isSprint ? collectionPath : collectionPath2
             const docRef = firestore.collection(collPath).doc(email); // 문서 참조 생성
             const errData = {
-                errCode: 0
+                errCode: 0,
+                errMsg: '',
             }
             const doc = await docRef.get(); // 문서 가져오기
 
-            const data = doc.data();
             if (!doc.exists) {
                 //등록되어있는 이메일 주소 존재 안함
                 errData.errCode = -1
+                errData.errMsg = 'not enrolled'
                 res.status(200).json(errData);
-            } else if (doc.exists && data.name !== name) {
+                return
+            }
+
+            const data = doc.data()
+            const passwordErrData = data.passwordErrData
+
+            if (passwordErrData){
+
+            }
+
+            if (data.name !== name) {
                 //이메일 주소 존재하지만 이름 불일치
+                if(passwordErrData) passwordErrData.isSuccess = false
+                const passwordErrData_H = await passwordErrHandle(firestore, docRef, passwordErrData)
+                if(passwordErrData_H.isPermanentLock){
+                    //보안처리 - 등록확인 서비스 잠금처리 되어있음
+                    errData.errCode = -4
+                    errData.errMsg = 'enroll check API Permanent Locked.'
+                    errData.passwordErrData = passwordErrData_H
+                    res.status(200).json(errData);
+                    return
+                }else if(passwordErrData_H.isLock){
+                    errData.errCode = -3
+                    errData.errMsg = 'enroll check API Locked'
+                    errData.passwordErrData = passwordErrData_H
+                    res.status(200).json(errData);
+                    return
+                }
                 errData.errCode = -2
+                errData.errMsg = 'name mismatch'
+                errData.passwordErrData = passwordErrData_H
                 res.status(200).json(errData);
             } else if (doc.exists && data.name === name) {
-                res.status(200).json({email: email, ...data});
+                if(passwordErrData) passwordErrData.isSuccess = true
+                await passwordErrHandle(firestore, docRef, passwordErrData)
+                res.status(200).send('email enroll checked');
             } else {
-                throw new Error('')
+                throw new Error('Fail to Check Enrolled')
             }
         } catch (error) {
-            await addErrLog(0, firestore, req, error, collectionPath)
+            await addErrLog(0, firestore, req, error, collPath)
             res.status(500).json(error);
         }
     })
@@ -102,7 +133,7 @@ function UserController(router, firestore) {
             const cnt = await getUserCnt(firestore, true)
             res.status(200).json({count:cnt})
         }catch (error){
-            await addErrLog(0, firestore, req, error, collectionPath)
+            await addErrLog(0, firestore, req, error, collectionPath2)
             res.status(500).send('error while getUserCnt')
         }
     })
