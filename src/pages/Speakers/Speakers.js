@@ -146,7 +146,7 @@ export const speakersData = {
             badge: '토크①사회',
             name: '박병철',
             company: 'SK하이닉스',
-            position: '리눅스 커널 커뮤니티 운영자',
+            position: '',
             imgUrl: 'assets/img/speakers/박병철.jpg',
             profileList: ['SK하이닉스 연구원 (2023.2~)', '리눅스 커널 개발자 (2014.7~)'],
             profileDesc: '',
@@ -196,7 +196,7 @@ export const speakersData = {
             company: 'Hello AI',
             position: '대표',
             imgUrl: 'assets/img/speakers/김영욱.jpg',
-            profileList: [],
+            profileList: ['현) Hello AI 대표', '현) Microsoft Regional Director ', '현) Microsoft AI MVP', '전) Microsoft 플랫폼 사업부 근무', '서울시립대 석사 졸업', '생성형 AI 사피엔스 외 다수 집필'],
             profileDesc: '',
         },
         2:{

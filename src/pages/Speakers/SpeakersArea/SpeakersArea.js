@@ -5,11 +5,9 @@ import {speakersData} from "../Speakers";
 
 const SpeakersArea = () => {
     const [mainViewId, setMainViewId] = useState(99);
-    const datas = [{},{},{},{},{}]
     const handleToggle = (viewId) => {
         setMainViewId(viewId)
     }
-    console.log("speakersData.startLect[1] = ", speakersData.startLect[1]);
 
     return (
         <div id="SpeakersArea">
