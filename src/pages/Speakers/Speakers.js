@@ -146,7 +146,7 @@ export const speakersData = {
             badge: '토크①사회',
             name: '박병철',
             company: 'SK하이닉스',
-            position: '리눅스 커널 커뮤니티 운영자',
+            position: '',
             imgUrl: 'assets/img/speakers/박병철.jpg',
             profileList: ['SK하이닉스 연구원 (2023.2~)', '리눅스 커널 개발자 (2014.7~)'],
             profileDesc: '',
