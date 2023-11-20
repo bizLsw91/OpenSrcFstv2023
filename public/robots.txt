@@ -4,6 +4,7 @@ Disallow: /login
 Disallow: /docTerms
 Disallow: /docPrivacy
 Disallow: /docRefusal
+Allow: /
 Allow: /overview
 Allow: /directions
 Allow: /program
