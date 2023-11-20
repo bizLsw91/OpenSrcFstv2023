@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>공개sw페스티벌</title>
+        <link>https://ossfestival.kr</link>
+        <description>오픈소스로 바꾸는 세상 OpenSource 2023 공개SW페스티벌</description>
+        <item>
+            <title>사전등록</title>
+            <link>https://ossfestival.kr/preRegistration</link>
+        </item>
+        <item>
+            <title>프로그램</title>
+            <link>https://ossfestival.kr/program</link>
+        </item>
+        <item>
+            <title>연사소개</title>
+            <link>https://ossfestival.kr/speakers</link>
+        </item>
+        <item>
+            <title>행사개요</title>
+            <link>https://ossfestival.kr/overview</link>
+        </item>
+        <item>
+            <title>오시는길</title>
+            <link>https://ossfestival.kr/directions</link>
+        </item>
+        <item>
+            <title>공지사항</title>
+            <link>https://ossfestival.kr/notice</link>
+        </item>
+    </channel>
+</rss>

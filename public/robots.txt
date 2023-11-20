@@ -1,3 +1,16 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /login
+Disallow: /docTerms
+Disallow: /docPrivacy
+Disallow: /docRefusal
+Allow: /overview
+Allow: /directions
+Allow: /program
+Allow: /speakers
+Allow: /notice
+Allow: /faq
+Allow: /preRegistration
+Allow: /preRegistration-sprint
+Allow: /event
+Sitemap: https://ossfestival.kr/sitemap.xml
