@@ -13,4 +13,5 @@ Allow: /faq
 Allow: /preRegistration
 Allow: /preRegistration-sprint
 Allow: /event
+Allow: /sitemap.xml
 Sitemap: https://ossfestival.kr/sitemap.xml
