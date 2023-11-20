@@ -39,7 +39,7 @@ const SpeakersArea = () => {
                     <section>
                         <div className="subTitle subTitle-3">
                             <h3>[패널토크-1]</h3>
-                            <h4>:리눅스와 개발자 성장</h4>
+                            <h4>:리눅스 오픈소스 문화와 개발자로서 성장하기</h4>
                         </div>
                         <div className="profiles">
                             <ProfileCard simple id={8} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[1]} subjType={3}/>
