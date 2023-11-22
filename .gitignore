@@ -22,8 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.idea/
+/.idea
 /functions/firebase-debug.log
 /.firebase/hosting.YnVpbGQ.cache
 /functions/ui-debug.log
-functions/
+/functions
