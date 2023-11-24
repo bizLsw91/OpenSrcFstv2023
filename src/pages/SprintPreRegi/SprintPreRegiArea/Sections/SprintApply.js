@@ -10,7 +10,7 @@ import {ConfigProvider} from "antd";
 
 
 const SprintApply = () => {
-    const [value, setValue] = React.useState('1');
+    const [value, setValue] = React.useState('2');
     const [email, setEmail] = useState();
 
     const handleChange = (event, newValue) => {
@@ -19,6 +19,11 @@ const SprintApply = () => {
 
     const nextTab2 = (email) => {
         setEmail(email)
+        setValue('2')
+    }
+
+    const alertFinish = () => {
+        alert('스프린트 사전 신청이 마감되었습니다.')
         setValue('2')
     }
 
@@ -40,7 +45,7 @@ const SprintApply = () => {
                             <TabContext value={value}>
                                 <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                                     <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                        <Tab className="tabBtn" label="사전 신청" value="1"/>
+                                        <Tab className="tabBtn" label="사전 신청" onClick={alertFinish} disableFocusRipple/>
                                         <Tab className="tabBtn" label="신청 확인" value="2"/>
                                     </TabList>
                                 </Box>
