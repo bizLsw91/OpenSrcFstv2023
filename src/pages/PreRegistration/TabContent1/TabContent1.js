@@ -154,6 +154,7 @@ const TabContent1 = (props) => {
                         console.error(err);
                         setMsg(msg1)
                         setIsError(true)
+                        setSubmitting(false);
                         setStatus({success: false});
                         setErrors({submit: err.message});
                         await api_addErrLog({collectionPath: isSprint?'UserSpr':'User', error: {stack: err.stack}, payload: values})

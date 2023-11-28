@@ -16,6 +16,7 @@ import {Modal, Button} from "antd";
 import {Col, Row} from "react-bootstrap";
 import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
 import moment from "moment";
+import {api_addErrLog} from "../../../services/CommonService";
 
 const userCheckApi = async(isSprint, values) => {
     values.isSprint = isSprint
@@ -30,9 +31,6 @@ const userCheckApi = async(isSprint, values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
-const api_addErrLog = async (req) => {
-    return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog',req)
-};
 
 const TabContent2 = (props) => {
     const {isSprint, email0} = props
@@ -74,7 +72,7 @@ const TabContent2 = (props) => {
                         const res = await userCheckApi(isSprint, values);
                         setLoading(false);
                         if(res.status === 200) {
-                            if (res.data.errCode) {
+                            if (res.data?.errCode) {
                                 setIsError(true)
                                 if (res.data.errCode === -1) setMsg(errMsg1)
                                 else {
