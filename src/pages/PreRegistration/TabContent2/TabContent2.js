@@ -103,7 +103,7 @@ const TabContent2 = (props) => {
                         setLoading(false);
                         setIsError(true)
                         setMsg(errMsg2)
-                        await api_addErrLog({collectionPath: isSprint?'UserSpr':'User', error:{stack:err.stack}, payload:values})
+                        await api_addErrLog({viewName:'TabContent2', collectionPath: isSprint?'UserSpr':'User', error:{stack:err.toString()}, payload:values})
                     }
                     showModal()
                 }}

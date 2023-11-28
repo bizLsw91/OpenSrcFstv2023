@@ -70,7 +70,6 @@ const TabContent1 = (props) => {
                 setIsClosedArr(res.data.isClosedArr)
             }
         } catch (err) {
-            console.log("sprintCloseChks err.stack = ", err.stack);
             setIsError(true)
             setMsg(msg4)
             showModal()
@@ -156,7 +155,7 @@ const TabContent1 = (props) => {
                         setIsError(true)
                         setStatus({success: false});
                         setErrors({submit: err.message});
-                        await api_addErrLog({collectionPath: isSprint?'UserSpr':'User', error: {stack: err.stack}, payload: values})
+                        await api_addErrLog({viewName:'TabContent1', collectionPath: isSprint?'UserSpr':'User', error: {stack: err.toString()}, payload: values})
                     }
                     showModal()
                 }}

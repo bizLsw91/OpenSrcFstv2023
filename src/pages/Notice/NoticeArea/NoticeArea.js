@@ -9,10 +9,6 @@ import moment from "moment";
 const api_getPosts = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Notice/getPosts', req)
 };
-const api_viewsUp = async (index) => {
-    return await axios.get(appConfig.apiPreUrl + '/Notice/viewsUp/'+index)
-};
-
 const NoticeArea = () => {
     const [loading, setLoading] = useState(false);
     // 게시물 목록을 저장할 상태 변수

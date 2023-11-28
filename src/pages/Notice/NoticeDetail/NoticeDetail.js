@@ -12,9 +12,9 @@ const NoticeDetail = () => {
 
     return (
         <div id="NoticeDetail">
-            <PageHelmet pageTitle="공지사항" />
+            <PageHelmet pageTitle="공지사항 상세" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Notice Detail" subtitle="공지사항" />
+            <CommonPageHeader title="NoticeDetail" subtitle="공지사항 상세" />
             <NoticeDetailArea index={index}/>
             <Footer/>
         </div>
