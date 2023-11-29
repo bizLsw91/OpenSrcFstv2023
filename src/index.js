@@ -13,7 +13,8 @@ ReactDOM.render(
       <App />
     </AllContext>
   </React.Fragment>,
-  document.getElementById('root')
+  document.getElementById('root'),
+console.log("App Rendered!")
 );
 
 

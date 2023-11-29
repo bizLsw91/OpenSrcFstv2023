@@ -14,7 +14,12 @@ const HomeKeyVisual = () => {
                            <img className="logo-top" src="assets/img/banner/top.png" alt=""/>
                            <img className="logo-keyvisual" src="assets/img/banner/keyvisual_desktop_text.png" alt=""/>
                            <div className="slider__btn mainBannerBtn">
-                              {isShow && <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전등록</Link>}
+                              {isShow &&
+                                  <div className="preRegistration">
+                                    <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전등록</Link>
+                                    <div className="info">등록마감: 11. 30.(금) 10:00 까지</div>
+                                  </div>
+                              }
                            </div>
                            <img className="logo-bottom" src="assets/img/banner/host.png" alt=""/>
                         </div>

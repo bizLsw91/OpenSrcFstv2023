@@ -1,8 +1,6 @@
-import {Container} from "react-bootstrap";
 import PageHelmet from "../../components/shared/PageHelmet";
 import HomeOneHeader from "../Home/HomeOneHeader/HomeOneHeader";
 import CommonPageHeader from "../../components/CommonPageHeader/CommonPageHeader";
-import SprintPreRegiArea from "../SprintPreRegi/SprintPreRegiArea/SprintPreRegiArea";
 import Footer from "../../components/shared/Footer";
 import React from "react";
 import SpeakersArea from "./SpeakersArea/SpeakersArea";
@@ -41,6 +39,7 @@ export const speakersData = {
             company: 'LG전자 SW센터',
             position: '상무',
             imgUrl: 'assets/img/speakers/엄유상.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_엄위상.pdf',
             profileList: ['2017 ~ 현재: LG전자 SW공학연구소장', '2015 ~ 2016: LG전자 SW A Team Leader', '2011 ~ 2015: LG전자 Agile 개발 팀장'],
             profileDesc: '',
             lectTitle: '협력의 힘: 공급망 관리의 핵심, 오픈소스와의 융합으로 발전하는 미래',
@@ -79,6 +78,7 @@ export const speakersData = {
             company: 'Dable',
             position: '',
             imgUrl: 'assets/img/speakers/김태곤.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_김태곤.pdf',
             profileList: ['(현) 데이블 프런트엔드 팀 리드', '(전) Automattic JavaScript Engineer', '(전) Fancy.com JavaScript Engineer', '(전) 네이버 프런트엔드 개발자'],
             profileDesc: '공개SW페스티벌, Deview, W3C HTML5\n' +
                 '컨퍼런스, FastCampus, Daum DevOn, SK Tech Planet,\n' +
@@ -96,6 +96,7 @@ export const speakersData = {
             company: 'LINE Plus',
             position: '',
             imgUrl: 'assets/img/speakers/배권한.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_배권한.pdf',
             profileList: [],
             profileDesc: <span>파이썬과 커뮤니티를 사랑하는 엔지니어다. 파이콘을 한국에 정착시켰으며 일단 저지르고 보는 사람. 현재는 Service Engineering 팀에서 라인의 모든 서비스에 대한 온갖 문제를 같이 고민하고 해결하고 여전히 일을 저지르고 있다. &lt;나는 LINE 개발자입니다&gt; 저자</span>,
             lectTitle: 'Python 커뮤니티와 PSF',
@@ -119,6 +120,7 @@ export const speakersData = {
             company: '아크회계법인',
             position: 'CTO',
             imgUrl: 'assets/img/speakers/김동우.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_김동우.pdf',
             profileList: ['전) QueryPie(CHEQUER): Vice President, Developer Relations &amp; Head of Engineering', '전) KOSSLAB: Open Source Frontier', '현) 자바스크립트 개발자 포럼: 운영, React Korea: 운영'],
             profileDesc: '',
             lectTitle: 'Architect를 활용한 고성능 서버리스웹서비스 만들기',
@@ -132,6 +134,7 @@ export const speakersData = {
             company: '당근마켓',
             position: 'SRE',
             imgUrl: 'assets/img/speakers/변정훈.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_변정훈.pdf',
             profileList: ['현) 당근마켓 SRE', '전) OnDemandKorea 개발팀 리드', '전) mocha 코어팀 멤버'],
             profileDesc: '',
             lectTitle: '오픈소스에 기여할 때 알면 좋을 개발 프로세스',

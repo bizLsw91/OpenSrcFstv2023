@@ -93,6 +93,33 @@ $pfc-h-simple:399px;
         width: $pfc-w-simple !important;
         height: $pfc-h-simple !important;
     }
+    .btnArea{
+        height: 50px;
+        display: flex;
+        justify-content: end;
+        .docBtn{
+            display: flex;
+            align-items: center;
+            height: 40px;
+            font-weight: bold;
+            background-color: rgb(57 71 107 / 91%);
+            color: white;
+            font-family: monospace;
+            font-size: 18px;
+        }
+        .docBtn:hover{
+            background-color: white;
+            .docIcon{
+                color: #4096ff;
+            }
+        }
+        .docIcon{
+            transition: all 0.3s ease-out 0s;
+            color: white;
+            width: auto;
+            height: 20px;
+        }
+    }
     .ProfileWrapper{
         position: relative;
         width: $pfc-w;

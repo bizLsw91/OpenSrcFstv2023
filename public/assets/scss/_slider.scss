@@ -409,7 +409,28 @@
             top: 70%; /* 상단에서부터 90% 위치에 배치 */
             //width: 15%; /* 상대적 크기 조정 */
             //height: auto; /* 비율 유지 */
+            .preRegistration{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .info{
+                    margin-top: 5px;
+                    font-size: 20px;
+                    color:white;
+                    @media #{$md}{
+                        font-size: 17px;
+                    }
+                    @media #{$sm}{
+                        font-size: 14px;
+                    }
+                    @media #{$xs}{
+                        font-size: 13px;
+                    }
+                }
+            }
         }
+
 
         .logo-bottom {
             top: 85%; /* 상단에서부터 90% 위치에 배치 */
