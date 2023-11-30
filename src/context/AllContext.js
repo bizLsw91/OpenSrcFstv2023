@@ -1,4 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
+import moment from "moment";
 
 export const AppContext = createContext();
 
@@ -17,10 +18,18 @@ const AllContext = ({ children }) => {
       }
       window.addEventListener('scroll', stickyMenuBar);
    }, [])
+
+   const isOverDeadLine = ()=>{
+      let nowTS10 = moment().format('YYYYMMDDHHmm')
+      return nowTS10 >= '202311301000'
+   }
+
+
    const values = {
       isVideoOpen,
       setIsVideoOpen,
       stickyMenu,
+      isOverDeadLine,
    }
    return (
       <>
