@@ -51,6 +51,7 @@ export const speakersData = {
             company: 'LINE Plus',
             position: '개발자',
             imgUrl: 'assets/img/speakers/이희승.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_이희승.pdf',
             profileList: [],
             profileDesc: 'JVM 생태계에서 가장 인기 있는 비동기 네트워킹 프레임워크인 Netty 프로젝트의 창립자로 잘 알려진 소프트웨어 엔지니어입니다. 개발자에게 최고의 경험을 제공하는 프레임워크와 라이브러리를 설계하는 것에 관심이 많으며, LINE+에서 마이크로서비스 프레임워크 Armeria, 분산 구성 저장소 Central Dogma 등 다양한 오픈소스 소프트웨어를 개발하고 있습니다.',
             lectTitle: '"나만 오픈소스 없어" - 잘 키운 오픈소스, 열 고양이 안 부럽다!?',
@@ -64,6 +65,7 @@ export const speakersData = {
             company: 'Medical AI LAB',
             position: '책임연구원',
             imgUrl: 'assets/img/speakers/이수정.jpg',
+            docFilePath: 'speakersDoc/2023Ossfestival_이수정.pdf',
             profileList: ['가톨릭대학교 성의교정 의료정보학교실(2021-현재)', '디티앤사노메딕스(2020-2021) 데이터관리자(DMA)', '국립암센터(2012-2019) 연구간호사, 매니저'],
             profileDesc: '',
             lectTitle: '낮에는 직장인, 밤에는 연구원 \n' +
