@@ -9,7 +9,7 @@ import HomeArea from "./HomeArea/HomeArea";
 const Home = () => {
     return (
         <>
-            <PageHelmet pageTitle="" />
+            <PageHelmet pageTitle="" index follow/>
             <HomeOneHeader/>
             <HomeKeyVisual/>
             <HomeArea/>
