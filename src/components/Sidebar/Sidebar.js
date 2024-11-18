@@ -19,7 +19,7 @@ const Sidebar = ({ show, handleClose }) => {
                      <NavLink to="/">
                         <div>
                            <h4>
-                              <a className="sidebar__logo">공개SW 페스티벌<br/>2023</a>
+                              <a className="sidebar__logo">공개SW 페스티벌<br/>2024</a>
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}

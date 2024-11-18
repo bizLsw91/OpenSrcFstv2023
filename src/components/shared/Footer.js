@@ -19,7 +19,7 @@ const Footer = () => {
                      <NavLink to="/">
                         <div>
                            <h4>
-                              <a href="/">공개SW 페스티벌 2023</a>
+                              <a href="/">공개SW 페스티벌 2024</a>
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
@@ -43,8 +43,8 @@ const Footer = () => {
                      <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>
                      <Col md={{span:6, order:1}} className="d-flex align-items-md-end">
                         <div className="copyright-text">
-                           <p>Copyright © 2023<Link to="/"> OSSFESTIVAL.KR.</Link>&nbsp;&nbsp;All Rights Reserved.</p>
-                           <p>Contact: <a className="underline__black" href="mailto:ossfesta2023@gmail.com">ossfesta2023@gmail.com</a></p>
+                           <p>Copyright © 2024<Link to="/"> OSSFESTIVAL.KR.</Link>&nbsp;&nbsp;All Rights Reserved.</p>
+                           <p>Contact: <a className="underline__black" href="mailto:ossfesta2024@gmail.com">ossfesta2024@gmail.com</a></p>
                         </div>
                      </Col>
                   </Row>
