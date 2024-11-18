@@ -38,27 +38,19 @@ const SpeakersArea = () => {
                     </section>
                     <section>
                         <div className="subTitle subTitle-3">
-                            <h3>[패널토크-1]</h3>
-                            <h4>:리눅스 오픈소스 문화와 개발자로서 성장하기</h4>
+                            <h3>[포스터 세션]</h3>
+                            {/*<h4>:리눅스 오픈소스 문화와 개발자로서 성장하기</h4>*/}
                         </div>
                         <div className="profiles">
-                            <ProfileCard simple id={8} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[1]} subjType={3}/>
-                            <ProfileCard simple id={9} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[2]} subjType={3}/>
-                            <ProfileCard simple id={10} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[3]} subjType={3}/>
-                            <ProfileCard simple id={11} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[4]} subjType={3}/>
-                            <ProfileCard simple id={12} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_1[5]} subjType={3}/>
-                        </div>
-                    </section>
-                    <section>
-                        <div className="subTitle subTitle-4">
-                            <h3>[패널토크-2]</h3>
-                            <h4>:오픈소스와 LLM(거대언어모델)</h4>
-                        </div>
-                        <div className="profiles">
-                            <ProfileCard simple id={13} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[1]} subjType={4}/>
-                            <ProfileCard simple id={14} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[2]} subjType={4}/>
-                            <ProfileCard simple id={15} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[3]} subjType={4}/>
-                            <ProfileCard simple id={16} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.talk_2[4]} subjType={4}/>
+                            <ProfileCard simple id={8} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[1]} subjType={3}/>
+                            <ProfileCard simple id={9} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[2]} subjType={3}/>
+                            <ProfileCard simple id={10} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[3]} subjType={3}/>
+                            <ProfileCard simple id={11} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[4]} subjType={3}/>
+                            <ProfileCard simple id={12} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[5]} subjType={3}/>
+                            <ProfileCard simple id={13} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[6]} subjType={3}/>
+                            <ProfileCard simple id={14} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[7]} subjType={3}/>
+                            <ProfileCard simple id={15} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[8]} subjType={3}/>
+                            <ProfileCard simple id={16} mainViewId={mainViewId} toggleVisibility={handleToggle} data={speakersData.poster[9]} subjType={3}/>
                         </div>
                     </section>
                 </div>

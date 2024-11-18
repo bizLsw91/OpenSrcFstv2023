@@ -191,6 +191,23 @@ $pfc-h-simple:399px;
                             font-weight: 600;
                         }
                     }
+                    .belong-type3{
+                        height: 58px;
+                    }
+                }
+                .left-subject{
+                    height: 73px;
+                    font-weight: bold;
+                    &::before{
+                        content:'[ ';
+                    }
+                    &::after{
+                        content:' ]';
+                    }
+                }
+                .font-sm{
+                    font-size: 14px;
+                    margin-bottom: 3px;
                 }
                 .left-photo{
                     $ratio: 20/27;

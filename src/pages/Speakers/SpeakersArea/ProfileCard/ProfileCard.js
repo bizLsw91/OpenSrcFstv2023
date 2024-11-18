@@ -47,7 +47,10 @@ const ProfileCard = (props) => {
                     <div className="left">
                         <div className="left-top">
                             <div className="left-top-1"><div className="nameAndDetail"><div className="prfName bold_m">{data?.name}</div><div className="underline__blue">상세보기</div></div><div className={`prfBadge ${'prfBadge-c'+subjType}`}>{data?.badge}</div></div>
-                            <div className="left-top-2"><div className="belong"><div className="prfCompany">{data?.company}</div><div className="prfPosition">{data?.position?'/ '+data?.position:''}</div> </div></div>
+                            <div className="left-top-2"><div className={`belong ${data?.subject?'belong-type3':''}`}><div className="prfCompany">{data?.company}</div><div className="prfPosition">{data?.position?'/ '+data?.position:''}</div> </div></div>
+                        </div>
+                        <div className={`left-subject ${id===16?'font-sm':''}`}>
+                            {data?.subject}
                         </div>
                         <div className="left-photo"><img src={data?.imgUrl} alt={data?.name}/></div>
                     </div>
