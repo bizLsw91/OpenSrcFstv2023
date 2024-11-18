@@ -12,13 +12,16 @@ const HomeKeyVisual = () => {
         <>
             <section className="key-visual">
                 <div className={'key-visual-bg_layer'}>
-                    <div className="layer-1"></div>
                     <div className="layer-2"></div>
+                    <div className="layer-3"></div>
                 </div>
                 <Container className="h1_slider_wrapper h-100">
                     <div className="slider__content-6">
-                        <img className="logo-top" src="assets/img/banner/top.png" alt=""/>
-                        <img className="logo-keyvisual" src="assets/img/banner/keyvisual_desktop_text.png" alt=""/>
+                        <img className="keyvisual-top" src="assets/img/2024design/keyvisual-top-1294.png" alt="keyvisual-top"/>
+                        <div className="keyvisual-mid">
+                            <img className="mid1" src="assets/img/2024design/keyvisual-mid1.png" alt="keyvisual-mid1"/>
+                            <img className="mid2" src="assets/img/2024design/keyvisual-mid2.png" alt="keyvisual-mid2"/>
+                        </div>
                         <div className="slider__btn mainBannerBtn">
                             {!isOverDeadLine() &&
                                 <div className="preRegistration">
@@ -27,7 +30,7 @@ const HomeKeyVisual = () => {
                                 </div>
                             }
                         </div>
-                        <img className="logo-bottom" src="assets/img/banner/host.png" alt=""/>
+                        <img className="keyvisual-bottom" src="assets/img/2024design/keyvisual-bottom.png" alt=""/>
                     </div>
                 </Container>
             </section>

@@ -379,7 +379,7 @@
     .key-visual-bg_layer {
         content: "";
 
-        .layer-1 {
+        .layer-2 {
             position: absolute;
             z-index: -5;
             top: 0;
@@ -390,16 +390,16 @@
             background-size: auto 100%;
             background-position: center;
         }
-        .layer-2 {
+        .layer-3 {
             position: absolute;
             z-index: -4;
             transform: translate(-50%, -50%);
-            width: 700px;
-            height: 700px;
+            width: 600px;
+            height: 600px;
             max-width: 80vw;
             max-height: 80vw;
-            top: 20%;
-            left: 10%;
+            top: 25%;
+            left: 20%;
             background-image: url(../img/2024design/globe.png);
             background-size: contain;
             //background-position: ;
@@ -411,30 +411,47 @@
     .slider__content-6{
         position: relative;
         height: 100%;
-        .logo-top, .logo-keyvisual, .logo-bottom, .mainBannerBtn {
+        .keyvisual-top, .keyvisual-mid, .keyvisual-bottom, .mainBannerBtn {
             position: absolute;
             left: 50%; /* 중앙 정렬 */
             transform: translateX(-50%) translateY(-50%); /* 정확한 중앙 위치 조정 */
         }
 
-        .logo-top {
-            top: 10%; /* 상단에서부터 10% 위치에 배치 */
+        .keyvisual-top {
+            top: 20%; /* 상단에서부터 10% 위치에 배치 */
             height: auto; /* 비율 유지 */
-            width: 300px; /* 상대적 크기 조정 */
-            @media #{$md} {
-                width: 250px;
+            width: 250px; /* 상대적 크기 조정 */
+            @media #{$sm} {
+                width: 220px;
             }
             @media #{$xs} {
                 width: 200px;
             }
         }
 
-        .logo-keyvisual {
-            top: 40%; /* 상단에서부터 40% 위치에 배치 */
+        .keyvisual-mid {
+            top: 48%; /* 상단에서부터 40% 위치에 배치 */
             height: auto; /* 비율 유지 */
-            width: 800px; /* 상대적 크기 조정 */
+            width: 960px; /* 상대적 크기 조정 */
             @media #{$lg_st} {
                 width: 95vw;
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .mid1 {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .mid2 {
+                width: 90%;
+                text-align: center;
+                @media #{$sm} {
+                    width: 100%;
+                }
+                @media #{$xs} {
+                    width: 100%;
+                }
             }
         }
 
@@ -465,11 +482,11 @@
         }
 
 
-        .logo-bottom {
+        .keyvisual-bottom {
             top: 85%; /* 상단에서부터 90% 위치에 배치 */
             height: auto; /* 비율 유지 */
             width: 540px; /* 상대적 크기 조정 */
-            @media #{$md} {
+            @media #{$sm} {
                 width: 490px;
             }
             @media #{$xs} {
