@@ -8,7 +8,7 @@ const PageHelmet = ({ pageTitle, index, noindex, follow, nofollow }) => {
     return (
         <>
             <Helmet>
-                <title>{pageTitle ? pageTitle+' || ' : ''}공개SW 페스티벌 2024 </title>
+                <title>{pageTitle ? pageTitle+' || ' : ''}공개SW 페스티벌</title>
                 <meta name="robots" content={`${i}, ${f}`} />
             </Helmet>
         </>
