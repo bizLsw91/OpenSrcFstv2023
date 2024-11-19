@@ -36,13 +36,15 @@ const infoData = [
     },
     {
         item: "주최",
-        desc: "과학기술정보통신부 로고 넣어주세요",
-        img_url:'',
+        desc: "",
+        img_url:'https://ossfestival.kr/assets/img/2024design/주최.png',
+        alt:'주최'
     },
     {
         item: "주관",
-        desc: "정보통신산업진흥원 로고 넣어주세요",
-        img_url:'',
+        desc: "",
+        img_url:'https://ossfestival.kr/assets/img/2024design/주관.png',
+        alt:'주관'
     },
 ];
 
@@ -62,8 +64,14 @@ const OverviewArea = () => {
                                                 <div className="item">{info.item}</div>
                                                 <div className="desc">
                                                     <div>
-                                                        {info.desc}
+                                                        {info.desc?.toString()}
                                                         {info.desc_sub && <p className="desc-sub">{info.desc_sub}</p>}
+                                                        {info.img_url &&
+                                                            <div className="colored-png-container">
+                                                                <img src={info.img_url} alt={info.alt}
+                                                                     className="colored-png"/>
+                                                            </div>
+                                                        }
                                                     </div>
                                                     {info.link && (
                                                         <Link className="directions ml-15" to={info.link}>
