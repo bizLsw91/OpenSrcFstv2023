@@ -198,12 +198,6 @@ $pfc-h-simple:399px;
                 .left-subject{
                     height: 73px;
                     font-weight: bold;
-                    &::before{
-                        content:'[ ';
-                    }
-                    &::after{
-                        content:' ]';
-                    }
                 }
                 .font-sm{
                     font-size: 14px;
@@ -213,9 +207,17 @@ $pfc-h-simple:399px;
                     $ratio: 20/27;
                     width: 200px;
                     height: auto;
+                    flex-grow: 1;
                     img{
                         border-radius: 20px;
                         height: 100%;
+                    }
+                    .coming_soon {
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
                     }
                 }
             }
