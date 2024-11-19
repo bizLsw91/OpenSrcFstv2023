@@ -37,10 +37,12 @@ const infoData = [
     {
         item: "주최",
         desc: "과학기술정보통신부 로고 넣어주세요",
+        img_url:'',
     },
     {
         item: "주관",
         desc: "정보통신산업진흥원 로고 넣어주세요",
+        img_url:'',
     },
 ];
 
