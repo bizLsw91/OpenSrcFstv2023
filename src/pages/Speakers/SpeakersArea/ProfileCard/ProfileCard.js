@@ -84,8 +84,8 @@ const ProfileCard = (props) => {
                 <div className={`back pfCard-Container gradient2 z2 toggleBox ${isVisible ? 'visible' : ''} `} onClick={toggleVisibility}>
                     <div className={`up ${data?.profileList.length>0 && isVisible ? 'up-visible':''}`}>
                         <ul>
-                            {data?.profileList.map(career => (
-                                <li>{career}</li>
+                            {data?.profileList.map((career, idx) => (
+                                <li key={idx}>{career}</li>
                             ))}
                         </ul>
                     </div>
