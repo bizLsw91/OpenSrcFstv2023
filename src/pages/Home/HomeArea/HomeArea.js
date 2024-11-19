@@ -72,7 +72,7 @@ const HomeArea = () => {
                             <Image
                                 maskClassName="imgBox"
                                 src='assets/img/2024design/program.webp' // 이미지 URL을 넣으세요
-                                // preview={{src: "assets/img/openSW/openSW-program.jpg"}} // 클릭할 때만 확대되도록 설정
+                                preview={false}
                             />
                         </div>
                     </div>

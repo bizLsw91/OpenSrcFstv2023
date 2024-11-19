@@ -11,8 +11,9 @@ const ProgramArea = () => {
                         <p className="d-sm-none">※클릭하시면 확대해서 보실 수 있습니다.</p>
                         <Image
                             className="imgBox"
-                            src='assets/img/openSW/openSW-program-noTitle.jpg' // 이미지 URL을 넣으세요
-                            preview={{ src: "assets/img/openSW/openSW-program-noTitle.jpg" }} // 클릭할 때만 확대되도록 설정
+                            src='assets/img/2024design/program.webp' // 이미지 URL을 넣으세요
+                            preview={false}
+                            // preview={{ src: "assets/img/openSW/openSW-program-noTitle.jpg" }} // 클릭할 때만 확대되도록 설정
                         />
 
                         {/*<div className="d overall"><ProgramOverall/></div>*/}
