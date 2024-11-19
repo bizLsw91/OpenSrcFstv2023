@@ -23,12 +23,9 @@ const HomeOneHeader = () => {
                                 <Row className="align-items-center">
                                     <Col xl={3} lg={3} md={6} sm={6} xs={6}>
                                         <div className="logo">
-                                            <div>
-                                                <h4>
-                                                    <NavLink to="/">공개SW 페스티벌 2024</NavLink>
-                                                </h4>
-                                            </div>
-                                            {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
+                                            <NavLink to="/">
+                                                <img src="assets/img/2024design/logo.png" alt="logo"/>
+                                            </NavLink>
                                         </div>
                                         <div className="logo-gradient">
                                             <div>

@@ -5,7 +5,7 @@ import {speakersData} from "../Speakers";
 import HeadingWithLines from "../../../components/HeadingWithLines/HeadingWithLines";
 import { Segmented } from 'antd';
 
-const SpeakersArea = ({id}) => {
+const SpeakersArea = ({id='1'}) => {
     const [mainViewId, setMainViewId] = useState(99);
     const [ho, setHo] = useState(id==='1' ? '401호' : '402호');
 
