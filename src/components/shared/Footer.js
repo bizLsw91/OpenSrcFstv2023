@@ -36,8 +36,8 @@ const Footer = () => {
                            </p>
                         </div>
                         <div className="d-flex justify-content-md-end">
-                           <a href='https://www.youtube.com/playlist?list=PL8MaVgZDhGk_6lUMRnoGQO8Xy4d3RXTDa' className="mr-10"><img src="assets/img/brand/youtubeIcon.png" className="icon"/></a>
-                           <a href="https://www.facebook.com/OpenUP_OSS"><img src="assets/img/brand/facebook.png" className="icon"/></a>
+                           <a href='https://www.youtube.com/playlist?list=PL8MaVgZDhGk_6lUMRnoGQO8Xy4d3RXTDa' className="mr-10"><img src="https://ossfestival.kr/assets/img/brand/youtubeIcon.png" className="icon"/></a>
+                           <a href="https://www.facebook.com/OpenUP_OSS"><img src="https://ossfestival.kr/assets/img/brand/facebook.png" className="icon"/></a>
                         </div>
                      </Col>
                      <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>

@@ -24,7 +24,8 @@ const HomeOneHeader = () => {
                                     <Col xl={3} lg={3} md={6} sm={6} xs={6}>
                                         <div className="logo">
                                             <NavLink to="/">
-                                                <img src="assets/img/2024design/logo.png" alt="logo"/>
+                                                {/*<div className={'logo-div'}/>*/}
+                                                <img src="https://ossfestival.kr/assets/img/2024design/logo.png" alt="logo"/>
                                             </NavLink>
                                         </div>
                                         <div className="logo-gradient">

@@ -9,9 +9,13 @@
 .header{
     &__area{
         & .logo {
-            img{
+            img {
                 width: 270px;
                 height: auto;
+                //background-image: url(../img/2024design/logo.png);
+                //background-size: cover;
+                //background-position: center;
+
                 @media #{$sm}{
                     width: 240px;
                 }
