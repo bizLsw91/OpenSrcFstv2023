@@ -16,14 +16,12 @@ const Sidebar = ({ show, handleClose }) => {
             <Offcanvas show={show} onHide={handleClose} placement='end'>
                <Offcanvas.Header closeButton>
                   <div className="logo">
-                     <NavLink to="/">
                         <div>
                            <h4>
-                              <a className="sidebar__logo">공개SW 페스티벌<br/>2024</a>
+                              <NavLink to="/" className="sidebar__logo">공개SW 페스티벌<br/>2024</NavLink>
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
-                     </NavLink>
                   </div>
                </Offcanvas.Header>
 

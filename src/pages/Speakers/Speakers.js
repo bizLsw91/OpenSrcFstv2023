@@ -4,14 +4,17 @@ import CommonPageHeader from "../../components/CommonPageHeader/CommonPageHeader
 import Footer from "../../components/shared/Footer";
 import React from "react";
 import SpeakersArea from "./SpeakersArea/SpeakersArea";
+import {useParams} from "react-router-dom";
 
 const Speakers = () => {
+    const { id='1' } = useParams();
+    console.log("Rendering Speakers with id:", id);
     return (
         <div id="Speakers">
-            <PageHelmet pageTitle="발표자"/>
-            <HomeOneHeader/>
-            <CommonPageHeader title="Speakers" subtitle="발표자"/>
-            <SpeakersArea/>
+            <PageHelmet key='pageHelmet' pageTitle="발표자"/>
+            <HomeOneHeader key="homeOneHeader"/>
+            <CommonPageHeader key="commonPageHeader" title="Speakers" subtitle="발표자"/>
+            <SpeakersArea id={id}/>
             <Footer/>
         </div>
     );

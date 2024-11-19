@@ -1,5 +1,6 @@
 import {Container} from "react-bootstrap";
 import KakaoMap from "../../../components/KakaoMap/KakaoMap";
+import HeadingWithLines from "../../../components/HeadingWithLines/HeadingWithLines";
 
 const DirectionsArea = () => {
     return (
@@ -7,7 +8,7 @@ const DirectionsArea = () => {
             <Container>
                 <div className="directions__area">
                     <div className="directions__content">
-                        <h2 className="directions__title">오시는 길</h2>
+                        <HeadingWithLines text={'오시는 길'} />
                         <div className="infoBox w-100">
                             <div className="mb-10 w250"><h5>주소</h5>서울특별시 강남구 영동대로 513</div>
 
@@ -53,17 +54,11 @@ const DirectionsArea = () => {
                                 </ul>
                             </div>
 
-
                             <div className="mb-10 w160">
                                 <div className="mb-20">
                                     <h5>더 자세한 교통편 안내</h5>
                                     <a className="underline__blue"
                                        href="https://www.coex.co.kr/services/traffic/location-3?type=organizer">바로가기</a></div>
-                                <div>
-                                    <h5>회의시설 안내</h5>
-                                    <a className="underline__blue"
-                                       href="https://www.coex.co.kr/blog/coex-facility-info/conference_south_4f">바로가기</a>
-                                </div>
                             </div>
                         </div>
 

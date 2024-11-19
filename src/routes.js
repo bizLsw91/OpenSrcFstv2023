@@ -20,7 +20,7 @@ const routes = [
   { path: "/overview", component: Overview },
   { path: "/directions", component: Directions },
   { path: "/program", component: Program },
-  { path: "/speakers", component: Speakers },
+  { path: "/speakers/:id", component: Speakers },
   { path: "/notice", component: Notice },
   { path: "/noticeDetail", component: NoticeDetail },
   { path: "/faq", component: Faq },

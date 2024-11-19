@@ -3,6 +3,7 @@ import {Image} from "antd";
 import React, {useState} from "react";
 import ProfileCard from "../../Speakers/SpeakersArea/ProfileCard/ProfileCard";
 import {speakersData} from "../../Speakers/Speakers";
+import {Link} from "react-router-dom";
 
 const HomeArea = () => {
     const [mainViewId, setMainViewId] = useState(99);
@@ -19,7 +20,7 @@ const HomeArea = () => {
                 <div className="home__speakers__content">
                     <h2 className="title">SPEAKER</h2>
                     <h3 className="title-2">[401호 연사 소개]</h3>
-                    <a className="detailBtn  ml-10" href="/speakers">자세히 보기 &gt;</a>
+                    <Link className="detailBtn ml-10" to="/speakers/1">자세히 보기 &gt;</Link>
                     <div className="profiles">
                         <ProfileCard id={0} simple mainViewId={mainViewId} toggleVisibility={handleToggle}
                                      data={speakersData.startLect[1]} subjType={1}/>
@@ -42,7 +43,7 @@ const HomeArea = () => {
                 <div className="home__speakers__content">
                 <h2 className="title">SPEAKER</h2>
                     <h3 className="title-2">[402호 연사 소개]</h3>
-                    <a className="detailBtn  ml-15" href="/speakers">자세히 보기 &gt;</a>
+                    <a className="detailBtn  ml-15" href="/speakers/2">자세히 보기 &gt;</a>
                     <div className="profiles">
                         <ProfileCard id={8} simple mainViewId={mainViewId} toggleVisibility={handleToggle}
                                      data={speakersData.poster[1]} subjType={3}/>

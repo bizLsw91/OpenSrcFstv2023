@@ -19,7 +19,7 @@ const Footer = () => {
                      <NavLink to="/">
                         <div>
                            <h4>
-                              <a href="/">공개SW 페스티벌 2024</a>
+                              공개SW 페스티벌 2024
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}

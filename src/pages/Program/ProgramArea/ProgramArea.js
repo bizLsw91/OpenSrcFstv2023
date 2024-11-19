@@ -1,5 +1,6 @@
 import {Container} from "react-bootstrap";
 import { Image } from 'antd';
+import HeadingWithLines from "../../../components/HeadingWithLines/HeadingWithLines";
 
 const ProgramArea = () => {
     return (
@@ -7,8 +8,7 @@ const ProgramArea = () => {
             <Container>
                 <div className="program__area">
                     <div className="program__content">
-                        <h2 className="program__title">프로그램</h2>
-                        <p className="d-sm-none">※클릭하시면 확대해서 보실 수 있습니다.</p>
+                        <HeadingWithLines text={'프로그램'} />
                         <Image
                             className="imgBox"
                             src='assets/img/2024design/program.webp' // 이미지 URL을 넣으세요

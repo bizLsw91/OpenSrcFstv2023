@@ -1,5 +1,5 @@
-$sp-badge-color1: #0dcaf0;
-$sp-badge-color2: #2f77ff;
+$sp-badge-color1: #55bba6;
+$sp-badge-color2: #7572b4;
 $sp-badge-color3: #c4aa21;
 $sp-badge-color4: #c47b21;
 .speakers {
@@ -32,6 +32,29 @@ $sp-badge-color4: #c47b21;
         padding-right: 0;
         margin-top: 50px;
 
+        @mixin textcss(){
+            color: #083a3f;
+            font-weight: bold;
+            .ant-segmented-item-label{
+                font-size: 20px;
+            }
+        }
+        .ant-segmented{
+            width: 100%;
+            max-width: 300px;
+            @include textcss;
+            .ant-segmented-item{
+                @include textcss;
+            }
+            margin-bottom: 40px;
+        }
+        .ant-segmented-group {
+            justify-content: center;
+            .ant-segmented-item{
+                flex-grow: 1;
+            }
+        }
+
         .title {
             font-size: 30px;
             text-align: center;
@@ -39,7 +62,7 @@ $sp-badge-color4: #c47b21;
         }
 
         section{
-            margin-bottom: 40px;
+            margin-bottom: 150px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -78,6 +101,7 @@ $sp-badge-color4: #c47b21;
 $pfC-bR:20px;
 $pfc-w:500px;
 $pfc-h:400px;
+$pfc-h-min-xs:650px;
 $pfc-h-xs:870px;
 
 $pfc-w-simple:240px;
@@ -92,6 +116,7 @@ $pfc-h-simple:399px;
     .simple{
         width: $pfc-w-simple !important;
         height: $pfc-h-simple !important;
+        min-height: auto !important;
     }
     .btnArea{
         height: 50px;
@@ -126,7 +151,7 @@ $pfc-h-simple:399px;
         height: $pfc-h;
         @media #{$xs} {
             width: $pfc-w-simple;
-            height: $pfc-h-xs;
+            min-height: $pfc-h-min-xs;
         }
         .front{
             display: flex;
