@@ -6,13 +6,12 @@
     top: 0;
     left:0;
     z-index: -20;
-    background: url(../img/banner/2022_Ossfestival_Awards.jpg);
-    //background-repeat: no-repeat;
     width: 100%;
-    display:block;
     height: 100vh; /* 화면 높이에 맞게 조정 */
-    background-size: cover; /* 이미지가 배너 크기에 맞게 조정되도록 함 */
-    background-position: center; /* 중앙에 이미지를 위치시킴 */
+    overflow: hidden;
+    display:block;
+    background: url(../img/2024design/2023.webp) no-repeat center;
+    background-size: cover;  /* 높이를 100%로 맞추고 너비는 자동 조정 */
     @media screen and (orientation: landscape) {
         min-height: 850px;
     }
@@ -59,7 +58,7 @@
                 }
                 &-2{
                     font-size: 23px;
-                    margin-bottom: 80px;
+                    margin-bottom: 30px;
                     color: gray;
                     @media #{$xs} {
                         font-size: 15px;

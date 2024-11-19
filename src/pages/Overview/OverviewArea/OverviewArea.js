@@ -9,18 +9,40 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import {overall} from "../../../data/ProgramData";
 import {Link} from "react-router-dom";
+import HeadingWithLines from "../../../components/HeadingWithLines/HeadingWithLines";
 
 const infoData = [
-    {item: '개최목적', desc: '공개SW 최신 기술 및 우수사례 등을 공유·전파하고, 공개SW 시상을 통해 공개SW 인식 제고 도모'},
-    {item: '주제', desc: '오픈소스로 바꾸는 세상 (Transforming the World with Open source)',
-        desc_sub: '- 공개SW 개발자, 커뮤니티, 기업의 공개SW 활용 경험과 역량을 개발자들과 공유하여 오픈소스 생태계의 성장과 발전 계기 마련'
+    {
+        item: "개최목적",
+        desc: "오픈소스 최신 기술 및 우수사례등을 공유 · 전파하고, 오픈소스 시상을 통해 오픈소스 인식제고 도모",
     },
-    {item: '참가자', desc: '공개SW개발자, 관련 기업, 학생 등 약 300여명'},
-    {item: '장소', desc: '코엑스 401호~403호'},
-    {item: '일시', desc: '2023.12.01.(금) 13:00~18:00'},
-    {item: '주최', desc: '과학기술정보통신부'},
-    {item: '주관', desc: '정보통신산업진흥원'},
-]
+    {
+        item: "주제",
+        desc: "오픈소스 세상을 삼키다 (Open Source ~)",
+        desc_sub: "- 오픈소스 개발자, 커뮤니티, 기업의 오픈소스 활용 경험과 역할을 개발자들과 공유하여 오픈소스 생태계의 성장과 발전계기 마련",
+    },
+    {
+        item: "참가자",
+        desc: "오픈소스 개발자, 관련 기업, 학생 등 300여명",
+    },
+    {
+        item: "장소",
+        desc: "코엑스 그랜드 컨퍼런스룸 401호 | 402호",
+        link: "/directions", // "찾아오시는 길" 링크
+    },
+    {
+        item: "일시",
+        desc: "2024. 12. 06(금) 13:00 ~ 18:00",
+    },
+    {
+        item: "주최",
+        desc: "과학기술정보통신부 로고 넣어주세요",
+    },
+    {
+        item: "주관",
+        desc: "정보통신산업진흥원 로고 넣어주세요",
+    },
+];
 
 const OverviewArea = () => {
     return (
@@ -30,92 +52,38 @@ const OverviewArea = () => {
                     <div className="overview__content">
                         <Row>
                             <Col md={7}>
-                                <h3 className="overview__title">행사 개요</h3>
+                                <HeadingWithLines text={'행사 개요'} />
                                 <section className="overview__textInfo">
-                                    <Row className="flex-column">
-                                        <Col className="mb-20">
-                                            <td>
-                                                <div className="item">{infoData[0].item}</div>
-                                            </td>
-                                            <td>
-                                                <div className="desc">{infoData[0].desc}</div>
-                                            </td>
-                                        </Col>
-                                    </Row>
-                                    <Row className="flex-column">
-                                        <Col className="mb-20">
-                                            <td>
-                                                <div className="item">{infoData[1].item}</div>
-                                            </td>
-                                            <td>
-                                                <div className="desc">{infoData[1].desc}</div>
-                                                <p className="desc-sub">{infoData[1].desc_sub}</p>
-                                            </td>
-                                        </Col>
-                                    </Row>
-                                    <Row className="flex-column">
-                                        <Col className="mb-20">
-                                            <td>
-                                                <div className="item">{infoData[2].item}</div>
-                                            </td>
-                                            <td>
-                                                <div className="desc">{infoData[2].desc}</div>
-                                            </td>
-                                        </Col>
-                                    </Row>
-                                    <Row className="flex-column">
-                                        <Col className="mb-20 d-flex">
-                                            <td>
-                                                <div className="item">{infoData[3].item}</div>
-                                            </td>
-                                            <td className="d-flex">
-                                                <div className="desc">{infoData[3].desc}</div>
-                                                <Link className="directions  ml-15" to="/directions">찾아오시는 길 ></Link>
-                                            </td>
-                                        </Col>
-                                    </Row>
-                                    <Row className="flex-column">
-                                        <Col className="mb-20">
-                                            <td>
-                                                <div className="item">{infoData[4].item}</div>
-                                            </td>
-                                            <td>
-                                                <div className="desc">{infoData[4].desc}</div>
-                                            </td>
-                                        </Col>
-                                    </Row>
-                                    <Row className="flex-column">
-                                        <Col className="mb-20">
-                                            <td>
-                                                <div className="item">{infoData[5].item}</div>
-                                            </td>
-                                            <td>
-                                                <div className="desc">{infoData[5].desc}</div>
-                                            </td>
-                                        </Col>
-                                    </Row>
-                                    <Row className="flex-column">
-                                        <Col className="mb-20">
-                                            <td>
-                                                <div className="item">{infoData[6].item}</div>
-                                            </td>
-                                            <td>
-                                                <div className="desc">{infoData[6].desc}</div>
-                                            </td>
-                                        </Col>
-                                    </Row>
+                                    {infoData.map((info, index) => (
+                                        <Row className="flex-column" key={index}>
+                                            <Col className="mb-20 d-flex">
+                                                <div className="item">{info.item}</div>
+                                                <div className="desc">
+                                                    <div>
+                                                        {info.desc}
+                                                        {info.desc_sub && <p className="desc-sub">{info.desc_sub}</p>}
+                                                    </div>
+                                                    {info.link && (
+                                                        <Link className="directions ml-15" to={info.link}>
+                                                            찾아오시는 길 ▶
+                                                        </Link>
+                                                    )}
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    ))}
                                 </section>
                                 <section className="overview__poster">
-                                    <img className="poster" src="assets/img/openSW/openSW-poster.png"/>
+                                    <img className="poster" src="assets/img/2024design/poster.webp" alt="오픈소스 포스터" />
                                 </section>
                             </Col>
                             <Col md={5}>
                                 <section className="overview__schedule">
-                                    <h3 className="overview__title">시간 안내</h3>
+                                    <HeadingWithLines text={'시간 안내'} />
                                     <Timeline>
                                         <TimelineItem>
                                             <TimelineOppositeContent color="textSecondary">
-                                                1:00 pm
+                                                13:00
                                             </TimelineOppositeContent>
                                             <TimelineSeparator>
                                                 <TimelineDot variant="outlined"/>
@@ -124,7 +92,7 @@ const OverviewArea = () => {
                                             <TimelineContent>
                                                 <div className="contentBox">
                                                     <div className="item">
-                                                        <div className="ho ho-color1">{overall.a.place+'호'}</div>
+                                                        <div className="ho">{overall.a.place+'호'}</div>
                                                         <a className="title">{overall.a.title}</a>
                                                     </div>
                                                 </div>
@@ -132,7 +100,7 @@ const OverviewArea = () => {
                                         </TimelineItem>
                                         <TimelineItem>
                                             <TimelineOppositeContent color="textSecondary">
-                                                2:00 pm
+                                                14:00
                                             </TimelineOppositeContent>
                                             <TimelineSeparator>
                                                 <TimelineDot variant="outlined"/>
@@ -141,11 +109,11 @@ const OverviewArea = () => {
                                             <TimelineContent>
                                                 <div className="contentBox">
                                                     <div className="item">
-                                                        <div className="ho ho-color1">{overall.b.place+'호'}</div>
+                                                        <div className="ho">{overall.b.place+'호'}</div>
                                                         <a className="title">{overall.b.title}</a>
                                                     </div>
                                                     <div className="item">
-                                                        <div className="ho ho-color3">{overall.b2.place+'호'}</div>
+                                                        <div className="ho">{overall.b2.place+'호'}</div>
                                                         <a className="title">{overall.b2.title}</a>
                                                     </div>
                                                 </div>
@@ -153,7 +121,7 @@ const OverviewArea = () => {
                                         </TimelineItem>
                                         <TimelineItem>
                                             <TimelineOppositeContent color="textSecondary">
-                                                3:00 pm
+                                                15:00
                                             </TimelineOppositeContent>
                                             <TimelineSeparator>
                                                 <TimelineDot variant="outlined"/>
@@ -162,23 +130,19 @@ const OverviewArea = () => {
                                             <TimelineContent>
                                                 <div className="contentBox">
                                                     <div className="item">
-                                                        <div className="ho ho-color1">{overall.c.place+'호'}</div>
+                                                        <div className="ho">{overall.c.place+'호'}</div>
                                                         <a className="title">{overall.c.title}</a>
                                                     </div>
                                                     <div className="item">
-                                                        <div className="ho ho-color2">{overall.c2.place+'호'}</div>
+                                                        <div className="ho">{overall.c2.place+'호'}</div>
                                                         <a className="title">{overall.c2.title}</a>
-                                                    </div>
-                                                    <div className="item">
-                                                        <div className="ho ho-color3">{overall.c3.place+'호'}</div>
-                                                        <a className="title">{overall.c3.title}</a>
                                                     </div>
                                                 </div>
                                             </TimelineContent>
                                         </TimelineItem>
                                         <TimelineItem>
                                             <TimelineOppositeContent color="textSecondary">
-                                                5:40 pm
+                                                15:40
                                             </TimelineOppositeContent>
                                             <TimelineSeparator>
                                                 <TimelineDot variant="outlined"/>
@@ -187,7 +151,7 @@ const OverviewArea = () => {
                                             <TimelineContent>
                                                 <div className="contentBox last">
                                                 <div className="item">
-                                                    <div className="ho ho-color3"></div>
+                                                    <div className="ho"></div>
                                                     <a className="title">{overall.d.title}</a>
                                                 </div>
                                                 </div>
@@ -195,7 +159,7 @@ const OverviewArea = () => {
                                         </TimelineItem>
                                         <TimelineItem>
                                             <TimelineOppositeContent color="textSecondary">
-                                                6:00 pm
+                                                18:00
                                             </TimelineOppositeContent>
                                             <TimelineSeparator>
                                                 <TimelineDot variant="outlined"/>
@@ -203,7 +167,7 @@ const OverviewArea = () => {
                                             <TimelineContent>
                                                 <div className="contentBox ops">
                                                     <div className="item">
-                                                        <div className="ho ho-color3"></div>
+                                                        <div className="ho"></div>
                                                         <a className="title">{overall.d.title}</a>
                                                     </div>
                                                 </div>

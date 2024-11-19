@@ -1,16 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CommonPageHeader = ({ title, subtitle}) => {
+const CommonPageHeader = ({ title, level_1, level_2, level_3}) => {
+   console.log('%cCommonPageHeader',"color:blue")
    return (
       <>
-         <section className="page__title p-relative d-flex align-items-center fix" style={{ background: `url(assets/img/banner/subBanner_desktop.png)`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-            {/*<div className="slider__shape">*/}
-            {/*   <img className= "shape triangle"  src="assets/img/icon/slider/triangle.png" alt="triangle" />*/}
-            {/*   <img className="shape dotted-square" src="assets/img/icon/slider/dotted-square.png" alt="dotted-square" />*/}
-            {/*   <img className="shape solid-square" src="assets/img/icon/slider/solid-square.png" alt="solid-square" />*/}
-            {/*   <img className="shape circle-2" src="assets/img/icon/slider/circle.png" alt="circle" />*/}
-            {/*</div>*/}
+         <section className="page__title p-relative d-flex align-items-center fix">
             <div className="container p-relative">
                <div className="row">
                   <div className="col-xl-12">
@@ -19,8 +14,11 @@ const CommonPageHeader = ({ title, subtitle}) => {
 
                         <nav aria-label="breadcrumb">
                            <ol className="breadcrumb">
-                              <li className="breadcrumb-item"><Link to="/">홈</Link></li>
-                              <li className="breadcrumb-item active" aria-current="page">{subtitle}</li>
+                              <li className="breadcrumb-item">{level_1}</li>
+                              <li className="breadcrumb-item" aria-current="page">{level_2}</li>
+                              {level_3 &&
+                                  <li className="breadcrumb-item" aria-current="page">{level_3}</li>
+                              }
                            </ol>
                         </nav>
                      </div>

@@ -804,3 +804,23 @@ p {
 .pointer{
 	cursor: pointer;
 }
+
+@mixin section-title(){
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #1f4a9e;
+}
+@mixin data-label() {
+	font-family: $font-nps-bold;
+	white-space: nowrap;
+	font-weight: bold;
+	background-color: #eaeff7;
+	padding: 15px 12px;
+	border-radius: 30px 30px 0 30px;
+	color: #555;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

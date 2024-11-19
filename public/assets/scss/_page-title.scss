@@ -2,10 +2,14 @@
 /*  20. PAGE TITLE CSS START
 /*----------------------------------------*/
 
-.page{
-    &__title{
+.page {
+    &__title {
+        background: url("../img/banner/subBanner_desktop.png");
+        background-position: center;
+        background-size: cover;
         min-height: 250px;
-        &-2{
+
+        &-2 {
             min-height: 700px;
             @media #{$sm}{
                 min-height: 500px;
@@ -14,18 +18,25 @@
                 min-height: 500px;
             }
         }
-        &-content{
-            & h2{
+
+        &-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 20px;
+
+            & h2 {
                 font-size: 60px;
                 color: $white;
                 @media #{$sm}{
                     font-size: 50px;
                 }
                 @media #{$xs}{
-                    font-size: 8vw; /* 비례적으로 폰트 크기 조절 */
+                    font-size: 24px;
                 }
             }
-            & .breadcrumb{
+
+            & .breadcrumb {
                 padding: 0;
                 background-color: transparent;
                 border-radius: 0;
@@ -34,18 +45,26 @@
                 -ms-border-radius: 0;
                 -o-border-radius: 0;
                 margin-bottom: 0;
-                &-item{
+
+                &-item {
                     color: $white;
                     font-size: 18px;
-                    &:hover{
+                    @media #{$xs}{
+                        font-size: 15px;
+                    }
+
+                    &:hover {
                         color: $white;
                     }
-                    &.active{
+
+                    &.active {
                         padding-left: 14px;
-                        &:hover{
+
+                        &:hover {
                             color: $white;
                         }
-                        &::before{
+
+                        &::before {
                             content: '|';
                             color: $white;
                             padding-right: 14px;
@@ -53,13 +72,15 @@
                     }
                 }
             }
-            & span{
+
+            & span {
                 color: $white;
                 opacity: .5;
                 display: inline-block;
                 margin-bottom: 15px;
             }
-            & h3{
+
+            & h3 {
                 font-size: 70px;
                 color: $white;
                 @media #{$sm}{

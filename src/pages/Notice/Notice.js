@@ -10,7 +10,7 @@ const Notice = () => {
         <div id="Notice">
             <PageHelmet pageTitle="공지사항" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Notice" subtitle="공지사항" />
+            <CommonPageHeader title="Notice" level_1={'게시판'} level_2="공지사항" />
             <NoticeArea/>
             <Footer/>
         </div>

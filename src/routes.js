@@ -11,7 +11,6 @@ import DocPrivacy from "./pages/DocPrivacy/DocPrivacy";
 import DocRefusal from "./pages/DocRefusal/DocRefusal";
 import Login from "./pages/Login/Login";
 import NoticeDetail from "./pages/Notice/NoticeDetail/NoticeDetail";
-import SprintPreRegi from "./pages/SprintPreRegi/SprintPreRegi";
 import Speakers from "./pages/Speakers/Speakers";
 
 const routes = [
@@ -20,12 +19,11 @@ const routes = [
   { path: "/overview", component: Overview },
   { path: "/directions", component: Directions },
   { path: "/program", component: Program },
-  { path: "/speakers", component: Speakers },
+  { path: "/speakers/:id", component: Speakers },
   { path: "/notice", component: Notice },
   { path: "/noticeDetail", component: NoticeDetail },
   { path: "/faq", component: Faq },
   { path: "/preRegistration", component: PreRegistration },
-  { path: "/preRegistration-sprint", component: SprintPreRegi },
   { path: "/event", component: Event },
   { path: "/docTerms", component: DocTerms },
   { path: "/docPrivacy", component: DocPrivacy },

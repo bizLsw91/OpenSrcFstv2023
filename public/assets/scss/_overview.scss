@@ -11,8 +11,7 @@
         padding: 60px 0 0;
     }
     &__title{
-        text-align: center;
-        margin-bottom: 20px;
+        @include section-title;
     }
     &__content{
         display: flex;
@@ -40,44 +39,52 @@
             display: flex;
             justify-items: baseline;
         }
-        .item{
-            position: relative;
-            width: 85px;
-            font-family: $font-nps-bold;
-            white-space: nowrap;
-        }
-        .item::after{
-            content: "";
-            display: inline-block;
-            position: absolute;
-            top: 5px;
-            left: 61px;
-            width: 3px; /* 막대의 너비 조절 */
-            height: 14px; /* 막대의 높이 조절 */
-            background-color: #3b8bdb; /* 파란색으로 설정 */
-            margin-left: 10px; /* A 요소 다음에 한 칸 띄우기 위한 여백 설정 */
-            margin-right: 10px; /* A 요소 다음에 한 칸 띄우기 위한 여백 설정 */
-        }
-        .desc{
-            font-family: $font-lato;
-            &-sub{
-                font-size: small;
+        .flex-column {
+            margin-bottom: 20px;
+
+            .item {
+                @include data-label;
+                margin-right: 15px;
+                width: 85px;
             }
-        }
-        p{
-            margin-bottom: 0;
-        }
-        .directions{
-            width: fit-content;
-            padding: 4px 7px;
-            font-size: smaller;
-            color: white;
-            background-color: #2a3a57;
-            line-height: 1.2;
-            border-radius: 9px;
-            border-color: #dfe5f3;
-            border-width: 2px;
-            border-style: solid;
+
+            .desc {
+                display: flex;
+                justify-content: space-between;
+                font-family: $font-lato;
+                background-color: #f8f8fc;
+                padding: 12px;
+                border-radius: 12px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #333;
+                flex: 1;
+
+                .desc-sub {
+                    font-size: 12px;
+                    color: #666;
+                    margin-top: 8px;
+                }
+            }
+
+            .directions {
+                width: fit-content;
+                padding: 4px 7px;
+                font-size: 14px;
+                color: white;
+                background-color: #1f4a9e;
+                border-color: #1f4a9e;
+                border-width: 2px;
+                border-style: solid;
+                margin-left: 15px;
+                text-decoration: none;
+                line-height: 1.2;
+                border-radius: 9px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
     &__schedule{
@@ -93,21 +100,18 @@
                 margin-bottom: 13px;
 
                 .title{
-                    width: fit-content;
-                    padding: 4px 7px;
-                    font-size: smaller;
-                    color: #264982;
-                    line-height: 1.2;
-                    border-radius: 9px;
-                    border-color: #dfe5f3;
-                    border-width: 2px;
-                    border-style: solid;
+                    font-size: large;
+                    color: black;
+                    font-weight: bold;
                 }
                 .ho{
+                    font-size: 20px;
+                    background-color: #e4e9f1;
                     width: fit-content;
-                    padding: 1px 2px;
-                    color: white;
+                    padding: 3px 5px;
                     line-height: 1.2;
+                    color: black;
+                    font-weight: bold;
                 }
                 .ho-color1{
                     background-color: $color-401-ho;

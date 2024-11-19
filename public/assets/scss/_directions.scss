@@ -9,7 +9,7 @@
         padding: 60px 0;
     }
     &__title{
-        margin-bottom: 35px;
+        @include section-title;
     }
     &__content{
         display: flex;
@@ -33,6 +33,10 @@
             }
             a{
                 font-size: small;
+            }
+            h5 {
+                @include data-label;
+                width: fit-content;
             }
             .w250{width: 250px}
             .w160{width: 160px}

@@ -10,7 +10,7 @@ const Faq = () => {
         <div id="Faq">
             <PageHelmet pageTitle="FAQ" />
             <HomeOneHeader/>
-            <CommonPageHeader title="FAQ" subtitle="FAQ" />
+            <CommonPageHeader title="FAQ" level_1={'게시판'} level_2="FAQ" />
             <FaqArea/>
             <Footer/>
         </div>

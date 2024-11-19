@@ -10,7 +10,7 @@ const DocRefusal = () => {
         <div id="DocRefusal">
             <PageHelmet pageTitle="이메일주소 무단수집 거부" />
             <HomeOneHeader/>
-            <CommonPageHeader title="No Email Scraping" subtitle="이메일주소 무단수집 거부" />
+            <CommonPageHeader title="No Email Scraping" level_1={'Footer'} level_2="이메일주소 무단수집 거부" />
             <DocRefusalArea/>
             <Footer/>
         </div>

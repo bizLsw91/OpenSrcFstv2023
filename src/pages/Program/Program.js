@@ -10,7 +10,7 @@ const Program = () => {
         <div id="Program">
             <PageHelmet pageTitle="프로그램" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Program" subtitle="프로그램" />
+            <CommonPageHeader title="Program" level_1={'프로그램'} level_2="프로그램" />
             <ProgramArea/>
             <Footer/>
         </div>
