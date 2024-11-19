@@ -15,10 +15,8 @@ import {Button, Checkbox, Modal} from "antd";
 import {useEffect, useState} from "react";
 import Terms1 from "./Terms1";
 import Terms2 from "./Terms2";
-import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
 
-const submitData = async (isSprint, values) => {
-    values.isSprint = isSprint
+const submitData = async (values) => {
     try {
         // Axios를 사용하여 POST 요청을 보냄
         const response = await axios.post(appConfig.apiPreUrl + '/User/' , values);
@@ -31,16 +29,13 @@ const submitData = async (isSprint, values) => {
         throw error; // 에러를 상위 호출자에게 전파
     }
 }
-const api_sprintCloseChks = async () => {
-    return await axios.get(appConfig.apiPreUrl + '/User/sprintCloseChks')
-};
 const api_addErrLog = async (req) => {
     return await axios.post(appConfig.apiPreUrl + '/Common/Error/addErrLog', req)
 };
 
 
 const TabContent1 = (props) => {
-    const {isSprint, nextTab2} = props
+    const {nextTab2} = props
     const [isClosedArr, setIsClosedArr] = useState([false,false,false]);
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
@@ -55,26 +50,6 @@ const TabContent1 = (props) => {
     const msg2 = '이미 같은 이메일 주소가 등록되어 있습니다. 다른 이메일로 등록해주시기 바랍니다.'
     let msg3 = ''
     const msg4 = '스프린트 신청 마감정보를 불러오는데 실패했습니다.'
-
-    useEffect(()=>{
-        if(isSprint){
-            sprintCloseChks()
-        }
-    },[])
-
-    const sprintCloseChks = async ()=>{
-        try {
-            const res = await api_sprintCloseChks()
-            if (res.status === 200) {
-                setIsError(false)
-                setIsClosedArr(res.data.isClosedArr)
-            }
-        } catch (err) {
-            setIsError(true)
-            setMsg(msg4)
-            showModal()
-        }
-    }
 
     const showModal = () => {
         setOpen(true);
@@ -116,7 +91,6 @@ const TabContent1 = (props) => {
                     name: '',
                     company: '',
                     call: '',
-                    sprint: isSprint?0:99,
                     submit: null
                 }}
                 validationSchema={Yup.object().shape({
@@ -124,15 +98,11 @@ const TabContent1 = (props) => {
                     name: Yup.string().max(100, '100자를 넘을 수 없습니다.').required('이름은 필수 입력사항입니다.'),
                     company: Yup.string().max(100, '100자를 넘을 수 없습니다.').required('소속은 필수 입력사항입니다.'),
                     call: Yup.string().matches(/^\d{8,11}$/, '유효한 전화번호를 입력하세요. - 없이 입력하세요').required('연락처는 필수 입력사항입니다.'),
-                    sprint: Yup.number().min(1, 'Sprint Project 선택은 필수입니다.'),
                 })}
                 onSubmit={async (values, {setErrors, setStatus, setSubmitting}) => {
-                    values.sprint = Number(values.sprint)
                     setEmail(values.email)
-                    if(values.sprint != 99)
-                        msg3 = 'Sprint Project: <'+sprintProjectDatas[values.sprint-1].name+'> 가 마감되었습니다.'
                     try {
-                        const res = await submitData(isSprint, values); // 비동기 함수 호출
+                        const res = await submitData(values); // 비동기 함수 호출
                         setSubmitting(false);
                         if (res.status === 200) {
                             if (res.data?.isError && res.data?.errCode === -1) { //중복 이메일 존재
@@ -156,7 +126,7 @@ const TabContent1 = (props) => {
                         setSubmitting(false);
                         setStatus({success: false});
                         setErrors({submit: err.message});
-                        await api_addErrLog({viewName:'TabContent1', collectionPath: isSprint?'UserSpr':'User', error: {stack: err.toString()}, payload: values})
+                        await api_addErrLog({viewName:'TabContent1', collectionPath: 'User', error: {stack: err.toString()}, payload: values})
                     }
                     showModal()
                 }}
@@ -164,30 +134,6 @@ const TabContent1 = (props) => {
                 {({errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values}) => (
 
                         <form noValidate onSubmit={handleSubmit}>
-                            {isSprint &&
-                                <Stack spacing={1}>
-                                    <InputLabel htmlFor="sprint-signup">Sprint Project 선택*</InputLabel>
-                                    <RadioGroup
-                                        col
-                                        id="sprint-signup"
-                                        name="sprint"
-                                        value={values.sprint}
-                                        onChange={handleChange}
-                                    >
-                                        {
-                                            sprintProjectDatas.map((data,index) =>
-                                                (<FormControlLabel value={data.value} control={<Radio disabled={isClosedArr[index]}/>}
-                                                                   label={<div className={'bold_m colorSprint'+data.value}>{data.name+(isClosedArr[index]?' (마감)':'')}</div>}/>)
-                                            )
-                                        }
-                                    </RadioGroup>
-                                    {errors.sprint && (
-                                        <FormHelperText error id="helper-text-sprint-signup">
-                                            {errors.sprint}
-                                        </FormHelperText>
-                                    )}
-                                </Stack>
-                            }
                             <Stack spacing={1}>
                                 <InputLabel htmlFor="email-signup">Email 주소*</InputLabel>
                                 <OutlinedInput

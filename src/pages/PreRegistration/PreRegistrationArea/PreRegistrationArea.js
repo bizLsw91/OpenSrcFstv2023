@@ -41,7 +41,6 @@ const PreRegistrationArea = () => {
                         <Row className="flex-column">
                             <Col className="mb-30">
                                 <Box sx={{width: '100%', typography: 'body1'}}>
-                                    <div className="bold_m">※Sprint 사전신청과 별개로 신청하실 수 있습니다.</div>
                                     <TabContext value={value}>
                                         <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                                             <TabList onChange={handleChange} aria-label="lab API tabs example">
@@ -51,11 +50,11 @@ const PreRegistrationArea = () => {
                                         </Box>
                                         <TabPanel value="1">
                                             {/* 사전등록 탭 */}
-                                            <TabContent1 isSprint={false} nextTab2={nextTab2}/>
+                                            <TabContent1 nextTab2={nextTab2}/>
                                         </TabPanel>
                                         <TabPanel value="2">
                                             {/* 등록하기 탭*/}
-                                            <TabContent2 isSprint={false} email0={email}/>
+                                            <TabContent2 email0={email}/>
                                         </TabPanel>
                                     </TabContext>
                                 </Box>

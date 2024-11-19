@@ -10,7 +10,7 @@ const DocTerms = () => {
         <div id="DocTerms">
             <PageHelmet pageTitle="이용약관" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Terms of Service" subtitle="이용약관" />
+            <CommonPageHeader title="Terms of Service" level_1={'Footer'} level_2="이용약관" />
             <DocTermsArea/>
             <Footer/>
         </div>

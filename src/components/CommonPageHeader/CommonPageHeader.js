@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CommonPageHeader = ({ title, subtitle}) => {
+const CommonPageHeader = ({ title, level_1, level_2, level_3}) => {
    console.log('%cCommonPageHeader',"color:blue")
    return (
       <>
@@ -14,8 +14,11 @@ const CommonPageHeader = ({ title, subtitle}) => {
 
                         <nav aria-label="breadcrumb">
                            <ol className="breadcrumb">
-                              <li className="breadcrumb-item"><Link to="/">홈</Link></li>
-                              <li className="breadcrumb-item active" aria-current="page">{subtitle}</li>
+                              <li className="breadcrumb-item">{level_1}</li>
+                              <li className="breadcrumb-item" aria-current="page">{level_2}</li>
+                              {level_3 &&
+                                  <li className="breadcrumb-item" aria-current="page">{level_3}</li>
+                              }
                            </ol>
                         </nav>
                      </div>

@@ -10,7 +10,7 @@ const PreRegistration = () => {
         <div id="PreRegistration">
             <PageHelmet pageTitle="사전등록" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Pre-Registration" subtitle="사전등록" />
+            <CommonPageHeader title="Pre-Registration" level_1={'사전등록'} level_2="사전등록" />
             <PreRegistrationArea/>
             <Footer/>
         </div>

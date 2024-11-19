@@ -10,7 +10,7 @@ const Event = () => {
         <div id="Event">
             <PageHelmet pageTitle="이벤트" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Event" subtitle="이벤트" />
+            <CommonPageHeader title="Event" level_1={'사전등록'} level_2="이벤트" />
             <EventArea/>
             <Footer/>
         </div>

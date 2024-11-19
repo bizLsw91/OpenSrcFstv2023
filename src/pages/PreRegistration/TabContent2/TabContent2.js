@@ -14,12 +14,10 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import {Modal, Button} from "antd";
 import {Col, Row} from "react-bootstrap";
-import {sprintProjectDatas} from "../../SprintPreRegi/SprintPreRegiArea/Sections/SprintProjects/SprintProjects";
 import moment from "moment";
 import {api_addErrLog} from "../../../services/CommonService";
 
-const userCheckApi = async(isSprint, values) => {
-    values.isSprint = isSprint
+const userCheckApi = async(values) => {
     try {
         const response = await axios.post(appConfig.apiPreUrl+'/User/check', values);
         // 응답이 성공적으로 돌아오면, 결과를 처리
@@ -33,7 +31,7 @@ const userCheckApi = async(isSprint, values) => {
 }
 
 const TabContent2 = (props) => {
-    const {isSprint, email0} = props
+    const {email0} = props
     const [email] = useState(email0);
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
@@ -69,7 +67,7 @@ const TabContent2 = (props) => {
                 onSubmit={async (values) => {
                     setLoading(true)
                     try {
-                        const res = await userCheckApi(isSprint, values);
+                        const res = await userCheckApi(values);
                         setLoading(false);
                         if(res.status === 200) {
                             if (res.data?.errCode) {
@@ -101,7 +99,7 @@ const TabContent2 = (props) => {
                         setLoading(false);
                         setIsError(true)
                         setMsg(errMsg2)
-                        await api_addErrLog({viewName:'TabContent2', collectionPath: isSprint?'UserSpr':'User', error:{stack:err.toString()}, payload:values})
+                        await api_addErrLog({viewName:'TabContent2', collectionPath: 'User', error:{stack:err.toString()}, payload:values})
                     }
                     showModal()
                 }}
@@ -168,9 +166,6 @@ const TabContent2 = (props) => {
                 <div className="msg">{msg}</div>
                 {!isError &&
                 <ul className="result">
-                    {isSprint && userData.sprint != undefined &&
-                        <Row><Col xs={sm1} sm={md1}>Sprint:</Col><Col><div>{sprintProjectDatas[userData.sprint-1].name}</div></Col></Row>
-                    }
                 </ul>}
             </Modal>
         </div>

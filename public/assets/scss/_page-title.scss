@@ -20,6 +20,11 @@
         }
 
         &-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 20px;
+
             & h2 {
                 font-size: 60px;
                 color: $white;
@@ -27,7 +32,7 @@
                     font-size: 50px;
                 }
                 @media #{$xs}{
-                    font-size: 8vw; /* 비례적으로 폰트 크기 조절 */
+                    font-size: 24px;
                 }
             }
 
@@ -44,6 +49,9 @@
                 &-item {
                     color: $white;
                     font-size: 18px;
+                    @media #{$xs}{
+                        font-size: 15px;
+                    }
 
                     &:hover {
                         color: $white;

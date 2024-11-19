@@ -10,7 +10,7 @@ const Login = () => {
         <div id="Login">
             <PageHelmet pageTitle="로그인" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Login" subtitle="로그인" />
+            <CommonPageHeader title="Login" level_2="로그인" />
             <LoginArea/>
             <Footer/>
         </div>

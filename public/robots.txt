@@ -10,7 +10,6 @@ Disallow: /speakers
 Disallow: /notice
 Disallow: /faq
 Disallow: /preRegistration
-Disallow: /preRegistration-sprint
 Disallow: /event
 Allow: /
 Allow: /sitemap.xml

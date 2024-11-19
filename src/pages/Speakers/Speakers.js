@@ -13,7 +13,7 @@ const Speakers = () => {
         <div id="Speakers">
             <PageHelmet key='pageHelmet' pageTitle="발표자"/>
             <HomeOneHeader key="homeOneHeader"/>
-            <CommonPageHeader key="commonPageHeader" title="Speakers" subtitle="발표자"/>
+            <CommonPageHeader key="commonPageHeader" title="Speakers" level_1={'프로그램'} level_2="발표자"/>
             <SpeakersArea id={id}/>
             <Footer/>
         </div>

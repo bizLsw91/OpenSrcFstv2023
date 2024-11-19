@@ -10,7 +10,7 @@ const DocPrivacy = () => {
         <div id="DocPrivacy">
             <PageHelmet pageTitle="개인정보취급방침" />
             <HomeOneHeader/>
-            <CommonPageHeader title="Privacy Policy" subtitle="개인정보취급방침" />
+            <CommonPageHeader title="Privacy Policy" level_1={'Footer'} level_2="개인정보취급방침" />
             <DocPrivacyArea/>
             <Footer/>
         </div>

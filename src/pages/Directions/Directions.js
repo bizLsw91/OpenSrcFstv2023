@@ -10,7 +10,7 @@ const Overview = () => {
         <div id="Overview">
             <PageHelmet pageTitle="오시는 길" />
             <HomeOneHeader/>
-            <CommonPageHeader title="How to Get Here" subtitle="오시는 길" />
+            <CommonPageHeader title="Directions" level-1={'행사안내'} level_2="오시는 길" />
             <DirectionsArea/>
             <Footer/>
         </div>
