@@ -29,15 +29,21 @@ const Footer = () => {
                   <Row md={2} className="d-flex">
                      <Col md={{span:6, order:2}} className="d-flex justify-content-start align-content-md-center flex-column justify-content-md-end">
                         <div className="justify-content-start">
-                           <p className="d-flex flex-column justify-content-start  flex-sm-row flex-sm-wrap justify-content-md-end">
-                              <div className="d-inline-block mb-10"><Link to={docUrl1} className="fw-bold">이용약관</Link></div><span className="d-none d-sm-inline">&nbsp;|&nbsp;</span>
-                              <div className="d-inline-block mb-10"><Link to={docUrl2} className="fw-bold">개인정보취급방침</Link></div><span className="d-none d-sm-inline">&nbsp;|&nbsp;</span>
-                              <div className="d-inline-block mb-10"><Link to={docUrl3} className="fw-bold">이메일주소 무단수집 거부</Link></div>
-                           </p>
+                           <div className="d-flex flex-column justify-content-start flex-sm-row flex-sm-wrap justify-content-md-end">
+                              <span className="d-inline-block mb-10"><Link to={docUrl1} className="fw-bold">이용약관</Link></span>
+                              <span className="d-none d-sm-inline">&nbsp;|&nbsp;</span>
+                              <span className="d-inline-block mb-10"><Link to={docUrl2} className="fw-bold">개인정보취급방침</Link></span>
+                              <span className="d-none d-sm-inline">&nbsp;|&nbsp;</span>
+                              <span className="d-inline-block mb-10"><Link to={docUrl3} className="fw-bold">이메일주소 무단수집 거부</Link></span>
+                           </div>
                         </div>
                         <div className="d-flex justify-content-md-end">
-                           <a href='https://www.youtube.com/playlist?list=PL8MaVgZDhGk_6lUMRnoGQO8Xy4d3RXTDa' className="mr-10"><img src="https://ossfestival.kr/assets/img/brand/youtubeIcon.png" className="icon"/></a>
-                           <a href="https://www.facebook.com/OpenUP_OSS"><img src="https://ossfestival.kr/assets/img/brand/facebook.png" className="icon"/></a>
+                           <a href='https://www.youtube.com/watch?v=DVMOREXMIAo&list=PL8MaVgZDhGk-mVoB9he8ofPqj24_4Bb1N' className="mr-10">
+                              <img src="https://ossfestival.kr/assets/img/brand/youtubeIcon.png" className="icon" alt="YouTube"/>
+                           </a>
+                           <a href="https://www.facebook.com/OpenUP_OSS">
+                              <img src="https://ossfestival.kr/assets/img/brand/facebook.png" className="icon" alt="Facebook"/>
+                           </a>
                         </div>
                      </Col>
                      <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>
