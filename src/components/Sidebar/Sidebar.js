@@ -11,7 +11,6 @@ const Sidebar = ({ show, handleClose }) => {
 
    return (
       <>
-
          <div className="sidebar__area">
             <Offcanvas show={show} onHide={handleClose} placement='end'>
                <Offcanvas.Header closeButton>

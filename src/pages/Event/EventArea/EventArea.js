@@ -1,5 +1,6 @@
 import {Container} from "react-bootstrap";
 import {Image} from "antd";
+import HeadingWithLine from "../../../components/HeadingWithLines/HeadingWithLines";
 
 const EventArea = () => {
     return (
@@ -7,13 +8,12 @@ const EventArea = () => {
             <Container>
                 <div className="program__area">
                     <div className="program__content">
-                        <h2 className="program__title">이벤트</h2>
-                        <p className="d-sm-none">※클릭하시면 확대해서 보실 수 있습니다.</p>
+                        <HeadingWithLine text={'이벤트'}/>
                         <Image
                             className="imgBox"
                             movable={true}
-                            src='assets/img/openSW/openSW-event.jpg' // 이미지 URL을 넣으세요
-                            preview={{ src: "assets/img/openSW/openSW-event.jpg" }} // 클릭할 때만 확대되도록 설정
+                            src='https://ossfestival.kr/assets/img/2024design/event.png' // 이미지 URL을 넣으세요
+                            preview={false} // 클릭할 때만 확대되도록 설정
                         />
                     </div>
                 </div>
