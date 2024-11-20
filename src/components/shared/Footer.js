@@ -17,12 +17,7 @@ const Footer = () => {
                <Container>
                   <div className="logo mb-20">
                      <NavLink to="/">
-                        <div>
-                           <h4>
-                              공개SW 페스티벌 2024
-                           </h4>
-                        </div>
-                        {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
+                        <img src="https://ossfestival.kr/assets/img/2024design/logo.png" alt="logo"/>
                      </NavLink>
                   </div>
                   <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>
@@ -50,7 +45,7 @@ const Footer = () => {
                      <Col md={{span:6, order:1}} className="d-flex align-items-md-end">
                         <div className="copyright-text">
                            <p>Copyright © 2024<Link to="/"> OSSFESTIVAL.KR.</Link>&nbsp;&nbsp;All Rights Reserved.</p>
-                           <p>Contact: <a className="underline__black" href="mailto:ossfesta2024@gmail.com">ossfesta2024@gmail.com</a></p>
+                           <p>Contact: <a className="underline__black" href="mailto:ossfestival2024@gmail.com">ossfestival2024@gmail.com</a></p>
                         </div>
                      </Col>
                   </Row>

@@ -64,34 +64,6 @@ const PreRegistrationArea = () => {
                                 </div>
                             }
                         </div>
-
-                        {/*<Row className="flex-column">*/}
-                        {/*    <Col className="mb-30">*/}
-                        {/*        <Box sx={{width: '100%', typography: 'body1'}}>*/}
-                        {/*            <TabContext value={value}>*/}
-                        {/*                <Box sx={{borderBottom: 1, borderColor: 'divider'}}>*/}
-                        {/*                    <TabList onChange={handleChange} aria-label="lab API tabs example">*/}
-                        {/*                        <Tab className="tabBtn" label="사전 등록" value="1" onClick={alertFinish}/>*/}
-                        {/*                        <Tab className="tabBtn" label="등록 확인" value="2"/>*/}
-                        {/*                    </TabList>*/}
-                        {/*                </Box>*/}
-                        {/*                <TabPanel value="1">*/}
-                        {/*                    /!* 사전등록 탭 *!/*/}
-                        {/*                    <TabContent1 nextTab2={nextTab2}/>*/}
-                        {/*                </TabPanel>*/}
-                        {/*                <TabPanel value="2">*/}
-                        {/*                    /!* 등록하기 탭*!/*/}
-                        {/*                    <TabContent2 email0={email}/>*/}
-                        {/*                </TabPanel>*/}
-                        {/*            </TabContext>*/}
-                        {/*        </Box>*/}
-                        {/*    </Col>*/}
-                        {/*    <Col className="guide">*/}
-                        {/*        <div className="office">공개SW페스티벌 사무국</div>*/}
-                        {/*        <div className="email"><span>이메일</span><span>ossfesta2024@gmail.com</span></div>*/}
-                        {/*    </Col>*/}
-                        {/*</Row>*/}
-
                     </div>
                 </div>
             </Container>

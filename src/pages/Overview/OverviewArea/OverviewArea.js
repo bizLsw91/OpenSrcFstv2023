@@ -152,7 +152,7 @@ const OverviewArea = () => {
                                         </TimelineItem>
                                         <TimelineItem>
                                             <TimelineOppositeContent color="textSecondary">
-                                                15:40
+                                                15:30
                                             </TimelineOppositeContent>
                                             <TimelineSeparator>
                                                 <TimelineDot variant="outlined"/>
