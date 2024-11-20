@@ -23,12 +23,12 @@ const HomeKeyVisual = () => {
                             <img className="mid2" src="assets/img/2024design/keyvisual-mid2.png" alt="keyvisual-mid2"/>
                         </div>
                         <div className="slider__btn mainBannerBtn">
-                            {!isOverDeadLine() &&
+                            {/*{!isOverDeadLine() &&*/}
                                 <div className="preRegistration">
-                                    <Link to="/preRegistration" className="z-btn-main z-btn-transparent">사전등록</Link>
-                                    <div className="info">등록마감: 11. 30.(금) 10:00 까지</div>
+                                    <Link to="/preRegistration" className={`z-btn-main z-btn-transparent ${!isOverDeadLine && 'z-btn-disable'}`}>사전등록</Link>
+                                    <div className="info">2024.11.20 (수) 12:00 부터 신청가능</div>
                                 </div>
-                            }
+                            {/*}*/}
                         </div>
                         <img className="keyvisual-bottom" src="assets/img/2024design/keyvisual-bottom.png" alt=""/>
                     </div>
