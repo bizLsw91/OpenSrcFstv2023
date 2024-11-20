@@ -20,8 +20,8 @@ const AllContext = ({ children }) => {
       window.addEventListener('scroll', stickyMenuBar);
    }, [])
 
-   const isOverDeadLine = ()=>{
-      return compareWithCurrentTime('>=','202411201121000')
+   const isOverDeadLine = async ()=>{
+      return await compareWithCurrentTime('>=','202411201149000')
    }
 
 
