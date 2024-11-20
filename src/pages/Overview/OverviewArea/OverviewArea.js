@@ -14,12 +14,12 @@ import HeadingWithLines from "../../../components/HeadingWithLines/HeadingWithLi
 const infoData = [
     {
         item: "개최목적",
-        desc: "오픈소스 최신 기술 및 우수사례등을 공유 · 전파하고, 오픈소스 시상을 통해 오픈소스 인식제고 도모",
+        desc: "오픈소스 최신기술 및 우수사례 공유·전파, 국내 오픈소스 생태계 활성화에 기여한 공로를 치하",
     },
     {
-        item: "주제",
-        desc: "오픈소스 세상을 삼키다 (Open Source ~)",
-        desc_sub: "- 오픈소스 개발자, 커뮤니티, 기업의 오픈소스 활용 경험과 역할을 개발자들과 공유하여 오픈소스 생태계의 성장과 발전계기 마련",
+        item: "행사주제",
+        desc: "기업·개발자·커뮤니티의 오픈소스 활용 경험과 우수사례를 공유하여 오픈소스 생태계 활성화와 저변 확대에 기여",
+        desc_sub: "",
     },
     {
         item: "참가자",
