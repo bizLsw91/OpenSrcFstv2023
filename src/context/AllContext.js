@@ -21,7 +21,7 @@ const AllContext = ({ children }) => {
    }, [])
 
    const isOverDeadLine = ()=>{
-      return compareWithCurrentTime('>=','202411201114000')
+      return compareWithCurrentTime('>=','202411201121000')
    }
 
 
