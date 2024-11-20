@@ -20,7 +20,6 @@ const HomeKeyVisual = () => {
         };
 
         checkDeadline();
-        console.log("isOver = ", isOver);
     }, [isOverDeadLine]);
 
     return (
