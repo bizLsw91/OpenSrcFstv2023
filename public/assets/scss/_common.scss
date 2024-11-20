@@ -414,6 +414,53 @@ p {
 		height: 44px;
 		line-height: 40px;
 	}
+
+	&-disable {
+		display: inline-block;
+		height: 54px;
+		line-height: 48px;
+		border: 2px solid $grey-5;
+		background: $grey-4;
+		color: $grey-20;
+		padding: 0 30px;
+		@include border-radius(10px);
+		font-weight: 700;
+		text-transform: capitalize;
+		min-width: 160px;
+		text-align: center;
+		cursor: not-allowed;
+		pointer-events: none;
+
+		&:hover {
+			background: $grey-4;
+			color: $grey-20;
+			border-color: $grey-5;
+		}
+
+		// 메인 버튼 스타일에 대한 비활성화 버전
+		&-main {
+			border: 4px solid $grey-5;
+			background: $grey-4;
+			color: $grey-20;
+			font-size: medium;
+			height: 50px;
+			line-height: 44px;
+			min-width: 150px;
+
+			@media #{$sm}{
+				font-size: x-large;
+				height: 62px;
+				line-height: 56px;
+				min-width: 190px;
+			}
+			@media #{$md_gt}{
+				font-size: xx-large;
+				height: 75px;
+				line-height: 69px;
+				min-width: 240px;
+			}
+		}
+	}
 }
 
 /* link btn */

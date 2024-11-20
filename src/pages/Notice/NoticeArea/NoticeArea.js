@@ -5,7 +5,6 @@ import axios from "axios";
 import appConfig from "../../../config/app.config";
 import {useNavigate} from "react-router-dom";
 import moment from "moment";
-import HeadingWithLines from "../../../components/HeadingWithLines/HeadingWithLines";
 import HeadingWithLine from "../../../components/HeadingWithLines/HeadingWithLines";
 
 const api_getPosts = async (req) => {

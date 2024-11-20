@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import moment from "moment";
+import compareWithCurrentTime from "../Util/timeUtil";
 
 export const AppContext = createContext();
 
@@ -19,9 +20,8 @@ const AllContext = ({ children }) => {
       window.addEventListener('scroll', stickyMenuBar);
    }, [])
 
-   const isOverDeadLine = ()=>{
-      let nowTS10 = moment().format('YYYYMMDDHHmm')
-      return nowTS10 >= '202311301000'
+   const isOverDeadLine = async ()=>{
+      return await compareWithCurrentTime('>=','202411201200000')
    }
 
 
