@@ -21,15 +21,11 @@ const compareWithCurrentTime = async (operator, dateTime) => {
     try {
         // 외부 서버로부터 현재 한국 시간 가져오기
         const response = await axios.get('https://worldtimeapi.org/api/timezone/Asia/Seoul');
-        console.log("response = ", response);
         const currentTime = response.data.datetime; // ISO8601 형식의 현재 시간 (예: 2024-11-20T12:34:56.789Z)
-        console.log("currentTime = ", currentTime);
         const currentKoreanTime = new Date(currentTime).getTime(); // 밀리초 값으로 변환
-        console.log("currentKoreanTime = ", currentKoreanTime);
 
         // 파라미터로 받은 dateTime (YYYYMMDDHHmmSSS)을 밀리초 값으로 변환
         const targetTime = moment(dateTime, 'YYYYMMDDHHmmss').valueOf();
-        console.log("targetTime = ", targetTime);
 
         // 비교 연산 수행
         let result;
@@ -49,7 +45,6 @@ const compareWithCurrentTime = async (operator, dateTime) => {
             default:
                 throw new Error('Invalid operator. Use "<", ">", "<=", ">=" only.');
         }
-        console.log("result = ", result);
         return result; // 비교 결과 반환
     } catch (error) {
         console.error('Error fetching current Korean time or performing comparison:', error);

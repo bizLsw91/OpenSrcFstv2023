@@ -29,6 +29,11 @@
       padding-left: 0px;
       padding-right: 0px;
     }
+    .preRegiBtnArea{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     .tabBtn {
       font-family: 'KBO Dia Gothic_bold';

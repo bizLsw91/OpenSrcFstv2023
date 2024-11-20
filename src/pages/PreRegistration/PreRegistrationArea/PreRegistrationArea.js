@@ -50,16 +50,17 @@ const PreRegistrationArea = () => {
                 <div className="preRegi__area">
                     <div className="preRegi__content">
                         <HeadingWithLine text={'사전등록'}/>
-                        <div className="slider__btn mainBannerBtn mt-40">
+                        <div className=" mt-40">
                             {!isOver ?
-                                <div className="preRegistration">
+                                <div className="preRegiBtnArea">
                                     <Link to="/"
                                           className={`z-btn-main z-btn-transparent z-btn-disable`}>사전등록하러 가기</Link>
-                                    <div className="info">2024.11.20 (수) 12:00 부터 신청가능</div>
+                                    <div className="info mt-2">2024.11.20 (수) 12:00 부터 신청가능</div>
                                 </div> :
-                                <div className="preRegistration">
+                                <div className="preRegiBtnArea">
                                     <Link to="https://www.onoffmix.com/event/313420"
-                                          className={`z-btn-main z-btn-transparent`}>사전등록</Link>
+                                          className={`z-btn z-btn-main`}>사전등록하러 가기</Link>
+                                    <div className="info mt-2">2024.12.6 (금) 12:00 까지 선착순 정원 500명 신청가능</div>
                                 </div>
                             }
                         </div>
