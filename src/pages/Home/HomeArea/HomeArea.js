@@ -20,7 +20,7 @@ const HomeArea = () => {
                 <div className="home__speakers__content">
                     <h2 className="title">SPEAKER</h2>
                     <h3 className="title-2">[401호 연사 소개]</h3>
-                    <Link className="detailBtn ml-10" to="/speakers/1">자세히 보기 &gt;</Link>
+                    <Link className="detailBtn ml-10" to="/speakers/1">자세히 보기</Link>
                     <div className="profiles">
                         <ProfileCard id={0} simple mainViewId={mainViewId} toggleVisibility={handleToggle}
                                      data={speakersData.startLect[1]} subjType={1}/>

@@ -5,6 +5,23 @@ import {FiUser} from "react-icons/fi";
 
 
 const MobileMenu = () => {
+    const lineStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        width: '100%',
+        maxWidth: '80px', // 원하는 선 길이
+        height: '1px',
+        backgroundColor: '#1f499d',
+        position: 'relative',
+    };
+
+    const dotStyle = {
+        width: '6px',
+        height: '6px',
+        backgroundColor: '#1f499d',
+        borderRadius: '50%',
+        position: 'absolute',
+    };
     const renderSubMenu = (subItems) => {
         if (!subItems || !subItems.length) return null;
 
@@ -13,6 +30,9 @@ const MobileMenu = () => {
                 {subItems.map(item => (
                     <li key={item.to}>
                         <NavLink to={item.to}>{item.label}</NavLink>
+                        <div style={lineStyle}>
+                            <span style={{...dotStyle, left: '-5px'}}></span>
+                        </div>
                         {renderSubMenu(item.subItems)}
                     </li>
                 ))}
@@ -22,7 +42,7 @@ const MobileMenu = () => {
 
     return (
         <nav id="mobile-menu">
-            <ul>
+        <ul>
                 {menuItems.map(item => (
                     <li key={item.to}>
                         <NavLink to={item.to}>{item.label}</NavLink>
