@@ -16,6 +16,8 @@
         margin-bottom: 40px;
     }
     &__content{
+        display: flex;
+        flex-direction: column;
         max-width: 900px;
         padding: 0 40px 0;
 

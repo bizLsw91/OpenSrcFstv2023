@@ -2,7 +2,7 @@
 /*  02. HEADER CSS START
 /*----------------------------------------*/
 
-.logo-gradient{
+.logo-in-sticky{
     display: none;
 }
 
@@ -12,9 +12,6 @@
             img {
                 width: 270px;
                 height: auto;
-                //background-image: url(../img/2024design/logo.png);
-                //background-size: cover;
-                //background-position: center;
 
                 @media #{$sm}{
                     width: 240px;
@@ -169,16 +166,17 @@
             animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
             -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
             background: $white;
-            & .logo-gradient{
+            & .logo-in-sticky{
                 display: block;
-                & a{
-                    font-family: "Giants Bold", sans-serif;
-                    font-size: 15px;
+                img {
+                    width: 270px;
+                    height: auto;
+
                     @media #{$sm}{
-                        font-size: 20px;
+                        width: 240px;
                     }
-                    @media #{$md_gt}{
-                        font-size: 24px;
+                    @media #{$xs}{
+                        width: 220px;
                     }
                 }
             }

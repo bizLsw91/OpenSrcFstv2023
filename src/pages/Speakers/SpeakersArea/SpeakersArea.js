@@ -57,7 +57,8 @@ const SpeakersArea = ({id='1'}) => {
                                 <section>
                                     <div className="subTitle subTitle-3">
                                         <h3>[포스터 세션]</h3>
-                                        {/*<h4>:리눅스 오픈소스 문화와 개발자로서 성장하기</h4>*/}
+                                        <h4>:국내 주요 커뮤니티 및 프로젝트 소개·발표를 통한 네트워킹
+                                            세션</h4>
                                     </div>
                                     <div className="profiles">
                                         <ProfileCard simple key={8}  id={8} mainViewId={mainViewId}

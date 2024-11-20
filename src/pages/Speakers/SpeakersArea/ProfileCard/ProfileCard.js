@@ -5,6 +5,7 @@ import {GrDocumentPdf} from "react-icons/gr";
 import {FaArrowRight, FaRegFilePdf} from "react-icons/fa6";
 import {api_download} from "../../../../services/CommonService";
 import { CircleAlert } from 'lucide-react';
+import {RiDoubleQuotesL, RiDoubleQuotesR} from "react-icons/ri";
 
 function downloadFile(downloadUrl, fileName) {
     const anchor = document.createElement('a');
@@ -20,11 +21,6 @@ const ProfileCard = (props) => {
     const [fileUrl, setFileUrl] = useState('');
     const isVisible = id === mainViewId
     const isDoc = !simple && data.docFilePath
-    const [imageLoaded, setImageLoaded] = useState(false);
-
-    const handleImageLoad = () => {
-        setImageLoaded(true);
-    };
 
     const handleDownloadClick = async () => {
         const docFilePath = data.docFilePath;
@@ -49,7 +45,7 @@ const ProfileCard = (props) => {
 
     return (
         <div className={`ProfileCard ${isDoc?'mb-0':''}`}>
-            <div className={`ProfileWrapper ${simple?'simple':''}`}>
+            <div className={`ProfileWrapper ${simple && subjType!==3 ? 'simple' : simple && subjType===3 ? 'simple2':''}`}>
                 <div className="front pfCard-Container gradient1" onClick={()=>toggleVisibility(id)}>
                     <div className="left">
                         <div className="left-top">
@@ -58,19 +54,19 @@ const ProfileCard = (props) => {
                         </div>
                         {
                             data?.subject ?
-                                <div className={`left-subject ${id===11 || id===16 ? 'font-sm':''}`}>
-                                    {`[ ${data?.subject} ]`}
+                                <div className={`left-subject`}>
+                                    <RiDoubleQuotesL className={'quotes'}/>
+                                    {data?.subject}
+                                    <RiDoubleQuotesR className={'quotes'}/>
                                 </div> :
                                 ''
                         }
-                        <div className="left-photo">
-                            {!imageLoaded &&
-                                <div className="coming_soon">
-                                    <CircleAlert/> 사진 제공 예정
-                                </div>
-                            }
-                            <img src={data?.imgUrl} alt={data?.name} onLoad={handleImageLoad} style={{ display: imageLoaded ? 'block' : 'none' }}/>
-                        </div>
+                        {
+                            subjType != 3 &&
+                            <div className="left-photo">
+                                <img src={data?.imgUrl} alt={data?.name} />
+                            </div>
+                        }
                     </div>
                     <div className={`right ${simple?'d-none':''}`}>
                         <div className="right-title">

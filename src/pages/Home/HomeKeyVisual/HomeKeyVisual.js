@@ -31,8 +31,11 @@ const HomeKeyVisual = () => {
                 </div>
                 <Container className="h1_slider_wrapper h-100">
                     <div className="slider__content-6">
-                        <img className="keyvisual-top" src="assets/img/2024design/keyvisual-top-1294.png" alt="keyvisual-top"/>
                         <div className="keyvisual-mid">
+                            <div className="wrapper-3">
+                                <img className="keyvisual-top" src="assets/img/2024design/keyvisual-top-1294.png"
+                                     alt="keyvisual-top"/>
+                            </div>
                             <img className="mid1" src="assets/img/2024design/keyvisual-mid1.png" alt="keyvisual-mid1"/>
                             <img className="mid2" src="assets/img/2024design/keyvisual-mid2.png" alt="keyvisual-mid2"/>
                         </div>
