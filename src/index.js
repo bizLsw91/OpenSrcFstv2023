@@ -14,7 +14,6 @@ ReactDOM.render(
     </AllContext>
   </React.Fragment>,
   document.getElementById('root'),
-console.log("App Rendered!")
 );
 
 
