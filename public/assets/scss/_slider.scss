@@ -437,15 +437,17 @@
         .keyvisual-top{
             position: absolute;
             transform: translateX(0%) translateY(-100%); /* 기준 위치 조정 */
-            top: -5vh; /* 상단에서부터 10% 위치에 배치 */
+            top: -3vh; /* 상단에서부터 10% 위치에 배치 */
             right: calc(50% - min(700px, 50vw) + 8%);
             height: auto; /* 비율 유지 */
             width: 250px; /* 상대적 크기 조정 */
             @media #{$sm} {
-                width: 220px;
+                width: 200px;
+                top: -1vh;
             }
             @media #{$xs} {
-                width: 200px;
+                width: 150px;
+                top: 10px;
             }
         }
     }
@@ -455,25 +457,52 @@
         position: relative;
         height: 100%;
 
-        .keyvisual-mid, .keyvisual-bottom, .mainBannerBtn {
+        .keyvisual-mid, .keyvisual-bottom {
             position: absolute;
             left: 50%; /* 중앙 정렬 */
             transform: translateX(-50%) translateY(-50%); /* 정확한 중앙 위치 조정 */
         }
 
         .keyvisual-mid {
-            top: 40%; /* 상단에서부터 40% 위치에 배치 */
+            top: calc(max(40%, 450px)); /* 상단에서부터 40% 위치에 배치 */
             height: auto; /* 비율 유지 */
             width: 960px; /* 상대적 크기 조정 */
+            gap:20px;
             @media #{$lg_st} {
                 width: 95vw;
+            }
+            @media #{$xs} {
+                top: 40%;
             }
             display: flex;
             flex-direction: column;
             align-items: center;
             .mid1 {
                 width: 100%;
-                margin-bottom: 10px;
+            }
+            .mainBannerBtn {
+                width: 100%;
+                //height: auto; /* 비율 유지 */
+                .preRegistration{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .info{
+                        margin-top: 5px;
+                        font-size: 20px;
+                        color:white;
+                        @media #{$md}{
+                            font-size: 17px;
+                        }
+                        @media #{$sm}{
+                            font-size: 14px;
+                        }
+                        @media #{$xs}{
+                            font-size: 13px;
+                        }
+                    }
+                }
             }
             .mid2 {
                 width: 90%;
@@ -487,31 +516,6 @@
             }
         }
 
-        .mainBannerBtn {
-            top: 70%; /* 상단에서부터 90% 위치에 배치 */
-            //width: 15%; /* 상대적 크기 조정 */
-            //height: auto; /* 비율 유지 */
-            .preRegistration{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                .info{
-                    margin-top: 5px;
-                    font-size: 20px;
-                    color:white;
-                    @media #{$md}{
-                        font-size: 17px;
-                    }
-                    @media #{$sm}{
-                        font-size: 14px;
-                    }
-                    @media #{$xs}{
-                        font-size: 13px;
-                    }
-                }
-            }
-        }
 
 
         .keyvisual-bottom {
