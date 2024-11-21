@@ -58,7 +58,7 @@ const DirectionsArea = () => {
                                 <div className="mb-20">
                                     <h5>더 자세한 교통편 안내</h5>
                                     <a className="underline__blue"
-                                       href="https://www.coex.co.kr/services/traffic/location-3?type=organizer">바로가기</a></div>
+                                       href="https://www.coex.co.kr/guide/directions/">바로가기</a></div>
                             </div>
                         </div>
 
