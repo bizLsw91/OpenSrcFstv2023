@@ -99,7 +99,7 @@ $sp-badge-color4: #c47b21;
 }
 
 $pfC-bR:20px;
-$pfc-w:500px;
+$pfc-w:530px;
 $pfc-h:410px;
 $pfc-h-min-xs:650px;
 $pfc-h-xs:870px;
@@ -278,7 +278,7 @@ $pfc-h-simple2:250px;
                 }
             }
             .right{
-                width: 240px;
+                width: 100%;
                 margin-left: 20px;
                 @media #{$xs} {
                     margin-left: 0;

@@ -71,7 +71,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/발표세션 1-김홍석.pdf',
             profileList: ['서울대학교 학사(전기공학)', '일리노이대학 박사 (컴퓨터과학)', '마이크로소프트,페이스북_개발자 근무', '삼성 리서치 _상무 재직', '구글코리아 R&D 부문 _대표 재직'],
             profileDesc: '',
-            lectTitle: '소프트웨어 개발자들이 만들어가는 AI 프로세서 혁명',
+            lectTitle: <>소프트웨어 개발자들이<br/>만들어가는 AI 프로세서 혁명</>,
             lectSummary: '개발자 생태계가 오픈소스 플랫폼을 중심으로 어떻게 진화했을까에 대한 발전방향 논의'
         },
         2: {
@@ -83,7 +83,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/발표세션 2-조성수.pdf',
             profileList: ['BHN Cloud 오픈스택 엔지니어(17~현재)', '오픈인프라(오픈스택)한국사용자모임 대표 (20~현재)', '오픈스택 한국사용자 모임 부대표(17~29)'],
             profileDesc: '',
-            lectTitle: 'Regional Hub, 오픈 인프라가 선택한 전략',
+            lectTitle: <>Regional Hub,<br/>오픈 인프라가 선택한 전략</>,
             lectSummary: '비즈니스에 맞게 변화하는 오픈소스 전략 사례'
         },
         3: {
@@ -95,7 +95,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/발표세션 3-신정규.pdf',
             profileList: ['한국통신학회 이사(현재~)', 'Google Cloud Champion Innovators Innovator(현재~)', 'Google For Startups Accelerator Mentor(DL/AI)(현재~)'],
             profileDesc: '',
-            lectTitle: '오픈소스 라이선스와 오픈 AI 모델',
+            lectTitle: <>오픈소스 라이선스와<br/>오픈 AI 모델</>,
             lectSummary: '전통적인 오픈소스 소프트웨어의 정의와 최근 등장한 오픈 AI모델들의 특성 비교'
         },
         4: {
@@ -107,7 +107,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/발표세션 3-박문식.pdf',
             profileList: ['젝사젠 대표이사(현재~)', '에프에이리눅스 연구소장(10~23)', '시그널싱크 연구소장(03~09)'],
             profileDesc: '',
-            lectTitle: '바이오에서 활용되는 AI 유전자 기술',
+            lectTitle: <>바이오에서 활용되는<br/>AI 유전자 기술</>,
             lectSummary: '바이오에 대한 소개와 AI기술이 활용되는 사례'
         },
         5: {
@@ -123,7 +123,7 @@ export const speakersData = {
                 '2024.05~ : 인공지능 기반 공정흐름도 자동 생성 플랫폼 개발 연구',
                 '2024.09 : 16th International Conference on Sustainable Energy & Environmental Protection, 09-12 September 2024 Best paper winning prize'],
             profileDesc: '',
-            lectTitle: '차세대 화학 시뮬레이션 : 디지털 트윈 혁신을 위한 오픈소스와 머신러닝 활용',
+            lectTitle: <>차세대 화학 시뮬레이션:<br/>디지털 트윈 혁신을 위한<br/>오픈소스와 머신러닝 활용</>,
             lectSummary: '시뮬레이션 데이터를 머신러닝 기법으로 분석, 화학공정 모사에 필요한 리소스를 줄일 수 있는 잠재력에 대한 발표'
         },
         6: {
@@ -135,7 +135,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/발표세션 6-오재웅.pdf',
             profileList: ['㈜무아베모션 대표이사(현재~)', '서울부민병원AI질병예측/진단 CTO', 'GS리테일 베트남 Offshore 관리총괄', 'Intives Healthcare(SKTspin-off)개발총괄', 'SK텔레콤 New Healthcare 개발컨설턴트', '2017년 공개SW개발자대회 대상'],
             profileDesc: '',
-            lectTitle: '오픈소스로 돈을 벌수 있을까?',
+            lectTitle: <>오픈소스가 키운 개발자,<br/>10년의 성장 보고서</>,
             lectSummary: '오픈소스 비즈니스 사례'
         },
     },
