@@ -11,6 +11,12 @@
         padding: 50px 20px;
         width: 100%;
 
+        li{
+            list-style: none;
+        }
+        li { position: relative; padding-left: 20px; /* 동그라미와 텍스트 간격 */ }
+        li::before { content: ''; position: absolute; top: 50%; left: 0; width: 10px; height: 10px; background-color: black; /* 꽉 찬 동그라미 색상 */ border-radius: 50%; /* 동그라미 모양 */ transform: translateY(-50%); }
+
         .title {
             margin-bottom: 40px;
 
