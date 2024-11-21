@@ -42,42 +42,72 @@ const ProfileCard = (props) => {
 
         }
     };
+    function containsKeyword(text, keyword) { return text.includes(keyword); }
 
+    function splitString(input) {
+        // 정규식 사용하여 글자/기호와 숫자 부분 분리
+        const match = input.match(/([^\d]+)(\d+)/);
+        if (match) {
+            return {letters: match[1], numbers: match[2]};
+        } else {
+            return {letters: input, numbers: ''};
+        }
+    }
 
     return (
-        <div className={`ProfileCard ${isDoc?'mb-0':''}`}>
+        <div className={`ProfileCard ${isDoc?'mb-4':''}`}>
             <div className={`ProfileWrapper ${simple && subjType!==3 ? 'simple' : simple && subjType===3 ? 'simple2':''}`}>
                 <div className="front pfCard-Container gradient1" onClick={()=>toggleVisibility(id)}>
-                    <div className="left">
-                        <div className="left-top">
-                            <div className="left-top-1">
-                                <div className="nameAndDetail">
-                                    <div className="prfName bold_m">{data?.name}</div>
-                                    { isBackVisible &&
-                                        <div className="underline__blue">상세보기</div>
-                                    }
+                    <div className={`left-and-vtext ${!simple ? 'w200' : ''}`}>
+                        <div className="left">
+                            <div className="left-top">
+                                <div className="left-top-1">
+                                    <div className="nameAndDetail">
+                                        <div className="prfName bold_m">{data?.name}</div>
+                                        { isBackVisible &&
+                                            <div className="underline__blue">상세보기</div>
+                                        }
+                                    </div>
                                 </div>
-                                <div className={`prfBadge ${'prfBadge-c'+subjType}`}>{data?.badge}</div>
+                                <div className="left-top-2"><div className={`belong ${data?.subject?'belong-type3':''}`}><div className="prfCompany">{data?.company}</div><div className="prfPosition">{data?.position?'/ '+data?.position:''}</div> </div></div>
                             </div>
-                            <div className="left-top-2"><div className={`belong ${data?.subject?'belong-type3':''}`}><div className="prfCompany">{data?.company}</div><div className="prfPosition">{data?.position?'/ '+data?.position:''}</div> </div></div>
+                            {
+                                data?.subject ?
+                                    <div className={`left-subject`}>
+                                        <RiDoubleQuotesL className={'quotes'}/>
+                                        {data?.subject}
+                                        <RiDoubleQuotesR className={'quotes'}/>
+                                    </div> :
+                                    ''
+                            }
+                            {
+                                subjType != 3 &&
+                                <div className="left-photo">
+                                    <img src={data?.imgUrl} alt={data?.name} />
+                                </div>
+                            }
                         </div>
-                        {
-                            data?.subject ?
-                                <div className={`left-subject`}>
-                                    <RiDoubleQuotesL className={'quotes'}/>
-                                    {data?.subject}
-                                    <RiDoubleQuotesR className={'quotes'}/>
-                                </div> :
-                                ''
-                        }
-                        {
-                            subjType != 3 &&
-                            <div className="left-photo">
-                                <img src={data?.imgUrl} alt={data?.name} />
+                        {simple &&
+                            <div className={`vertical-text-wraaper ${containsKeyword(data?.badge, '기조') ? 'align-end' : ''}`}>
+                                <div className={`vertical-text-num vertical-text-num${'-c'+ subjType}`}>
+                                    <div className={`vertical-text`}>
+                                        {splitString(data?.badge).letters}
+                                    </div>
+                                    <div className="vertical-num">
+                                        {splitString(data?.badge).numbers}
+                                    </div>
+                                </div>
                             </div>
                         }
                     </div>
-                    <div className={`right ${simple?'d-none':''}`}>
+                    <div className={`right ${simple ? 'd-none' : ''}`}>
+                        {!simple &&
+                            <div className="prfBadge-box">
+                                <div className={`prfBadge ${'prfBadge-c'+subjType}`}>
+                                    {data?.badge}
+                                </div>
+                            </div>
+                        }
                         <div className="right-title">
                             <h4>{data?.lectTitle}</h4>
                         </div>

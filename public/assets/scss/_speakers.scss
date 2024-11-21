@@ -100,13 +100,13 @@ $sp-badge-color4: #c47b21;
 
 $pfC-bR:20px;
 $pfc-w:500px;
-$pfc-h:400px;
+$pfc-h:410px;
 $pfc-h-min-xs:650px;
 $pfc-h-xs:870px;
 
-$pfc-w-simple:240px;
-$pfc-h-simple:400px;
-$pfc-h-simple2:230px;
+$pfc-w-simple:300px;
+$pfc-h-simple:410px;
+$pfc-h-simple2:250px;
 .ProfileCard{
     padding: 0 20px;
     margin-bottom: 50px;
@@ -166,93 +166,114 @@ $pfc-h-simple2:230px;
                 display: flex;
                 flex-direction: column;
             }
-            .left{
-                $mb: 5px;
+            .left-and-vtext{
                 display: flex;
-                flex-direction: column;
-                width: 200px;
-                height: 360px;
-                border-radius: $pfC-bR;
-                .left-top-1{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    word-break: keep-all;
-                    margin-bottom: $mb;
-                    .nameAndDetail{
-                        display: flex;
-                        align-items: center;
-                        .underline__blue{
-                            font-weight: 600;
-                            font-size: 14px;
-                        }
-                    }
-                    .prfName{
-                        color: white;
-                        background-color: #244bb3;
-                        border-radius: 3px;
-                        padding: 3px 5px;
-                        margin-right: 5px;
-                        @media #{$xs} {
-                            font-size: 15px;
-                        }
-                    }
-                    .prfBadge{
-                        border-radius: 3px;
-                        padding: 3px 5px;
-                        color: white;
-                        font-size: 14px;
-                        &-c1{background-color: $sp-badge-color1;}
-                        &-c2{background-color: $sp-badge-color2;}
-                        &-c3{background-color: $sp-badge-color3;}
-                        &-c4{background-color: $sp-badge-color4;}
-                    }
-
-                }
-                .left-top-2{
-                    .belong{
-                        .prfCompany{
-                            margin-bottom: $mb;
-                            font-weight: 600;
-                        }
-                        .prfPosition{
-                            margin-bottom: $mb;
-                            height: 24px;
-                            font-size: 14px;
-                            font-weight: 600;
-                        }
-                    }
-                    .belong-type3{
-                        height: 58px;
-                    }
-                }
-                .left-subject{
-                    height: 73px;
-                    font-weight: bold;
-
-                    .quotes{
-                        margin-bottom: 13px;
-                    }
-                }
-                .font-sm{
-                    font-size: 14px;
-                    margin-bottom: 3px;
-                }
-                .left-photo{
-                    $ratio: 20/27;
+                width: 300px;
+                &.w200{
                     width: 200px;
-                    height: auto;
-                    flex-grow: 1;
-                    img{
-                        border-radius: 20px;
-                        height: 100%;
-                    }
-                    .coming_soon {
-                        height: 100%;
+                }
+                .left{
+                    $mb: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 200px;
+                    min-width: 200px;
+                    height: 360px;
+                    border-radius: $pfC-bR;
+                    .left-top-1{
                         display: flex;
-                        justify-content: center;
                         align-items: center;
+                        justify-content: space-between;
+                        word-break: keep-all;
+                        margin-bottom: $mb;
+                        .nameAndDetail{
+                            display: flex;
+                            align-items: flex-end;
+                            .underline__blue{
+                                font-weight: 600;
+                                font-size: 14px;
+                            }
+                        }
+                        .prfName{
+                            color: white;
+                            background-color: #244bb3;
+                            border-radius: 10px;
+                            padding: 13px 13px;
+                            margin-right: 5px;
+                            font-size: 30px;
+                            @media #{$xs} {
+                                font-size: 15px;
+                            }
+                        }
 
+                    }
+                    .left-top-2{
+                        .belong{
+                            .prfCompany{
+                                margin-bottom: $mb;
+                                font-weight: 600;
+                            }
+                            .prfPosition{
+                                margin-bottom: $mb;
+                                height: 24px;
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                        }
+                        .belong-type3{
+                            height: 58px;
+                        }
+                    }
+                    .left-subject{
+                        height: 73px;
+                        font-weight: bold;
+
+                        .quotes{
+                            margin-bottom: 13px;
+                        }
+                    }
+                    .font-sm{
+                        font-size: 14px;
+                        margin-bottom: 3px;
+                    }
+                    .left-photo{
+                        $ratio: 20/27;
+                        width: 200px;
+                        height: auto;
+                        flex-grow: 1;
+                        img{
+                            border-radius: 100px;
+                            height: 100%;
+                        }
+                        .coming_soon {
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+                    }
+                }
+                .vertical-text-wraaper{
+                    display: flex;
+                    justify-content: end;
+                    width: 100%;
+                    &.align-end{
+                        align-items: flex-end;
+                    }
+                    .vertical-text-num{
+                        font-size: 40px;
+                        font-weight: bold;
+                        &-c1{color: $sp-badge-color1;}
+                        &-c2{color: $sp-badge-color2;}
+                        &-c3{color: $sp-badge-color3;}
+                        &-c4{color: $sp-badge-color4;}
+                        .vertical-text{
+                            writing-mode: vertical-rl;
+                        }
+                        .vertical-num{
+                            padding-top: 5px;
+                        }
                     }
                 }
             }
@@ -263,6 +284,24 @@ $pfc-h-simple2:230px;
                     margin-left: 0;
                     margin-top: 20px;
                     width: 200px;
+                }
+                .prfBadge-box{
+                    height: 93px;
+                    display: flex;
+                    justify-content: end;
+                    align-items: flex-start;
+                    .prfBadge{
+                        width: fit-content;
+                        border-radius: 20px;
+                        padding: 13px 13px;
+                        color: white;
+                        font-size: 30px;
+                        font-weight: bold;
+                        &-c1{background-color: $sp-badge-color1;}
+                        &-c2{background-color: $sp-badge-color2;}
+                        &-c3{background-color: $sp-badge-color3;}
+                        &-c4{background-color: $sp-badge-color4;}
+                    }
                 }
                 .right-title{
                     height: 93px;
