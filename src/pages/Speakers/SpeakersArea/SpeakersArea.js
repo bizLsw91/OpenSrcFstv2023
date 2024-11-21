@@ -57,7 +57,7 @@ const SpeakersArea = ({id='1'}) => {
                                 <section>
                                     <div className="subTitle subTitle-3">
                                         <h3>[포스터 세션]</h3>
-                                        <h4>:국내 주요 커뮤니티 및 프로젝트 소개·발표를 통한 네트워킹
+                                        <h4>국내 주요 커뮤니티 및 프로젝트 소개·발표를 통한 네트워킹
                                             세션</h4>
                                     </div>
                                     <div className="profiles">

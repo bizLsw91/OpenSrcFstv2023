@@ -104,7 +104,7 @@ $pfc-h:410px;
 $pfc-h-min-xs:650px;
 $pfc-h-xs:870px;
 
-$pfc-w-simple:300px;
+$pfc-w-simple:320px;
 $pfc-h-simple:410px;
 $pfc-h-simple2:250px;
 .ProfileCard{
@@ -177,7 +177,7 @@ $pfc-h-simple2:250px;
                     display: flex;
                     flex-direction: column;
                     width: 200px;
-                    min-width: 200px;
+                    min-width: 240px;
                     height: 360px;
                     border-radius: $pfC-bR;
                     .left-top-1{
