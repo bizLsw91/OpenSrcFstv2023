@@ -1,11 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Col, Container, Row} from "react-bootstrap";
-import {Box, Tab} from "@mui/material";
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import TabContent1 from "../TabContent1/TabContent1";
-import TabContent2 from "../TabContent2/TabContent2";
+import { Container} from "react-bootstrap";
 import {AppContext} from "../../../context/AllContext";
 import {Link} from "react-router-dom";
 import HeadingWithLine from "../../../components/HeadingWithLines/HeadingWithLines";
