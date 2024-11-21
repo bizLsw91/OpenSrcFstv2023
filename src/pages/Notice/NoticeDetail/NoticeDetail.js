@@ -14,7 +14,7 @@ const NoticeDetail = () => {
         <div id="NoticeDetail">
             <PageHelmet pageTitle="공지사항 상세" />
             <HomeOneHeader/>
-            <CommonPageHeader title="NoticeDetail" level_1={'게시판'} level_2="공지사항" level_3="공지사항 상세" />
+            <CommonPageHeader title="Notice Detail" level_1={'게시판'} level_2="공지사항" level_3="공지사항 상세" />
             <NoticeDetailArea index={index}/>
             <Footer/>
         </div>

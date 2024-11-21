@@ -43,7 +43,7 @@ export const speakersData = {
             position: '교수',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/장혜식.jpg',
             docFilePath: 'speakersDoc/기조강연 1-장혜식.pdf',
-            profileList: ['기초과학연구원RNA연구단연구위원(18~현재)', 'Fellow, Python, SoftwareFoundation(14~19)', 'Committer, The FreeBSD Project(01~09)', '리눅스코리아(주) 솔루션 개발팀 (01~05)'],
+            profileList: ['기초과학연구원 RNA연구단연구위원(18~현재)', 'Fellow, Python, SoftwareFoundation(14~19)', 'Committer, The FreeBSD Project(01~09)', '리눅스코리아(주) 솔루션 개발팀 (01~05)'],
             profileDesc: '',
             lectTitle: <>오픈소스로 풀어내는<br/>생명의 코드</>,
             lectSummary: '오픈소스 생물학 소프트웨어들이 어떻게 현대생명과학 연구 지평을 넓혀왔는지에 대한 사례\n'
