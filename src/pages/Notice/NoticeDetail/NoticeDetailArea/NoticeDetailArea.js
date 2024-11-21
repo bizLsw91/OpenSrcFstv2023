@@ -5,6 +5,7 @@ import moment from "moment";
 import axios from "axios";
 import appConfig from "../../../../config/app.config";
 import SpinByW from "../../../../components/SpinByW/SpinByW";
+import HeadingWithLine from "../../../../components/HeadingWithLines/HeadingWithLines";
 
 
 const NoticeDetailArea = ({index}) => {
@@ -58,7 +59,7 @@ const NoticeDetailArea = ({index}) => {
         <div id="NoticeDetailArea">
             <Container>
                 <div className="noticeDetail__area">
-                    <h2 className="title">공지사항</h2>
+                    <HeadingWithLine text={'공지사항'} />
                     <SpinByW loading={loading}/>
                     <div className="noticeDetail__content">
                         {data.categoryCode === 0 ?
