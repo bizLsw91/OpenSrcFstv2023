@@ -17,7 +17,7 @@ const Sidebar = ({ show, handleClose }) => {
                   <div className="logo">
                         <div>
                            <h4>
-                              <NavLink to="/" className="sidebar__logo">공개SW 페스티벌<br/>2024</NavLink>
+                              <NavLink to="/" className="sidebar__logo">오픈소스 페스티벌<br/>2024</NavLink>
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
