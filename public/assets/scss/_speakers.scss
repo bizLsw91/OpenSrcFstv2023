@@ -390,6 +390,11 @@ $pfc-h-simple2:250px;
     @media #{$xs} {
         margin-bottom: 100px;
     }
+    &:last-child{
+        @media #{$xs} {
+            margin-bottom: 0px;
+        }
+    }
 }
 
 //추가 커스텀
