@@ -45,7 +45,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/기조강연 1-장혜식.pdf',
             profileList: ['기초과학연구원RNA연구단연구위원(18~현재)', 'Fellow, Python, SoftwareFoundation(14~19)', 'Committer, The FreeBSD Project(01~09)', '리눅스코리아(주) 솔루션 개발팀 (01~05)'],
             profileDesc: '',
-            lectTitle: '오픈소스로 풀어내는 생명의 코드',
+            lectTitle: <>오픈소스로 풀어내는<br/>생명의 코드</>,
             lectSummary: '오픈소스 생물학 소프트웨어들이 어떻게 현대생명과학 연구 지평을 넓혀왔는지에 대한 사례\n'
         },
         2: {
@@ -57,7 +57,7 @@ export const speakersData = {
             docFilePath: 'speakersDoc/기조강연 2-백송하.pdf',
             profileList: ['현대자동차 오프소스 그룹장(22~현재)'],
             profileDesc: '',
-            lectTitle: '현대차 그룹 오픈소스 거버넌스 및 자동차 SW공급망으로의 확장',
+            lectTitle: <>현대차 그룹 오픈소스 거버넌스<br/>및 자동차 SW공급망으로의 확장</>,
             lectSummary: '자동차산업 동향에 따른 현대차 그룹의 오픈소스 거버넌스 구축 과정\n'
         }
     },
@@ -105,7 +105,7 @@ export const speakersData = {
             position: '대표',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/박문식.jpg',
             docFilePath: 'speakersDoc/발표세션 3-박문식.pdf',
-            profileList: ['㈜무아베모션 대표이사(현재~)', '서울부민병원AI질병예측/진단 CTO', 'GS리테일 베트남 Offshore 관리총괄', 'Intives Healthcare(SKTspin-off)개발총괄', 'SK텔레콤 New Healthcare 개발컨설턴트', '2017년 공개SW개발자대회 대상'],
+            profileList: ['젝사젠 대표이사(현재~)', '에프에이리눅스 연구소장(10~23)', '시그널싱크 연구소장(03~09)'],
             profileDesc: '',
             lectTitle: '바이오에서 활용되는 AI 유전자 기술',
             lectSummary: '바이오에 대한 소개와 AI기술이 활용되는 사례'
