@@ -55,9 +55,9 @@ const ProfileCard = (props) => {
     }
 
     return (
-        <div className={`ProfileCard ${isDoc?'mb-4':''}`}>
+        <div className={`ProfileCard ${!simple ? 'm-mb-100' : ''}`}>
             <div className={`ProfileWrapper ${simple && subjType!==3 ? 'simple' : simple && subjType===3 ? 'simple2':''}`}>
-                <div className="front pfCard-Container gradient1" onClick={()=>toggleVisibility(id)}>
+                <div className={`front pfCard-Container gradient1 ${subjType===3 ? 'h-100':''} ${!simple ? 'm-column' : ''}`} onClick={()=>toggleVisibility(id)}>
                     <div className={`left-and-vtext ${!simple ? 'w200' : ''}`}>
                         <div className="left">
                             <div className="left-top">
@@ -116,7 +116,7 @@ const ProfileCard = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className={`back pfCard-Container gradient2 z2 toggleBox ${isVisible ? 'visible' : ''} `} onClick={toggleVisibility}>
+                <div className={`back pfCard-Container gradient2 z2 toggleBox ${isVisible ? 'visible' : ''}`} onClick={toggleVisibility}>
                     <div className={`up ${data?.profileList.length>0 && isVisible ? 'up-visible':''}`}>
                         <ul>
                             {data?.profileList.map((career, idx) => (
@@ -129,11 +129,11 @@ const ProfileCard = (props) => {
                     </div>
                 </div>
             </div>
-            {isDoc &&
-                <div className="btnArea">
-                    <Button className="docBtn" onClick={handleDownloadClick}><FaRegFilePdf className="docIcon"/>발표 자료<FaArrowRight className="docIcon"/></Button>
-                </div>
-            }
+            {/*{isDoc &&*/}
+            {/*    <div className="btnArea">*/}
+            {/*        <Button className="docBtn" onClick={handleDownloadClick}><FaRegFilePdf className="docIcon"/>발표 자료<FaArrowRight className="docIcon"/></Button>*/}
+            {/*    </div>*/}
+            {/*}*/}
         </div>
     );
 };

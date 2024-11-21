@@ -193,7 +193,7 @@ export const speakersData = {
         6:{
             badge: '발표-6',
             name: '정이태',
-            company: 'G.U.G(Graph Usar Group)',
+            company: 'G.U.G(Graph User Group)',
             position: '',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/정이태.jpg',
             profileList: ['약력1','약력2','약력3'],

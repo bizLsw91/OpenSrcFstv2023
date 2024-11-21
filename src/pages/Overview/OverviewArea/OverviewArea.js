@@ -74,7 +74,7 @@ const OverviewArea = () => {
                                                         }
                                                     </div>
                                                     {info.link && (
-                                                        <Link className="directions ml-15" to={info.link}>
+                                                        <Link className="directions" to={info.link}>
                                                             찾아오시는 길 ▶
                                                         </Link>
                                                     )}

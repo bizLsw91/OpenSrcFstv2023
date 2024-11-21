@@ -38,27 +38,38 @@ const SpeakersArea = ({id='1'}) => {
                                         <h3>[발표세션]</h3>
                                     </div>
                                     <div className="profiles">
-                                        <ProfileCard key={2} id={2} mainViewId={mainViewId} toggleVisibility={handleToggle}
+                                        <ProfileCard key={2} id={2} mainViewId={mainViewId}
+                                                     toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[1]} subjType={2}/>
-                                        <ProfileCard key={3} id={3} mainViewId={mainViewId} toggleVisibility={handleToggle}
+                                        <ProfileCard key={3} id={3} mainViewId={mainViewId}
+                                                     toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[2]} subjType={2}/>
-                                        <ProfileCard key={4} id={4} mainViewId={mainViewId} toggleVisibility={handleToggle}
+                                        <ProfileCard key={4} id={4} mainViewId={mainViewId}
+                                                     toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[3]} subjType={2}/>
-                                        <ProfileCard key={5} id={5} mainViewId={mainViewId} toggleVisibility={handleToggle}
+                                        <ProfileCard key={5} id={5} mainViewId={mainViewId}
+                                                     toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[4]} subjType={2}/>
-                                        <ProfileCard key={6} id={6} mainViewId={mainViewId} toggleVisibility={handleToggle}
+                                        <ProfileCard key={6} id={6} mainViewId={mainViewId}
+                                                     toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[5]} subjType={2}/>
-                                        <ProfileCard key={7} id={7} mainViewId={mainViewId} toggleVisibility={handleToggle}
+                                        <ProfileCard key={7} id={7} mainViewId={mainViewId}
+                                                     toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[6]} subjType={2}/>
+                                    </div>
+                                    <div className="card-width">
+                                        * 연사분들의 발표 자료는 행사 종료 후, 외부 공개가 가능한 연사분에 한하여 발표 자료가 공개될 예정입니다.
                                     </div>
                                 </section>
                             </> :
                             <>
                                 <section>
-                                    <div className="subTitle subTitle-3">
+                                <div className="subTitle subTitle-3">
                                         <h3>[포스터 세션]</h3>
-                                        <h4>국내 주요 커뮤니티 및 프로젝트 소개·발표를 통한 네트워킹
-                                            세션</h4>
+                                        <div className="px-3">
+                                            <h4>국내 주요 커뮤니티 및 프로젝트 소개·발표를 통한 네트워킹
+                                                세션</h4>
+                                        </div>
                                     </div>
                                     <div className="profiles">
                                         <ProfileCard simple key={8}  id={8} mainViewId={mainViewId}
@@ -92,7 +103,6 @@ const SpeakersArea = ({id='1'}) => {
                                 </section>
                             </>
                     }
-
                 </div>
             </div>
         </div>

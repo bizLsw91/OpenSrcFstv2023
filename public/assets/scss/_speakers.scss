@@ -91,6 +91,9 @@ $sp-badge-color4: #c47b21;
             justify-content: center;
         }
 
+        .card-width{
+            width: 320px;
+        }
 
 
 
@@ -100,19 +103,19 @@ $sp-badge-color4: #c47b21;
 
 $pfC-bR:20px;
 $pfc-w:530px;
-$pfc-h:410px;
-$pfc-h-min-xs:650px;
+$pfc-h:420px;
+$pfc-h-min-xs:710px;
 $pfc-h-xs:870px;
 
 $pfc-w-simple:320px;
-$pfc-h-simple:410px;
+$pfc-w-simple-xs:310px;
+$pfc-h-simple:420px;
 $pfc-h-simple2:250px;
 .ProfileCard{
     padding: 0 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     @media #{$xs} {
         padding: 5px;
-        margin-bottom: 10px;
     }
     .simple{
         width: $pfc-w-simple !important;
@@ -156,7 +159,7 @@ $pfc-h-simple2:250px;
         width: $pfc-w;
         height: $pfc-h;
         @media #{$xs} {
-            width: $pfc-w-simple;
+            width: $pfc-w-simple-xs;
             min-height: $pfc-h-min-xs;
         }
         .front{
@@ -164,7 +167,6 @@ $pfc-h-simple2:250px;
             padding: 20px;
             @media #{$xs} {
                 display: flex;
-                flex-direction: column;
             }
             .left-and-vtext{
                 display: flex;
@@ -178,7 +180,7 @@ $pfc-h-simple2:250px;
                     flex-direction: column;
                     width: 200px;
                     min-width: 240px;
-                    height: 360px;
+                    height: 380px;
                     border-radius: $pfC-bR;
                     .left-top-1{
                         display: flex;
@@ -201,9 +203,9 @@ $pfc-h-simple2:250px;
                             padding: 13px 13px;
                             margin-right: 5px;
                             font-size: 30px;
-                            @media #{$xs} {
-                                font-size: 15px;
-                            }
+                            //@media #{$xs} {
+                            //    font-size: 15px;
+                            //}
                         }
 
                     }
@@ -283,13 +285,16 @@ $pfc-h-simple2:250px;
                 @media #{$xs} {
                     margin-left: 0;
                     margin-top: 20px;
-                    width: 200px;
+                    width: 280px;
                 }
                 .prfBadge-box{
                     height: 93px;
                     display: flex;
                     justify-content: end;
                     align-items: flex-start;
+                    @media #{$xs} {
+                        justify-content: flex-start;
+                    }
                     .prfBadge{
                         width: fit-content;
                         border-radius: 20px;
@@ -355,7 +360,11 @@ $pfc-h-simple2:250px;
                 border-radius: $pfC-bR;
                 position: absolute;
                 width: 100%;
-                height: 100%;
+            }
+        }
+        .m-column{
+            @media #{$xs} {
+                flex-direction: column;
             }
         }
         .toggleBox{
@@ -375,6 +384,11 @@ $pfc-h-simple2:250px;
         .z2{
             z-index: 2;
         }
+    }
+}
+.m-mb-100{
+    @media #{$xs} {
+        margin-bottom: 100px;
     }
 }
 

@@ -65,6 +65,10 @@
                 line-height: 1.6;
                 color: #333;
                 flex: 1;
+                @media #{$xs} {
+                    width: 180px;
+                    flex-direction: column;
+                }
 
                 .desc-sub {
                     font-size: 12px;
@@ -82,6 +86,9 @@
                     .colored-png {
                         width: 250px;
                         height: 40px;
+                        @media #{$xs} {
+                            width: 180px;
+                        }
                     }
                 }
             }
@@ -99,6 +106,10 @@
                 text-decoration: none;
                 line-height: 1.2;
                 border-radius: 9px;
+                @media #{$xs} {
+                    margin-left: 0px;
+                    margin-top: 5px;
+                }
 
                 &:hover {
                     text-decoration: underline;
