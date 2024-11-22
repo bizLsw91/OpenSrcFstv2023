@@ -71,7 +71,7 @@ const HomeArea = () => {
                     <div className="home__area">
                         <div className="home__content">
                             <Image
-                                src='assets/img/2024design/program.webp' // 이미지 URL을 넣으세요
+                                src='assets/img/2024design/program.jpg' // 이미지 URL을 넣으세요
                                 preview={false}
                             />
                         </div>

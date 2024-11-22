@@ -11,7 +11,7 @@ const ProgramArea = () => {
                         <HeadingWithLines text={'프로그램'} />
                         <Image
                             className="imgBox"
-                            src='assets/img/2024design/program.webp' // 이미지 URL을 넣으세요
+                            src='assets/img/2024design/program.jpg' // 이미지 URL을 넣으세요
                             preview={false}
                             // preview={{ src: "assets/img/openSW/openSW-program-noTitle.jpg" }} // 클릭할 때만 확대되도록 설정
                         />
