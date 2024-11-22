@@ -371,8 +371,14 @@
     min-height: 540px;
     background-size: cover; /* 이미지가 배너 크기에 맞게 조정되도록 함 */
     background-position: center; /* 중앙에 이미지를 위치시킴 */
-    @media screen and (orientation: landscape) {
+    @media screen and (orientation: landscape)  {
         min-height: 850px;
+        @media #{$sm}{
+            min-height: 650px;
+        }
+        @media #{$xs}{
+            min-height: 550px;
+        }
     }
     overflow: hidden;
 
