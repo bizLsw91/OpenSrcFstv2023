@@ -90,13 +90,10 @@ $sp-badge-color4: #c47b21;
             flex-wrap: wrap;
             justify-content: center;
         }
-
-        .card-width{
-            width: 320px;
-        }
-
-
-
+    }
+    &__lastdesc{
+        word-break: keep-all;
+        padding: 0 20px;
     }
 
 }
@@ -309,7 +306,7 @@ $pfc-h-simple2:250px;
                     }
                 }
                 .right-title{
-                    height: 93px;
+                    margin-bottom: 20px;
                     overflow-wrap: anywhere;
                     display: flex;
                     img{

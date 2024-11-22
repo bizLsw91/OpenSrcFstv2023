@@ -57,7 +57,7 @@ const SpeakersArea = ({id='1'}) => {
                                                      toggleVisibility={handleToggle}
                                                      data={speakersData.lectures[6]} subjType={2}/>
                                     </div>
-                                    <div className="card-width">
+                                    <div className="speakers__lastdesc">
                                         * 연사분들의 발표 자료는 행사 종료 후, 외부 공개가 가능한 연사분에 한하여 발표 자료가 공개될 예정입니다.
                                     </div>
                                 </section>

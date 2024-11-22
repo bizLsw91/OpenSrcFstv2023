@@ -52,7 +52,7 @@ export const speakersData = {
             badge: '기조강연2',
             name: '백송하',
             company: '현대자동차',
-            position: '책임',
+            position: '책임연구원',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/백송하.png',
             docFilePath: 'speakersDoc/기조강연 2-백송하.pdf',
             profileList: ['현대자동차 오프소스 그룹장(22~현재)'],
@@ -77,11 +77,11 @@ export const speakersData = {
         2: {
             badge: '발표-2',
             name: '조성수',
-            company: '오픈스택',
-            position: '리더',
+            company: '오픈인프라(오픈스택)한국사용자모임',
+            position: '대표',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/조성수.png',
             docFilePath: 'speakersDoc/발표세션 2-조성수.pdf',
-            profileList: ['BHN Cloud 오픈스택 엔지니어(17~현재)', '오픈인프라(오픈스택)한국사용자모임 대표 (20~현재)', '오픈스택 한국사용자 모임 부대표(17~29)'],
+            profileList: ['NHN Cloud 오픈스택 엔지니어(17~현재)', '오픈인프라(오픈스택)한국사용자모임 대표 (20~현재)', '오픈스택 한국사용자 모임 부대표(17~19)'],
             profileDesc: '',
             lectTitle: <>Regional Hub,<br/>오픈 인프라가 선택한 전략</>,
             lectSummary: '비즈니스에 맞게 변화하는 오픈소스 전략 사례'
@@ -89,11 +89,11 @@ export const speakersData = {
         3: {
             badge: '발표-3',
             name: '신정규',
-            company: '㈜레블업',
+            company: '레블업㈜',
             position: '대표',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/신정규.jpg',
             docFilePath: 'speakersDoc/발표세션 3-신정규.pdf',
-            profileList: ['한국통신학회 이사(현재~)', 'Google Cloud Champion Innovators Innovator(현재~)', 'Google For Startups Accelerator Mentor(DL/AI)(현재~)'],
+            profileList: ['래블업(주) 대표이사 (현재)','한국통신학회 이사(현재~)', 'Google Cloud Champion Innovators_ Innovator (현재~)', 'Google For Startups Accelerator_ Mentor(DL/AI) (현재~)'],
             profileDesc: '',
             lectTitle: <>오픈소스 라이선스와<br/>오픈 AI 모델</>,
             lectSummary: '전통적인 오픈소스 소프트웨어의 정의와 최근 등장한 오픈 AI모델들의 특성 비교'
@@ -101,11 +101,11 @@ export const speakersData = {
         4: {
             badge: '발표-4',
             name: '박문식',
-            company: '㈜젝사젠',
+            company: '젝사젠㈜',
             position: '대표',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/박문식.jpg',
             docFilePath: 'speakersDoc/발표세션 3-박문식.pdf',
-            profileList: ['젝사젠 대표이사(현재~)', '에프에이리눅스 연구소장(10~23)', '시그널싱크 연구소장(03~09)'],
+            profileList: ['젝사젠(주) 대표이사(현재~)', '에프에이리눅스 연구소장(10~23)', '시그널싱크 연구소장(03~09)'],
             profileDesc: '',
             lectTitle: <>바이오에서 활용되는<br/>AI 유전자 기술</>,
             lectSummary: '바이오에 대한 소개와 AI기술이 활용되는 사례'
@@ -113,7 +113,7 @@ export const speakersData = {
         5: {
             badge: '발표-5',
             name: '이현정',
-            company: '경상대학교 화학공학과',
+            company: '경상국립대학교 화학공학과',
             position: '연구원',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/이현정.png',
             docFilePath: 'speakersDoc/발표세션 5-이현정.pdf',
@@ -123,7 +123,7 @@ export const speakersData = {
                 '2024.05~ : 인공지능 기반 공정흐름도 자동 생성 플랫폼 개발 연구',
                 '2024.09 : 16th International Conference on Sustainable Energy & Environmental Protection, 09-12 September 2024 Best paper winning prize'],
             profileDesc: '',
-            lectTitle: <>차세대 화학 시뮬레이션:<br/>디지털 트윈 혁신을 위한<br/>오픈소스와 머신러닝 활용</>,
+            lectTitle: <>차세대 화학 시뮬레이션:<br/>비용 효율적인<br/>디지털 트윈 혁신을 위한<br/>오픈소스와 머신러닝 활용</>,
             lectSummary: '시뮬레이션 데이터를 머신러닝 기법으로 분석, 화학공정 모사에 필요한 리소스를 줄일 수 있는 잠재력에 대한 발표'
         },
         6: {
