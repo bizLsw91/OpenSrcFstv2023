@@ -89,7 +89,7 @@ export const speakersData = {
         3: {
             badge: '발표-3',
             name: '신정규',
-            company: '레블업㈜',
+            company: '래블업㈜',
             position: '대표',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/신정규.jpg',
             docFilePath: 'speakersDoc/발표세션 3-신정규.pdf',
@@ -218,7 +218,7 @@ export const speakersData = {
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/이제응.jpg',
             profileList: ['약력1','약력2','약력3'],
             profileDesc: '',
-            subject:'오픈소스기반의 클라우드 네이티브 글로벌 활성화',
+            subject:'클라우드 네이티브와 AI 생태계진화',
         },
         9:{
             badge: '발표-9',
@@ -228,7 +228,7 @@ export const speakersData = {
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/김관영.jpg',
             profileList: ['약력1','약력2','약력3'],
             profileDesc: '',
-            subject:'오픈 인프라(오픈스택) 한국 사용자 모임의 2024 활동정리 및 2025년 활동계획 공유',
+            subject:'오픈 인프라(오픈스택) 한국 사용자 모임의 2024년 활동정리 및 2025년 활동계획 공유',
         },
     }
 }
