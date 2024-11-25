@@ -228,7 +228,7 @@ export const speakersData = {
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/김관영.jpg',
             profileList: ['약력1','약력2','약력3'],
             profileDesc: '',
-            subject:'오픈 인프라(오픈스택) 한국 사용자 모임의 2024년 활동정리 및 2025년 활동계획 공유',
+            subject:'일상속에 클라우드, 오픈스택',
         },
     }
 }
