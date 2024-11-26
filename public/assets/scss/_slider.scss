@@ -443,18 +443,18 @@
         position: relative;
         .keyvisual-top{
             position: absolute;
-            transform: translateX(50%) translateY(-100%); /* 기준 위치 조정 */
-            top: -22px; /* 상단에서부터 10% 위치에 배치 */
-            right: 50%;
+            transform: translateX(0%) translateY(-100%); /* 기준 위치 조정 */
+            top: 0; /* 상단에서부터 10% 위치에 배치 */
+            right: 0%;
             height: auto; /* 비율 유지 */
-            width: 250px; /* 상대적 크기 조정 */
+            width: 160px; /* 상대적 크기 조정 */
             @media #{$sm} {
-                width: 200px;
-                top: -15px;
+                width: 130px;
+                top: 0px;
             }
             @media #{$xs} {
-                width: 150px;
-                top: -10px;
+                width: 100px;
+                top: 0px;
             }
         }
     }
