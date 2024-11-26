@@ -84,7 +84,7 @@ const OverviewArea = () => {
                                     ))}
                                 </section>
                                 <section className="overview__poster">
-                                    <img className="poster" src="assets/img/2024design/poster.webp" alt="오픈소스 포스터" />
+                                    <img className="poster" src="assets/img/2024design/keyvisual_sumnail_TOP_R_800.webp" alt="오픈소스 포스터" />
                                 </section>
                             </Col>
                             <Col md={5}>
