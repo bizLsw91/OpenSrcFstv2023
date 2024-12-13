@@ -45,11 +45,11 @@ const HomeKeyVisual = () => {
                                 {/*    //           className={`z-btn-main z-btn-transparent z-btn-disable`}>사전등록</Link>*/}
                                 {/*    //     <div className="info">2024.11.20 (수) 12:00 부터 신청가능</div>*/}
                                 {/*    // </div> :*/}
-                                <div className="preRegistration">
-                                    <Link to="https://www.onoffmix.com/event/313420"
-                                          className={`z-btn-main z-btn-transparent`}>사전등록</Link>
-                                    <div className="info">2024.12.6 (금) 12:00 까지 선착순 정원 500명 신청가능</div>
-                                </div>
+                                {/*<div className="preRegistration">*/}
+                                {/*    <Link to="https://www.onoffmix.com/event/313420"*/}
+                                {/*          className={`z-btn-main z-btn-transparent`}>사전등록</Link>*/}
+                                {/*    <div className="info">2024.12.6 (금) 12:00 까지 선착순 정원 500명 신청가능</div>*/}
+                                {/*</div>*/}
                                 {/*}*/}
                             </div>
                             <img className="keyvisual-bottom" src="assets/img/2024design/keyvisual-bottom.png" alt=""/>

@@ -53,7 +53,7 @@ const PreRegistrationArea = () => {
                             {/*    </div> :*/}
                                 <div className="preRegiBtnArea">
                                     <Link to="https://www.onoffmix.com/event/313420"
-                                          className={`z-btn z-btn-main`}>사전등록하러 가기</Link>
+                                          className={`z-btn z-btn-disable `}>사전등록하러 가기</Link>
                                     <div className="info mt-2">2024.12.6 (금) 12:00 까지 선착순 정원 500명 신청가능</div>
                                 </div>
                             {/*}*/}
