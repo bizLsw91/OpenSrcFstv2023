@@ -132,7 +132,7 @@ export const speakersData = {
             company: '㈜무아베모션',
             position: '대표',
             imgUrl: 'https://ossfestival.kr/assets/img/speakers/오재웅.jpg',
-            docFilePath: 'speakersDoc/2024/05. 강연_오재웅 대표.pdf',
+            docFilePath: 'speakersDoc/2024/08. 강연_오재웅 대표.pdf',
             profileList: ['㈜무아베모션 대표이사(현재~)', '서울부민병원AI질병예측/진단 CTO', 'GS리테일 베트남 Offshore 관리총괄', 'Intives Healthcare(SKTspin-off)개발총괄', 'SK텔레콤 New Healthcare 개발컨설턴트', '2017년 공개SW개발자대회 대상'],
             profileDesc: '',
             lectTitle: <>오픈소스가 키운 개발자,<br/>10년의 성장 보고서</>,
