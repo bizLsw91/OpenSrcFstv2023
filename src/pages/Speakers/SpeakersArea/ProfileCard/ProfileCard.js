@@ -1,11 +1,8 @@
-import {useState} from "react";
-
-import {Button, ConfigProvider} from "antd";
-import {GrDocumentPdf} from "react-icons/gr";
-import {FaArrowRight, FaRegFilePdf} from "react-icons/fa6";
 import {api_download} from "../../../../services/CommonService";
-import { CircleAlert } from 'lucide-react';
 import {RiDoubleQuotesL, RiDoubleQuotesR} from "react-icons/ri";
+
+import {Button} from "antd";
+import {FaArrowRight, FaRegFilePdf} from "react-icons/fa6";
 
 function downloadFile(downloadUrl, fileName) {
     const anchor = document.createElement('a');
@@ -17,11 +14,10 @@ function downloadFile(downloadUrl, fileName) {
 
 
 const ProfileCard = (props) => {
-    const {id, mainViewId, toggleVisibility, simple, data, subjType} = props
-    const [fileUrl, setFileUrl] = useState('');
+    const {id, mainViewId, toggleVisibility, simple, data, subjType,  isDocLooked} = props
     const isBackVisible = subjType !== 3
     const isVisible = isBackVisible && id === mainViewId
-    const isDoc = !simple && data.docFilePath
+    const isDoc =  isDocLooked && data.docFilePath || !simple && data.docFilePath
 
     const handleDownloadClick = async () => {
         const docFilePath = data.docFilePath;
@@ -114,7 +110,17 @@ const ProfileCard = (props) => {
                         <div className="right-desc">
                             <p>{data?.lectSummary}</p>
                         </div>
+                        {isDoc &&
+                            <div className="btnArea">
+                                <Button className="docBtn" onClick={handleDownloadClick}><FaRegFilePdf className="docIcon"/>발표 자료<FaArrowRight className="docIcon"/></Button>
+                            </div>
+                        }
                     </div>
+                    {isDoc && subjType===3 &&
+                        <div className="btnArea">
+                            <Button className="docBtn" onClick={handleDownloadClick}><FaRegFilePdf className="docIcon"/>발표 자료<FaArrowRight className="docIcon"/></Button>
+                        </div>
+                    }
                 </div>
                 <div className={`back pfCard-Container gradient2 z2 toggleBox ${isVisible ? 'visible' : ''}`} onClick={toggleVisibility}>
                     <div className={`up ${data?.profileList.length>0 && isVisible ? 'up-visible':''}`}>
@@ -129,11 +135,6 @@ const ProfileCard = (props) => {
                     </div>
                 </div>
             </div>
-            {/*{isDoc &&*/}
-            {/*    <div className="btnArea">*/}
-            {/*        <Button className="docBtn" onClick={handleDownloadClick}><FaRegFilePdf className="docIcon"/>발표 자료<FaArrowRight className="docIcon"/></Button>*/}
-            {/*    </div>*/}
-            {/*}*/}
         </div>
     );
 };

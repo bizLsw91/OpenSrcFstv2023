@@ -101,13 +101,13 @@ $sp-badge-color4: #c47b21;
 $pfC-bR:20px;
 $pfc-w:530px;
 $pfc-h:420px;
-$pfc-h-min-xs:710px;
+$pfc-h-min-xs:795px;
 $pfc-h-xs:870px;
 
 $pfc-w-simple:320px;
 $pfc-w-simple-xs:310px;
 $pfc-h-simple:420px;
-$pfc-h-simple2:250px;
+$pfc-h-simple2:280px;
 .ProfileCard{
     padding: 0 20px;
     margin-bottom: 30px;
@@ -128,6 +128,9 @@ $pfc-h-simple2:250px;
         height: 50px;
         display: flex;
         justify-content: end;
+        position: absolute;
+        bottom: 15px;
+        right: 24px;
         .docBtn{
             display: flex;
             align-items: center;
@@ -359,6 +362,7 @@ $pfc-h-simple2:250px;
                 border-radius: $pfC-bR;
                 position: absolute;
                 width: 100%;
+                height: 100%;
             }
         }
         .m-column{

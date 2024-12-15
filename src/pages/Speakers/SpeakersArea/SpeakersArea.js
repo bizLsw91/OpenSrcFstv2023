@@ -74,31 +74,31 @@ const SpeakersArea = ({id='1'}) => {
                                     <div className="profiles">
                                         <ProfileCard simple key={8}  id={8} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[1]} subjType={3}/>
+                                                     data={speakersData.poster[1]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={9} id={9} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[2]} subjType={3}/>
+                                                     data={speakersData.poster[2]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={10} id={10} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[3]} subjType={3}/>
+                                                     data={speakersData.poster[3]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={11} id={11} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[4]} subjType={3}/>
+                                                     data={speakersData.poster[4]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={12} id={12} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[5]} subjType={3}/>
+                                                     data={speakersData.poster[5]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={13} id={13} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[6]} subjType={3}/>
+                                                     data={speakersData.poster[6]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={14} id={14} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[7]} subjType={3}/>
+                                                     data={speakersData.poster[7]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={15} id={15} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[8]} subjType={3}/>
+                                                     data={speakersData.poster[8]} subjType={3} isDocLooked/>
                                         <ProfileCard simple key={16} id={16} mainViewId={mainViewId}
                                                      toggleVisibility={handleToggle}
-                                                     data={speakersData.poster[9]} subjType={3}/>
+                                                     data={speakersData.poster[9]} subjType={3} isDocLooked/>
                                     </div>
                                 </section>
                             </>
