@@ -1,10 +1,12 @@
 // import {Map, MapMarker} from "react-kakao-maps-sdk";
 
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 
-const content = '<div class="mapInfoWindowBox">코엑스 컨퍼런룸 4F</div>';
-
+const content = '<div class="mapInfoWindowBox">코엑스 컨퍼런룸 4F</div>'
 const KakaoMap = () => {
+    const [isLoaded, setIsLoaded] = useState(true);
+    // 마커를 표시할 위치 설정
+    //코엑스 컨퍼런스룸
     const position = {
         lat: 37.5128,
         lng: 127.0590
@@ -43,11 +45,16 @@ const KakaoMap = () => {
 
                 infoWindow.open(map, marker);
             });
+        } else {
+            setIsLoaded(false);
         }
     }, []); // 빈 배열을 넣어 마운트 시 한 번만 실행되도록 설정
 
     return (
-        <div id="map" style={{ width: "100%", height: "400px" }}></div>
+        <div>
+            {!isLoaded && <div style={{color: 'red', fontSize: '25px'}}>[ 카카오맵 API 정책 변경으로 맵 UI 가 로드 되지 않았습니다. ]</div>}
+            <div id="map" style={{ width: "100%", height: "400px" }}></div>
+        </div>
     );
 };
 
