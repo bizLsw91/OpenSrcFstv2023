@@ -1,13 +1,9 @@
 // import {Map, MapMarker} from "react-kakao-maps-sdk";
 
-import {useEffect} from "react";
-
-const {kakao} = window;
-
-
-const content = '<div class="mapInfoWindowBox">코엑스 컨퍼런룸 4F</div>'
+import {useEffect, useState} from "react";
 
 const KakaoMap = () => {
+    const [isLoaded, setIsLoaded] = useState(true);
     // 마커를 표시할 위치 설정
     //코엑스 컨퍼런스룸
     const position = {
@@ -16,38 +12,52 @@ const KakaoMap = () => {
     };
 
     useEffect(() => {
-        // 지도를 표시할 div
-        const mapContainer = document.getElementById('map')
-        const markerPosition  = new kakao.maps.LatLng(position.lat, position.lng);
-        const mapOption = {
-            // 지도의 중심좌표
-            center: markerPosition,
-            level: 3 // 지도의 확대 레벨
-        };
-        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-        const map = new kakao.maps.Map(mapContainer, mapOption);
+        const {kakao} = window;
 
-        // 마커를 생성
-        let marker = new kakao.maps.Marker({
-            position: mapOption.center,
-        });
+        // kakao 객체가 있고, maps 모듈이 로드되었는지 확인
+        if (kakao && kakao.maps) {
+            kakao.maps.load(() => {
+                const mapContainer = document.getElementById('map');
 
-        // 마커를 지도 위에 표시
-        marker.setMap(map);
+                // 좌표 생성
+                const markerPosition = new kakao.maps.LatLng(position.lat, position.lng);
 
-        // 인포윈도우 생성
-        const infoWindow = new kakao.maps.InfoWindow({
-            content: content,
-            position: markerPosition
-        });
+                const mapOption = {
+                    center: markerPosition,
+                    level: 3
+                };
 
-        infoWindow.open(map, marker); // 오버레이 표시
+                // 지도 생성
+                const map = new kakao.maps.Map(mapContainer, mapOption);
+
+                // 마커 생성
+                const marker = new kakao.maps.Marker({
+                    position: markerPosition,
+                });
+
+                marker.setMap(map);
+
+                // 인포윈도우 생성
+                const infoWindow = new kakao.maps.InfoWindow({
+                    content: content,
+                });
+
+                infoWindow.open(map, marker);
+            });
+        } else {
+            setIsLoaded(false);
+        }
     })
 
 
     return (
-        <div id="map"></div>
+        <div>
+            {!isLoaded && <div style={{color: 'red', fontSize: '25px'}}>[ 카카오맵 API 정책 변경으로 맵 UI 가 로드 되지 않았습니다. ]</div>}
+            <div id="map"></div>
+        </div>
     );
 };
+
+const content = '<div class="mapInfoWindowBox">코엑스 컨퍼런룸 4F</div>'
 
 export default KakaoMap;
