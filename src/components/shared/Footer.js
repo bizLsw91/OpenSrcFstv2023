@@ -17,7 +17,7 @@ const Footer = () => {
                <Container>
                   <div className="logo mb-20">
                      <NavLink to="/">
-                        <img src="https://ossfestival.kr/assets/img/2024design/logo.png" alt="logo"/>
+                        <img src="https://open-src-fstv-2024.vercel.app//assets/img/2024design/logo.png" alt="logo"/>
                      </NavLink>
                   </div>
                   <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>
@@ -34,10 +34,10 @@ const Footer = () => {
                         </div>
                         <div className="d-flex justify-content-md-end">
                            <a href='https://www.youtube.com/watch?v=DVMOREXMIAo&list=PL8MaVgZDhGk-mVoB9he8ofPqj24_4Bb1N' className="mr-10">
-                              <img src="https://ossfestival.kr/assets/img/brand/youtubeIcon.png" className="icon" alt="YouTube"/>
+                              <img src="https://open-src-fstv-2024.vercel.app//assets/img/brand/youtubeIcon.png" className="icon" alt="YouTube"/>
                            </a>
                            <a href="https://www.facebook.com/OpenUP_OSS">
-                              <img src="https://ossfestival.kr/assets/img/brand/facebook.png" className="icon" alt="Facebook"/>
+                              <img src="https://open-src-fstv-2024.vercel.app//assets/img/brand/facebook.png" className="icon" alt="Facebook"/>
                            </a>
                         </div>
                      </Col>

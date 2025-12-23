@@ -37,13 +37,13 @@ const infoData = [
     {
         item: "주최",
         desc: "",
-        img_url:'https://ossfestival.kr/assets/img/2024design/주최.png',
+        img_url:'https://open-src-fstv-2024.vercel.app//assets/img/2024design/주최.png',
         alt:'주최'
     },
     {
         item: "주관",
         desc: "",
-        img_url:'https://ossfestival.kr/assets/img/2024design/주관.png',
+        img_url:'https://open-src-fstv-2024.vercel.app//assets/img/2024design/주관.png',
         alt:'주관'
     },
 ];

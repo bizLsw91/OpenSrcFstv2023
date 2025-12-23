@@ -13,4 +13,4 @@ Disallow: /preRegistration
 Disallow: /event
 Allow: /
 Allow: /sitemap.xml
-Sitemap: https://ossfestival.kr/sitemap.xml
+Sitemap: https://open-src-fstv-2024.vercel.app//sitemap.xml

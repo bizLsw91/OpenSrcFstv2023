@@ -24,12 +24,12 @@ const HomeOneHeader = () => {
                                     <Col xl={3} lg={3} md={6} sm={6} xs={6}>
                                         <div className="logo">
                                             <NavLink to="/">
-                                                <img src="https://ossfestival.kr/assets/img/2024design/logo.png" alt="logo"/>
+                                                <img src="https://open-src-fstv-2024.vercel.app//assets/img/2024design/logo.png" alt="logo"/>
                                             </NavLink>
                                         </div>
                                         <div className="logo-in-sticky">
                                             <NavLink to="/">
-                                                <img src="https://ossfestival.kr/assets/img/2024design/logo.png"
+                                                <img src="https://open-src-fstv-2024.vercel.app//assets/img/2024design/logo.png"
                                                      alt="logo"/>
                                             </NavLink>
                                         </div>

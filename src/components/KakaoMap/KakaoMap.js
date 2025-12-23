@@ -2,8 +2,6 @@
 
 import {useEffect} from "react";
 
-const {kakao} = window;
-
 
 const content = '<div class="mapInfoWindowBox">코엑스 컨퍼런룸 4F</div>'
 
