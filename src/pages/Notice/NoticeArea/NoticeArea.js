@@ -7,7 +7,13 @@ import {useNavigate} from "react-router-dom";
 import moment from "moment";
 
 const api_getPosts = async (req) => {
-    return await axios.post(appConfig.apiPreUrl + '/Notice/getPosts', req)
+    return await axios.post(appConfig.apiPreUrl + '/Notice/getPosts', req, {
+        headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            'Expires': '0',
+        }
+    })
 };
 const NoticeArea = () => {
     const [loading, setLoading] = useState(false);
@@ -27,6 +33,12 @@ const NoticeArea = () => {
             setLoading(false);
         } catch (error) {
             setLoading(false);
+            // 304 Not Modified는 에러가 아니므로 무시하거나 기존 데이터를 유지할 수 있도록 처리
+            if (error.response && error.response.status === 304) {
+                console.log('304 Not Modified: Using cached data');
+                return;
+            }
+            console.error('Fetch error:', error);
             setPosts([])
             alert(errMsg)
         }
