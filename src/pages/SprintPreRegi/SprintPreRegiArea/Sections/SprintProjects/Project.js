@@ -1,5 +1,4 @@
 import {Col, Row} from "react-bootstrap";
-import {useState} from "react";
 
 const Project = ({projId, data}) => {
 

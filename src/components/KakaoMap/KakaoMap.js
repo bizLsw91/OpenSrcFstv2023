@@ -47,7 +47,7 @@ const KakaoMap = () => {
         } else {
             setIsLoaded(false);
         }
-    })
+    }, [position.lat, position.lng])
 
 
     return (

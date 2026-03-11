@@ -1,11 +1,8 @@
 import React, {useContext} from 'react';
-import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { Col, Container, Row } from "react-bootstrap";
-import appConfig from "../../../config/app.config";
+import { Container } from "react-bootstrap";
 import {AppContext} from "../../../context/AllContext";
 
-const isShow = appConfig.isShow
 const HomeKeyVisual = () => {
     const {isOverDeadLine} = useContext(AppContext);
    return (

@@ -37,11 +37,4 @@ const overall = {
 }
 
 
-const data401ho = [
-    {
-
-    }
-]
-
-
 export {overall}

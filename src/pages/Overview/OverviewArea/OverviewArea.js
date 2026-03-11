@@ -70,7 +70,7 @@ const OverviewArea = () => {
                                             </td>
                                             <td className="d-flex">
                                                 <div className="desc">{infoData[3].desc}</div>
-                                                <Link className="directions  ml-15" to="/directions">찾아오시는 길 ></Link>
+                                                <Link className="directions  ml-15" to="/directions">찾아오시는 길 &gt;</Link>
                                             </td>
                                         </Col>
                                     </Row>
@@ -106,7 +106,7 @@ const OverviewArea = () => {
                                     </Row>
                                 </section>
                                 <section className="overview__poster">
-                                    <img className="poster" src="assets/img/openSW/openSW-poster.png"/>
+                                    <img className="poster" src="assets/img/openSW/openSW-poster.png" alt="공개SW 페스티벌 포스터"/>
                                 </section>
                             </Col>
                             <Col md={5}>
@@ -125,7 +125,7 @@ const OverviewArea = () => {
                                                 <div className="contentBox">
                                                     <div className="item">
                                                         <div className="ho ho-color1">{overall.a.place+'호'}</div>
-                                                        <a className="title">{overall.a.title}</a>
+                                                        <a href="#!" className="title">{overall.a.title}</a>
                                                     </div>
                                                 </div>
                                             </TimelineContent>
@@ -142,11 +142,11 @@ const OverviewArea = () => {
                                                 <div className="contentBox">
                                                     <div className="item">
                                                         <div className="ho ho-color1">{overall.b.place+'호'}</div>
-                                                        <a className="title">{overall.b.title}</a>
+                                                        <a href="#!" className="title">{overall.b.title}</a>
                                                     </div>
                                                     <div className="item">
                                                         <div className="ho ho-color3">{overall.b2.place+'호'}</div>
-                                                        <a className="title">{overall.b2.title}</a>
+                                                        <a href="#!" className="title">{overall.b2.title}</a>
                                                     </div>
                                                 </div>
                                             </TimelineContent>
@@ -163,15 +163,15 @@ const OverviewArea = () => {
                                                 <div className="contentBox">
                                                     <div className="item">
                                                         <div className="ho ho-color1">{overall.c.place+'호'}</div>
-                                                        <a className="title">{overall.c.title}</a>
+                                                        <a href="#!" className="title">{overall.c.title}</a>
                                                     </div>
                                                     <div className="item">
                                                         <div className="ho ho-color2">{overall.c2.place+'호'}</div>
-                                                        <a className="title">{overall.c2.title}</a>
+                                                        <a href="#!" className="title">{overall.c2.title}</a>
                                                     </div>
                                                     <div className="item">
                                                         <div className="ho ho-color3">{overall.c3.place+'호'}</div>
-                                                        <a className="title">{overall.c3.title}</a>
+                                                        <a href="#!" className="title">{overall.c3.title}</a>
                                                     </div>
                                                 </div>
                                             </TimelineContent>
@@ -188,7 +188,7 @@ const OverviewArea = () => {
                                                 <div className="contentBox last">
                                                 <div className="item">
                                                     <div className="ho ho-color3"></div>
-                                                    <a className="title">{overall.d.title}</a>
+                                                    <a href="#!" className="title">{overall.d.title}</a>
                                                 </div>
                                                 </div>
                                             </TimelineContent>
@@ -204,7 +204,7 @@ const OverviewArea = () => {
                                                 <div className="contentBox ops">
                                                     <div className="item">
                                                         <div className="ho ho-color3"></div>
-                                                        <a className="title">{overall.d.title}</a>
+                                                        <a href="#!" className="title">{overall.d.title}</a>
                                                     </div>
                                                 </div>
                                             </TimelineContent>

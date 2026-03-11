@@ -37,7 +37,7 @@ const NoticeDetailArea = ({index}) => {
 
     useEffect(() => {
         fetchData(index)
-    }, [])
+    }, [index])
 
     useEffect(() => {
         console.log('ll', loading)

@@ -1,4 +1,3 @@
-import {Container} from "react-bootstrap";
 import React, {useState} from "react";
 import ProfileCard from "./ProfileCard/ProfileCard";
 import {speakersData} from "../Speakers";

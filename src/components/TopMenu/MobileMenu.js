@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import menuItems from "../../menuItem";
-import {FiUser} from "react-icons/fi";
 
 
 const MobileMenu = () => {

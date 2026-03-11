@@ -19,7 +19,7 @@ const Footer = () => {
                      <NavLink to="/">
                         <div>
                            <h4>
-                              <a href="/">공개SW 페스티벌 2023</a>
+                              <span className="underline__black">공개SW 페스티벌 2023</span>
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
@@ -36,8 +36,8 @@ const Footer = () => {
                            </p>
                         </div>
                         <div className="d-flex justify-content-md-end">
-                           <a href='https://www.youtube.com/playlist?list=PL8MaVgZDhGk_6lUMRnoGQO8Xy4d3RXTDa' className="mr-10"><img src="assets/img/brand/youtubeIcon.png" className="icon"/></a>
-                           <a href="https://www.facebook.com/OpenUP_OSS"><img src="assets/img/brand/facebook.png" className="icon"/></a>
+                           <a href='https://www.youtube.com/playlist?list=PL8MaVgZDhGk_6lUMRnoGQO8Xy4d3RXTDa' className="mr-10"><img src="assets/img/brand/youtubeIcon.png" className="icon" alt="YouTube"/></a>
+                           <a href="https://www.facebook.com/OpenUP_OSS"><img src="assets/img/brand/facebook.png" className="icon" alt="Facebook"/></a>
                         </div>
                      </Col>
                      <div className="footer__horizontal-line d-md-none mt-10 mb-10"></div>

@@ -73,7 +73,7 @@ const NoticeArea = () => {
             dataIndex: 'title',
             key: 'title',
             render: (_, record) => (
-                <a onClick={() => toDetail(record.index)}>{record.title}</a>
+                <a href="#!" onClick={() => toDetail(record.index)}>{record.title}</a>
             )
         },
         {
@@ -101,7 +101,7 @@ const NoticeArea = () => {
             dataIndex: 'index',
             key: 'index',
             render: (_, record) => (
-                <a onClick={() => toDetail(record.index)}>
+                <a href="#!" onClick={() => toDetail(record.index)}>
                     <div>
                         {record.categoryCode === 0 ?
                             <div className="m-title">{record.title}</div>

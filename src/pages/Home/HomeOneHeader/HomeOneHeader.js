@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { FaSearch} from 'react-icons/fa';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import useGlobalContext from '../../../hooks/useGlobalContext';
 import { Col, Container, Row } from "react-bootstrap";
@@ -26,7 +26,7 @@ const HomeOneHeader = () => {
                                         <NavLink to="/">
                                             <div>
                                                 <h4>
-                                                    <a href="/">공개SW 페스티벌 2023</a>
+                                                    <span className="underline__black">공개SW 페스티벌 2023</span>
                                                 </h4>
                                             </div>
                                             {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}
@@ -36,7 +36,7 @@ const HomeOneHeader = () => {
                                         <NavLink to="/">
                                             <div>
                                                 <h4>
-                                                    <a href="/">공개SW 페스티벌 2023</a>
+                                                    <span className="underline__black">공개SW 페스티벌 2023</span>
                                                 </h4>
                                             </div>
                                             {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}

@@ -1,7 +1,6 @@
 import {Container} from "react-bootstrap";
 import SpinByW from "../../../components/SpinByW/SpinByW";
 import {useEffect, useState} from "react";
-import {Paper} from "@mui/material";
 import appConfig from "../../../config/app.config";
 import axios from "axios";
 import {Collapse, Pagination, Space} from "antd";
@@ -12,7 +11,7 @@ const api_getFaqs = async (req) => {
 
 const FaqArea = () => {
     const [data, setData] = useState([]);
-    const [categoryCode, setCategoryCode] = useState(0);
+    const [categoryCode] = useState(0);
     const [loading, setLoading] = useState(false);
     const errMsg1 = 'Faq를 조회하는데 실패하였습니다.'
 

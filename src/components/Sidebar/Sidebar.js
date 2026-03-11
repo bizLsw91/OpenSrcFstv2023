@@ -2,10 +2,7 @@ import React from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Collapsible from 'react-collapsible';
-import { BiMap } from 'react-icons/bi';
-import { FaEnvelope, FaPhoneAlt, FaSearch } from 'react-icons/fa';
 import menuItems from "../../menuItem";
-import {FiUser} from "react-icons/fi";
 
 const Sidebar = ({ show, handleClose }) => {
 
@@ -19,7 +16,7 @@ const Sidebar = ({ show, handleClose }) => {
                      <NavLink to="/">
                         <div>
                            <h4>
-                              <a className="sidebar__logo">공개SW 페스티벌<br/>2023</a>
+                              <span className="sidebar__logo">공개SW 페스티벌<br/>2023</span>
                            </h4>
                         </div>
                         {/*<img src="assets/img/logo/logo.png" alt="logo"/>*/}

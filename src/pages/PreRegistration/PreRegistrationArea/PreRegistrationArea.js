@@ -16,7 +16,7 @@ const PreRegistrationArea = () => {
 
     useEffect(()=>{
         setIsOver(isOverDeadLine())
-    },[])
+    },[isOverDeadLine])
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
